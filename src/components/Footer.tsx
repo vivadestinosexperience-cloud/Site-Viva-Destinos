@@ -33,10 +33,10 @@ export default function Footer() {
           </p>
 
           <div className="flex items-center gap-3">
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="bg-white/5 hover:bg-dourado hover:text-azul p-2 rounded-full transition-colors">
+            <a href="https://www.instagram.com/vivadestinosexperience/" target="_blank" rel="noreferrer" className="bg-white/5 hover:bg-dourado hover:text-azul p-2 rounded-full transition-colors">
               <Instagram size={16} />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" className="bg-white/5 hover:bg-dourado hover:text-azul p-2 rounded-full transition-colors">
+            <a href="https://www.facebook.com/profile.php?id=61588801127216" target="_blank" rel="noreferrer" className="bg-white/5 hover:bg-dourado hover:text-azul p-2 rounded-full transition-colors">
               <Facebook size={16} />
             </a>
           </div>
