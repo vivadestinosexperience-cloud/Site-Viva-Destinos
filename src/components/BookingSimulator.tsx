@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { Calendar, Users, Calculator, MessageSquare, Compass, Gift, Ticket } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Calendar, Users, Calculator, MessageSquare, Compass, Gift, Ticket, Loader2 } from 'lucide-react';
 import { HOTELS_DATA } from '../data/hotelsData';
+import { supabase } from '../lib/supabaseClient';
+import { LeadReserva } from '../types';
 
 export default function BookingSimulator() {
   const [selectedHotelId, setSelectedHotelId] = useState(HOTELS_DATA[0].id);
@@ -10,6 +12,17 @@ export default function BookingSimulator() {
   const [checkIn, setCheckIn] = useState('');
   const [checkOut, setCheckOut] = useState('');
   const [specialNeeds, setSpecialNeeds] = useState('');
+
+  // Lead target fields
+  const [clientName, setClientName] = useState('');
+  const [clientPhone, setClientPhone] = useState('');
+  const [clientEmail, setClientEmail] = useState('');
+  const [childAges, setChildAges] = useState<string[]>([]);
+
+  // Action flow states
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const selectedHotel = HOTELS_DATA.find(h => h.id === selectedHotelId) || HOTELS_DATA[0];
 
@@ -38,11 +51,67 @@ export default function BookingSimulator() {
 
   const travelStyle = getTravelStyle();
 
+  const handleUpdateChildren = (updater: (prev: number) => number) => {
+    setChildren(prev => {
+      const next = updater(prev);
+      setChildAges(prevAges => {
+        const nextAges = [...prevAges];
+        if (next > nextAges.length) {
+          while (nextAges.length < next) {
+            nextAges.push('');
+          }
+        } else {
+          nextAges.splice(next);
+        }
+        return nextAges;
+      });
+      return next;
+    });
+  };
+
   // Pre-fill WhatsApp URL link generator formatted elegantly
-  const handleGenerateQuote = (e: React.FormEvent) => {
+  const handleGenerateQuote = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isLoading) return; // Prevent duplicate clicks
+
+    // Fields validation
+    if (!clientName.trim()) {
+      setErrorMessage('Por favor, informe seu nome completo.');
+      return;
+    }
+    if (!clientPhone.trim()) {
+      setErrorMessage('Por favor, informe seu número de WhatsApp.');
+      return;
+    }
+    if (!checkIn) {
+      setErrorMessage('Por favor, escolha uma data de check-in.');
+      return;
+    }
+    if (!checkOut) {
+      setErrorMessage('Por favor, escolha uma data de check-out.');
+      return;
+    }
     
-    // Format dates to brazillian standard if filled
+    // Check if check-out is after check-in
+    if (new Date(checkOut) <= new Date(checkIn)) {
+      setErrorMessage('A data de check-out deve ser posterior à data de check-in.');
+      return;
+    }
+
+    // Check children ages if specified
+    if (children > 0) {
+      const emptyAgeIdx = childAges.findIndex(age => !age.trim());
+      if (emptyAgeIdx !== -1) {
+        setErrorMessage(`Por favor, preencha a idade de todas as crianças (Criança ${emptyAgeIdx + 1}).`);
+        return;
+      }
+    }
+
+    setIsLoading(true);
+    setErrorMessage(null);
+    setSuccessMessage(null);
+
+    // Format dates to brazilian standard if filled
     const formatDate = (dateStr: string) => {
       if (!dateStr) return 'A definir';
       const [year, month, day] = dateStr.split('-');
@@ -51,28 +120,73 @@ export default function BookingSimulator() {
 
     const formattedIn = formatDate(checkIn);
     const formattedOut = formatDate(checkOut);
+    const idadesStr = children > 0 ? childAges.join(', ') : 'Nenhuma';
 
     const message = `✨ *SOLICITAÇÃO DE ORÇAMENTO - VIVA DESTINOS EXPERIENCE* ✨
 -----------------------------------------------
-🦜 *Consultor do Capitão Destino, eu escolhi:*
-🏨 *Hotel:* ${selectedHotel.name}
+👤 *Cliente:* ${clientName.trim()}
+📞 *WhatsApp:* ${clientPhone.trim()}
+${clientEmail.trim() ? `📧 *E-mail:* ${clientEmail.trim()}\n` : ''}🏨 *Hotel Escolhido:* ${selectedHotel.name}
 📍 *Rede:* ${selectedHotel.categoryLabel}
 
 👥 *Detalhes dos Hóspedes:*
 • Adultos: ${adults}
-• Crianças: ${children}
+• Crianças: ${children}${children > 0 ? ` (Idades: ${idadesStr})` : ''}
 
 📆 *Período Desejado:*
 • Check-in: ${formattedIn}
 • Check-out: ${formattedOut}
 
 ✈️ *Estilo Identificado:* ${travelStyle.name}
-${specialNeeds ? `\n💬 *Observações Especiais:* ${specialNeeds}` : ''}
+${specialNeeds.trim() ? `\n💬 *Observações Especiais:* ${specialNeeds.trim()}` : ''}
 -----------------------------------------------
-🏝️ _Conduzindo você às melhores experiências!_`;
+🏝️ _Cliente veio pelo site da Viva Destinos Experience!_`;
+
+    const leadPayload: LeadReserva = {
+      nome: clientName.trim(),
+      telefone: clientPhone.trim(),
+      email: clientEmail.trim() || null,
+      hotel: selectedHotel.name,
+      checkin: checkIn,
+      checkout: checkOut,
+      adultos: adults,
+      criancas: children,
+      idades_criancas: children > 0 ? idadesStr : null,
+      observacoes: specialNeeds.trim() || null,
+      origem: 'site',
+      status: 'novo'
+    };
 
     const whatsappUrl = `https://wa.me/556421310045?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+
+    try {
+      const { error } = await supabase
+        .from('leads_reservas')
+        .insert([leadPayload]);
+
+      if (error) {
+        throw error;
+      }
+
+      setSuccessMessage('Orçamento registrado com sucesso! Redirecionando para o WhatsApp...');
+      
+      // Open WhatsApp
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+        setIsLoading(false);
+      }, 1000);
+
+    } catch (err: any) {
+      console.error('Erro ao salvar lead no Supabase:', err);
+      // Friendly message on DB failure
+      setErrorMessage('Não conseguimos registrar sua solicitação agora, mas você ainda pode chamar nossa equipe no WhatsApp.');
+      
+      // Still open WhatsApp as fallback even if Supabase configuration or saving failed
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+        setIsLoading(false);
+      }, 2500);
+    }
   };
 
   return (
@@ -99,10 +213,10 @@ ${specialNeeds ? `\n💬 *Observações Especiais:* ${specialNeeds}` : ''}
           </h2>
           <div className="w-16 h-1 bg-dourado rounded-full" />
           <p className="text-gray-150 leading-relaxed font-sans font-light text-base sm:text-lg">
-            Selecione o hotel que você mais gostou no nosso portfólio, digite suas datas e a quantidade de hóspedes.
+            Selecione o hotel que você mais gostou no nosso portfólio, informe seus dados e o período desejado da viagem.
           </p>
           <p className="text-sm text-white/80 font-light italic leading-relaxed">
-            O nosso simulador estrutura as informações num formato impecável e já envia direto para nosso sistema no WhatsApp. Evite cadastros cansativos e longos formulários!
+            O nosso simulador estruturará suas informações no formato ideal e salvará o seu pedido na nossa mesa de atendimento, redirecionando você em seguida para falar diretamente com nosso especialista.
           </p>
 
           {/* Dynamic travel style recommendation card */}
@@ -132,8 +246,54 @@ ${specialNeeds ? `\n💬 *Observações Especiais:* ${specialNeeds}` : ''}
         >
           <form onSubmit={handleGenerateQuote} className="space-y-5">
             
+            {/* 0. Cliente Basic Info Fields */}
+            <div className="space-y-4">
+              <div className="space-y-1.5">
+                <label className="text-xs sm:text-sm font-bold uppercase tracking-wider text-azul flex items-center gap-1.5">
+                  👤 Seu Nome Completo:
+                </label>
+                <input
+                  type="text"
+                  value={clientName}
+                  onChange={(e) => setClientName(e.target.value)}
+                  placeholder="Nome completo"
+                  className="w-full bg-gray-50 border border-gray-250 focus:border-dourado focus:outline-none rounded-2xl p-4 text-sm font-medium transition-colors"
+                  required
+                />
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-1.5">
+                  <label className="text-xs sm:text-sm font-bold uppercase tracking-wider text-azul flex items-center gap-1.5">
+                    📞 WhatsApp / Telefone:
+                  </label>
+                  <input
+                    type="tel"
+                    value={clientPhone}
+                    onChange={(e) => setClientPhone(e.target.value)}
+                    placeholder="(00) 99999-9999"
+                    className="w-full bg-gray-50 border border-gray-250 focus:border-dourado focus:outline-none rounded-2xl p-4 text-sm font-medium transition-colors"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="text-xs sm:text-sm font-bold uppercase tracking-wider text-azul flex items-center gap-1.5">
+                    📧 E-mail (Opcional):
+                  </label>
+                  <input
+                    type="email"
+                    value={clientEmail}
+                    onChange={(e) => setClientEmail(e.target.value)}
+                    placeholder="exemplo@email.com"
+                    className="w-full bg-gray-50 border border-gray-250 focus:border-dourado focus:outline-none rounded-2xl p-4 text-sm font-medium transition-colors"
+                  />
+                </div>
+              </div>
+            </div>
+
             {/* 1. Selected Hotel Dropdown */}
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 pt-2 border-t border-gray-100">
               <label className="text-xs sm:text-sm font-bold uppercase tracking-wider text-azul flex items-center gap-1.5">
                 🏨 Selecione o Hotel Desejado:
               </label>
@@ -161,7 +321,7 @@ ${specialNeeds ? `\n💬 *Observações Especiais:* ${specialNeeds}` : ''}
                   type="date"
                   value={checkIn}
                   onChange={(e) => setCheckIn(e.target.value)}
-                  className="w-full bg-gray-50 border border-gray-250 focus:border-dourado focus:outline-none rounded-2xl p-4 text-sm font-medium transition-colors"
+                  className="w-full bg-gray-50 border border-gray-250 focus:border-dourado focus:outline-none rounded-2xl p-4 text-sm font-medium transition-colors animate-none"
                   required
                 />
               </div>
@@ -174,7 +334,7 @@ ${specialNeeds ? `\n💬 *Observações Especiais:* ${specialNeeds}` : ''}
                   type="date"
                   value={checkOut}
                   onChange={(e) => setCheckOut(e.target.value)}
-                  className="w-full bg-gray-50 border border-gray-250 focus:border-dourado focus:outline-none rounded-2xl p-4 text-sm font-medium transition-colors"
+                  className="w-full bg-gray-50 border border-gray-250 focus:border-dourado focus:outline-none rounded-2xl p-4 text-sm font-medium transition-colors animate-none"
                   required
                 />
               </div>
@@ -212,7 +372,7 @@ ${specialNeeds ? `\n💬 *Observações Especiais:* ${specialNeeds}` : ''}
                 <div className="flex items-center justify-between bg-gray-50 border border-gray-250 p-1.5 rounded-2xl">
                   <button
                     type="button"
-                    onClick={() => setChildren(prev => Math.max(0, prev - 1))}
+                    onClick={() => handleUpdateChildren(prev => Math.max(0, prev - 1))}
                     className="w-11 h-11 rounded-xl bg-white hover:bg-gray-100 flex items-center justify-center font-bold text-lg select-none cursor-pointer border border-gray-200"
                   >
                     -
@@ -220,7 +380,7 @@ ${specialNeeds ? `\n💬 *Observações Especiais:* ${specialNeeds}` : ''}
                   <span className="font-display font-semibold text-base sm:text-lg">{children}</span>
                   <button
                     type="button"
-                    onClick={() => setChildren(prev => Math.min(10, prev + 1))}
+                    onClick={() => handleUpdateChildren(prev => Math.min(10, prev + 1))}
                     className="w-11 h-11 rounded-xl bg-white hover:bg-gray-100 flex items-center justify-center font-bold text-lg select-none cursor-pointer border border-gray-200"
                   >
                     +
@@ -228,6 +388,41 @@ ${specialNeeds ? `\n💬 *Observações Especiais:* ${specialNeeds}` : ''}
                 </div>
               </div>
             </div>
+
+            {/* Dynamic Child Ages Selection list */}
+            <AnimatePresence>
+              {children > 0 && (
+                <motion.div 
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="space-y-2.5 p-4 bg-azul/5 rounded-2xl border border-azul/10 overflow-hidden"
+                >
+                  <label className="text-xs sm:text-sm font-bold uppercase tracking-wider text-azul block">
+                    👶 Idades das Crianças:
+                  </label>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                    {childAges.map((age, idx) => (
+                      <div key={idx} className="space-y-1">
+                        <span className="text-[10px] uppercase font-bold text-gray-500">Criança {idx + 1}:</span>
+                        <input
+                          type="text"
+                          placeholder="Ex: 5 anos"
+                          value={age}
+                          onChange={(e) => {
+                            const updated = [...childAges];
+                            updated[idx] = e.target.value;
+                            setChildAges(updated);
+                          }}
+                          className="w-full bg-white border border-gray-255 focus:border-dourado focus:outline-none rounded-xl p-2.5 text-xs font-semibold transition-colors"
+                          required
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             {/* 4. Special considerations text */}
             <div className="space-y-1.5">
@@ -251,17 +446,44 @@ ${specialNeeds ? `\n💬 *Observações Especiais:* ${specialNeeds}` : ''}
               </div>
             )}
 
+            {/* Response Alerts */}
+            {errorMessage && (
+              <div className="bg-red-50 border border-red-200 text-red-650 text-xs sm:text-sm px-4 py-3.5 rounded-2xl font-medium leading-relaxed">
+                ⚠️ {errorMessage}
+              </div>
+            )}
+
+            {successMessage && (
+              <div className="bg-green-50 border border-green-200 text-green-755 text-xs sm:text-sm px-4 py-3.5 rounded-2xl font-medium leading-relaxed">
+                ✅ {successMessage}
+              </div>
+            )}
+
             {/* Form submit trigger */}
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full bg-verde hover:bg-green-600 text-white hover:shadow-xl font-bold text-base sm:text-lg py-4 rounded-full flex items-center justify-center gap-2 shadow cursor-pointer transition-all duration-200"
+                disabled={isLoading}
+                className={`w-full text-white font-bold text-base sm:text-lg py-4 rounded-full flex items-center justify-center gap-2 shadow transition-all duration-200 ${
+                  isLoading
+                    ? 'bg-verde/60 cursor-not-allowed'
+                    : 'bg-verde hover:bg-green-600 hover:shadow-xl cursor-pointer'
+                }`}
               >
-                <MessageSquare size={20} fill="#FFF" className="text-verde" />
-                Gerar Orçamento no WhatsApp
+                {isLoading ? (
+                  <>
+                    <Loader2 size={20} className="animate-spin text-white" />
+                    Processando...
+                  </>
+                ) : (
+                  <>
+                    <MessageSquare size={20} fill="#FFF" className="text-verde" />
+                    Gerar Orçamento no WhatsApp
+                  </>
+                )}
               </button>
-              <p className="text-[11px] text-gray-450 text-center mt-2 font-light">
-                *O link abrirá em nova aba diretamente no app ou web WhatsApp pré-preenchido.
+              <p className="text-[11px] text-gray-450 text-center mt-2 font-light text-azul/60">
+                *O link de contato continuará disponível para atendimento mesmo se houver erro ao salvar.
               </p>
             </div>
 

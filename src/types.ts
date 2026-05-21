@@ -47,3 +47,19 @@ export interface QuizQuestion {
     icon: string;
   }[];
 }
+
+export interface LeadReserva {
+  nome: string;
+  telefone: string;
+  email?: string | null;
+  hotel: string;
+  checkin: string;
+  checkout: string;
+  adultos: number;
+  criancas: number;
+  idades_criancas?: string | null;
+  observacoes?: string | null;
+  origem: string;
+  status: string;
+}
+
