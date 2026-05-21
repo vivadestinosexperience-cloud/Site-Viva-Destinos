@@ -10,7 +10,7 @@ interface HotelCatalogProps {
 
 export default function HotelCatalog({ onOpenHotelDetail }: HotelCatalogProps) {
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeTab, setActiveTab] = useState<'todos' | 'lagoa' | 'diroma'>('todos');
+  const [activeTab, setActiveTab] = useState<'todos' | 'lagoa' | 'diroma' | 'viver-caldas'>('todos');
   const [selectedFeature, setSelectedFeature] = useState<string>('todos');
 
   // Key feature tags for rapid filtration
@@ -97,6 +97,12 @@ export default function HotelCatalog({ onOpenHotelDetail }: HotelCatalogProps) {
                 className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'diroma' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
               >
                 Rede diRoma ({HOTELS_DATA.filter(h => h.category === 'diroma').length})
+              </button>
+              <button
+                onClick={() => { setActiveTab('viver-caldas'); }}
+                className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'viver-caldas' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
+              >
+                Viver Caldas ({HOTELS_DATA.filter(h => h.category === 'viver-caldas').length})
               </button>
             </div>
 

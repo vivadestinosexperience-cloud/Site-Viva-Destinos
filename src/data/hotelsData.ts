@@ -658,6 +658,204 @@ export const HOTELS_DATA: Hotel[] = [
       'TV a Cabo',
       'Telefone'
     ]
+  },
+  {
+    id: 'alta-vista',
+    name: 'Alta Vista Thermas Resort',
+    category: 'viver-caldas',
+    categoryLabel: 'Viver Caldas',
+    tagline: 'Lazer premium, cinema exclusivo e sofisticação em 5 modernas torres.',
+    description: 'O condomínio Alta Vista Thermas Resort é composto por cinco torres de seis pavimentos cada, estacionamento coberto, áreas comerciais, de lazer e comuns. O empreendimento é dotado de 221 apartamentos com ar condicionado nos quartos e sala, sendo 53 apartamentos de um quarto, composto por uma cama de casal no quarto e um sofá-cama na sala e 168 de dois quartos composto por uma suíte com cama de casal, um quarto com duas camas de solteiro e um sofá-cama na sala. Seu parque aquático possui 4 piscinas de água termal para adultos, sendo 1 coberta; 1 piscina de água termal infantil; 1 de água fria adulto. Conta ainda com: 3 ofurôs, sauna, academia, salão de jogos, cineminha, brinquedoteca, quadra de esportes e playground seco/molhado. Além de restaurante, bar e loja de conveniência/souvenirs.',
+    images: [
+      'https://i.postimg.cc/DwyZQ6c6/1490088.jpg',
+      'https://i.postimg.cc/qvMRcwGQ/1490089.jpg',
+      'https://i.postimg.cc/YCq9NRxb/1490093.jpg',
+      'https://i.postimg.cc/g2S0ghMV/1490098.webp',
+      'https://i.postimg.cc/dVH05CW8/1490102.jpg',
+      'https://i.postimg.cc/pLGdsj0Q/1490104.jpg',
+      'https://i.postimg.cc/XYHvs52c/1490106.jpg',
+      'https://i.postimg.cc/XYHvs52L/1490108.jpg',
+      'https://i.postimg.cc/NjJ0dXN4/1490109.jpg',
+      'https://i.postimg.cc/7ZsLKzBX/1490111.jpg',
+      'https://i.postimg.cc/NjJ0dXNC/1490114.jpg',
+      'https://i.postimg.cc/rwnpf4hf/1490115.jpg',
+      'https://i.postimg.cc/wjfBwNWf/1490118.jpg',
+      'https://i.postimg.cc/P53qSD6R/1490119.jpg',
+      'https://i.postimg.cc/MpPG9BsC/1490121.jpg',
+      'https://i.postimg.cc/nhRL3mR8/1490122.jpg',
+      'https://i.postimg.cc/pLGdsjGb/1490124.jpg',
+      'https://i.postimg.cc/g2S0ghSW/1490126.jpg'
+    ],
+    features: ['4 Piscinas Termais', 'Ofurôs & Spa', 'Cineminha Exclusivo', 'Brinquedoteca & Playground', 'Apartamentos de 1 e 2 Qts', 'Estacionamento Coberto'],
+    captainRating: 9.7,
+    captainTip: 'A infraestrutura de 5 torres deste resort é impecável e moderna! Aconselho agendar uma sessão com as crianças no cineminha privativo.',
+    highlight: 'Estrutura Moderna com Ótimas Opções de Lazer',
+    bestFor: 'família',
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Aberto das 0h00m Até às 0h00m (Recepção 24h)',
+      breakfast: 'A partir das 7h30m Até às 10h00m'
+    },
+    generalServices: [
+      'Berço disponivel a pedido',
+      'Sala de Jogos',
+      'Recepção 24 horas',
+      'Estacionamento Gratuito',
+      'Elevador',
+      'Wifi Gratuito'
+    ],
+    restaurantsAndBars: [
+      'Bar',
+      'Restaurante',
+      'Restaurante Privado'
+    ],
+    wellnessAndSports: [
+      'Piscina',
+      'Parque Infantil',
+      'Academia de ginástica gratuita'
+    ],
+    eventsAndConferences: [
+      'Sala de Reuniões'
+    ]
+  },
+  {
+    id: 'atrium',
+    name: 'Atrium Thermas Residence',
+    category: 'viver-caldas',
+    categoryLabel: 'Viver Caldas',
+    tagline: 'Excelente localização e conforto no setor mais nobre de Caldas Novas.',
+    description: 'Atrium Thermas Residence Service conta com o total de 168 unidades e é um dos melhores hotéis em Caldas Novas com ótima localização. O hotel está perto do Centro Turístico da cidade, onde concentram os principais comércios e atrações de lazer. Fica muito bem situado na região mais nobre e valorizada de Caldas Novas.',
+    images: [
+      'https://i.postimg.cc/cH1X0V7Z/1379015.jpg',
+      'https://i.postimg.cc/76Pmwp1w/1379018.jpg',
+      'https://i.postimg.cc/hj4pcH8K/1379019.jpg',
+      'https://i.postimg.cc/QtN0hRgX/1379022.jpg',
+      'https://i.postimg.cc/tTR2pLdR/1379024.jpg',
+      'https://i.postimg.cc/bJY3pK0N/1379027.jpg',
+      'https://i.postimg.cc/LX4N2rks/1379028.jpg',
+      'https://i.postimg.cc/pTVqRgQL/1379029.jpg',
+      'https://i.postimg.cc/bJY3pK0S/1379030.jpg',
+      'https://i.postimg.cc/tTR2pLdT/1379031.jpg',
+      'https://i.postimg.cc/3RrnYPjN/1379035.jpg',
+      'https://i.postimg.cc/cH1X0V78/1379036.jpg',
+      'https://i.postimg.cc/B6ZM4d5D/1379037.jpg',
+      'https://i.postimg.cc/NMGpBW8H/1379038.jpg',
+      'https://i.postimg.cc/tTR2pLdW/1379039.jpg',
+      'https://i.postimg.cc/cH1X0V7M/1379041.jpg',
+      'https://i.postimg.cc/RFCX4j17/1379042.jpg',
+      'https://i.postimg.cc/Y9X89b84/1478651.jpg',
+      'https://i.postimg.cc/j58v5Zvn/1478654.jpg',
+      'https://i.postimg.cc/MTstTdtj/1478655.jpg',
+      'https://i.postimg.cc/9Mx1MJ19/1478656.jpg',
+      'https://i.postimg.cc/MTstTdtR/1478657.jpg',
+      'https://i.postimg.cc/HxS3xB3X/1478658.jpg',
+      'https://i.postimg.cc/NMNbMpb1/1478659.jpg',
+      'https://i.postimg.cc/gJM4JN4V/1478662.jpg',
+      'https://i.postimg.cc/0QtZQcZd/1478663.jpg',
+      'https://i.postimg.cc/ydfndvnT/1478664.jpg',
+      'https://i.postimg.cc/C1vJ1mJ7/1478665.jpg',
+      'https://i.postimg.cc/SsZVsDVr/1478666.jpg',
+      'https://i.postimg.cc/63Hz3YzH/1478667.jpg',
+      'https://i.postimg.cc/j58v5Zv1/1478669.jpg'
+    ],
+    features: ['Piscinas Exteriores', 'Localização Nobre', 'Recepção 24 Horas', 'Berço sob Pedido', 'Estacionamento Gratuito', 'Próximo ao Centro'],
+    captainRating: 9.4,
+    captainTip: 'A localização do Atrium é imbatível! Você fica na área mais nobre de Caldas Novas, super perto de ótimos restaurantes e com uma estrutura de águas termais excelente para relaxar depois dos passeios.',
+    highlight: 'Localização Excelente com Máximo Conforto',
+    bestFor: 'casal',
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Recepção 24 horas',
+      breakfast: 'A partir das 7h00m Até às 10h00m'
+    },
+    generalServices: [
+      'Berço disponivel a pedido',
+      'Recepção 24 horas',
+      'Estacionamento Gratuito',
+      'Elevador',
+      'Wifi Gratuito'
+    ],
+    restaurantsAndBars: [
+      'Restaurante',
+      'Bar de Piscina'
+    ],
+    wellnessAndSports: [
+      'Piscina',
+      'Piscina Exterior',
+      'Academia de ginástica gratuita'
+    ]
+  },
+  {
+    id: 'marina-flat',
+    name: 'Marina Flat',
+    category: 'viver-caldas',
+    categoryLabel: 'Viver Caldas',
+    tagline: 'Respire novos ares e cerque-se de natureza às margens do Lago Corumbá.',
+    description: 'O Hotel Marina fica localizado as margens do Lago Corumbá em Caldas Novas e conta com 160 apartamentos, 07 piscinas termais, entre quentes e frias, sauna seca, academia, salão de jogos e serviço de recepção 24 horas. É diversão garantida para adultos e crianças. Respire novos ares e cerque-se de natureza por todos os lados.',
+    images: [
+      'https://i.postimg.cc/x1yGBRJS/1379070.jpg',
+      'https://i.postimg.cc/s2jPzhS0/1379071.jpg',
+      'https://i.postimg.cc/8CpdG6WY/1379074.jpg',
+      'https://i.postimg.cc/VNf9wCMV/1379075.jpg',
+      'https://i.postimg.cc/g0zypZR1/1379076.jpg',
+      'https://i.postimg.cc/7LH1420r/1379077.jpg',
+      'https://i.postimg.cc/N0s8tHTW/1379078.jpg',
+      'https://i.postimg.cc/5t45JCLd/1379083.jpg',
+      'https://i.postimg.cc/jjx6T7Pd/1379088.jpg',
+      'https://i.postimg.cc/zfzwNgKG/1379090.jpg',
+      'https://i.postimg.cc/hGD8ndTG/1379092.jpg',
+      'https://i.postimg.cc/pdWQvFzr/1379094.jpg',
+      'https://i.postimg.cc/TPdjxDgK/1379096.jpg',
+      'https://i.postimg.cc/MG60wQVc/1379097.jpg',
+      'https://i.postimg.cc/8CpdG6MJ/1379098.jpg',
+      'https://i.postimg.cc/8CZRzzmk/1379099.jpg',
+      'https://i.postimg.cc/PqSW55Qr/1379100.jpg',
+      'https://i.postimg.cc/R0g7ZZLF/1379101.jpg',
+      'https://i.postimg.cc/YSd6CCz0/1379102.jpg',
+      'https://i.postimg.cc/HL6wkk9c/1379103.jpg',
+      'https://i.postimg.cc/bvmxww9S/1379104.jpg',
+      'https://i.postimg.cc/k5TQggvb/1379105.jpg',
+      'https://i.postimg.cc/FKTyHHVS/1379106.jpg',
+      'https://i.postimg.cc/YSd6CCzg/1379107.jpg',
+      'https://i.postimg.cc/GpXFmmxG/1379108.jpg',
+      'https://i.postimg.cc/1zvG33rp/1379109.jpg',
+      'https://i.postimg.cc/q71svvxL/1490141.jpg',
+      'https://i.postimg.cc/k5TQggvw/1490147.jpg',
+      'https://i.postimg.cc/DzxrwwPB/1490148.jpg',
+      'https://i.postimg.cc/PqSW55QS/1490149.jpg'
+    ],
+    features: ['Às Margens do Lago', '7 Piscinas Termais', 'Sauna Seca', 'Salão de Jogos', 'Academia Completa', 'Cercado de Natureza'],
+    captainRating: 9.5,
+    captainTip: 'Este hotel é maravilhoso para quem quer aproveitar águas quentes e a bela paisagem do Lago Corumbá. Recomendo curtir o entardecer nas piscinas com vista para a natureza e fazer passeios náuticos!',
+    highlight: 'Às margens do Lago Corumbá com exuberante natureza',
+    bestFor: 'família',
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Recepção 24 horas'
+    },
+    generalServices: [
+      'Berço disponivel a pedido',
+      'Internet Banda Larga',
+      'Sala de Jogos',
+      'Recepção 24 horas',
+      'Estacionamento Gratuito',
+      'Garagem',
+      'Elevador',
+      'Wifi Gratuito'
+    ],
+    restaurantsAndBars: [
+      'Bar',
+      'Restaurante'
+    ],
+    wellnessAndSports: [
+      'Piscina',
+      'Piscina Exterior',
+      'Piscina Interior',
+      'Sauna'
+    ]
   }
 ];
 

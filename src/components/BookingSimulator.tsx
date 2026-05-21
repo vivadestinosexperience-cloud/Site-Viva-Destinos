@@ -446,6 +446,13 @@ ${specialNeeds.trim() ? `\n💬 *Observações Especiais:* ${specialNeeds.trim()
               </div>
             )}
 
+            {selectedHotel.category === 'viver-caldas' && (
+              <div className="bg-azul/5 border border-azul/15 rounded-xl p-3.5 text-xs text-azul flex items-center gap-2 font-medium">
+                <Gift size={16} className="text-dourado shrink-0 animate-pulse" />
+                <span>Fantástico! Esta reserva garante acesso total à luxuosa infraestrutura de piscinas, ofurôs, cineminha e demais comodidades do <strong>{selectedHotel.name}!</strong></span>
+              </div>
+            )}
+
             {/* Response Alerts */}
             {errorMessage && (
               <div className="bg-red-50 border border-red-200 text-red-650 text-xs sm:text-sm px-4 py-3.5 rounded-2xl font-medium leading-relaxed">

@@ -12,6 +12,7 @@ interface HotelModalProps {
 export default function HotelModal({ hotel, onClose }: HotelModalProps) {
   const [activeImgIndex, setActiveImgIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [showZoomHint, setShowZoomHint] = useState(true);
 
   // Lock body scroll when modal is active
   useEffect(() => {
@@ -19,6 +20,7 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
       document.body.style.overflow = 'hidden';
       setActiveImgIndex(0); // Reset index
       setIsLightboxOpen(false); // Reset lightbox
+      setShowZoomHint(true); // Reset zoom animation helper
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -32,11 +34,18 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
   const handleNextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
     setActiveImgIndex((prev) => (prev + 1) % hotel.images.length);
+    setShowZoomHint(false);
   };
 
   const handlePrevImage = (e: React.MouseEvent) => {
     e.stopPropagation();
     setActiveImgIndex((prev) => (prev - 1 + hotel.images.length) % hotel.images.length);
+    setShowZoomHint(false);
+  };
+
+  const handleOpenLightbox = () => {
+    setIsLightboxOpen(true);
+    setShowZoomHint(false);
   };
 
   // Pre-fill WhatsApp URL link generator
@@ -76,17 +85,79 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
                 src={hotel.images[activeImgIndex]}
                 alt={`${hotel.name} - Imagem ${activeImgIndex + 1}`}
                 className="w-full h-full object-cover transition-all duration-300 cursor-zoom-in hover:brightness-105"
-                onClick={() => setIsLightboxOpen(true)}
+                onClick={handleOpenLightbox}
                 referrerPolicy="no-referrer"
               />
               
-              {/* Zoom click hint button */}
+              {/* Persistent helper badge in the top-left corner */}
               <button
-                onClick={() => setIsLightboxOpen(true)}
-                className="absolute top-4 left-4 bg-black/50 hover:bg-black/80 text-white px-3 py-1.5 rounded-full z-40 transition-colors cursor-pointer border border-white/10 text-[10px] sm:text-xs flex items-center gap-1.5"
+                onClick={handleOpenLightbox}
+                className="absolute top-4 left-4 bg-dourado hover:bg-azul text-azul hover:text-white px-3.5 py-2 rounded-2xl z-20 transition-all duration-300 cursor-pointer border border-dourado/45 text-[10px] sm:text-xs flex items-center gap-1.5 font-extrabold uppercase tracking-widest shadow-xl active:scale-95"
               >
-                🔍 Clique para Ampliar
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-azul hover:bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-azul hover:bg-white"></span>
+                </span>
+                <span>🔎 Ampliar Foto</span>
               </button>
+
+              {/* Pulsing centered zoom helper */}
+              <AnimatePresence>
+                {showZoomHint && (
+                  <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="absolute inset-0 flex items-center justify-center p-4 bg-black/45 z-20 cursor-zoom-in"
+                    onClick={handleOpenLightbox}
+                  >
+                    <motion.div
+                      animate={{
+                        scale: [0.96, 1.04, 0.96],
+                      }}
+                      transition={{
+                        duration: 2.2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                      className="bg-azul border-2 border-dourado text-white p-6 rounded-3xl flex flex-col items-center justify-center shadow-[0_20px_50px_rgba(0,0,0,0.6)] backdrop-blur-md text-center max-w-[90%] sm:max-w-xs relative"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {/* Self-dismiss cross icon */}
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setShowZoomHint(false);
+                        }}
+                        className="absolute top-2.5 right-2.5 text-white/50 hover:text-white hover:bg-white/10 p-1 rounded-full transition-colors cursor-pointer border border-white/5"
+                        title="Ocultar aviso"
+                      >
+                        <X size={14} />
+                      </button>
+
+                      <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-dourado text-azul shrink-0 shadow-lg">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-dourado/60 opacity-100"></span>
+                        <span className="relative text-xl font-bold">🔎</span>
+                      </div>
+                      
+                      <h4 className="font-display font-black text-sm sm:text-base uppercase tracking-wider text-dourado mt-4 leading-tight">
+                        Clique Para Ampliar
+                      </h4>
+                      
+                      <p className="text-[11px] sm:text-xs text-white/90 font-light mt-2 leading-relaxed">
+                        Toque no meio da foto para abrir a galeria em <strong className="text-dourado font-extrabold animate-pulse">Alta Definição (HD)</strong>.
+                      </p>
+
+                      <button
+                        onClick={handleOpenLightbox}
+                        className="mt-4 px-4 py-2 bg-dourado hover:bg-yellow-600 text-azul font-black rounded-full text-[10px] uppercase tracking-wider transition-colors shadow-md cursor-pointer"
+                      >
+                        Visualizar em HD
+                      </button>
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Slider Arrows controls */}
               <button
