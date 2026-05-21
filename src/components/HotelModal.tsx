@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronLeft, ChevronRight, Star, Compass, CheckCircle2, ShieldAlert, MessageCircle, Info, MapPin, Clock } from 'lucide-react';
 import MascotImage from './MascotImage';
@@ -13,6 +13,96 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
   const [activeImgIndex, setActiveImgIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [showZoomHint, setShowZoomHint] = useState(true);
+
+  // Drag / swipe states for main gallery
+  const [mainDragStartX, setMainDragStartX] = useState<number | null>(null);
+  const [mainDragCurrentX, setMainDragCurrentX] = useState<number | null>(null);
+  const [isMainSwiping, setIsMainSwiping] = useState(false);
+  const isMainMoving = useRef(false);
+
+  // Drag / swipe states for lightbox
+  const [lightDragStartX, setLightDragStartX] = useState<number | null>(null);
+  const [lightDragCurrentX, setLightDragCurrentX] = useState<number | null>(null);
+  const [isLightSwiping, setIsLightSwiping] = useState(false);
+  const isLightMoving = useRef(false);
+
+  const handleMainDragStart = (clientX: number) => {
+    setMainDragStartX(clientX);
+    setMainDragCurrentX(clientX);
+    setIsMainSwiping(true);
+    isMainMoving.current = false;
+  };
+
+  const handleMainDragMove = (clientX: number) => {
+    if (!isMainSwiping || mainDragStartX === null) return;
+    setMainDragCurrentX(clientX);
+    if (Math.abs(clientX - mainDragStartX) > 10) {
+      isMainMoving.current = true;
+    }
+  };
+
+  const handleMainDragEnd = (e?: React.MouseEvent | React.TouchEvent) => {
+    if (!isMainSwiping || mainDragStartX === null || mainDragCurrentX === null) return;
+
+    const diff = mainDragStartX - mainDragCurrentX;
+    const threshold = 55; // pixels to trigger slide change
+
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0) {
+        // Dragged Left -> Next image
+        setActiveImgIndex((prev) => (prev + 1) % hotel.images.length);
+      } else {
+        // Dragged Right -> Previous image
+        setActiveImgIndex((prev) => (prev - 1 + hotel.images.length) % hotel.images.length);
+      }
+      setShowZoomHint(false);
+    } else {
+      // If we clicked (very small drag) on desktop, launch zoomed photo
+      if (!isMainMoving.current && e && window.innerWidth >= 1024) {
+        handleOpenLightbox();
+      }
+    }
+
+    setMainDragStartX(null);
+    setMainDragCurrentX(null);
+    setIsMainSwiping(false);
+  };
+
+  const handleLightDragStart = (clientX: number) => {
+    setLightDragStartX(clientX);
+    setLightDragCurrentX(clientX);
+    setIsLightSwiping(true);
+    isLightMoving.current = false;
+  };
+
+  const handleLightDragMove = (clientX: number) => {
+    if (!isLightSwiping || lightDragStartX === null) return;
+    setLightDragCurrentX(clientX);
+    if (Math.abs(clientX - lightDragStartX) > 10) {
+      isLightMoving.current = true;
+    }
+  };
+
+  const handleLightDragEnd = () => {
+    if (!isLightSwiping || lightDragStartX === null || lightDragCurrentX === null) return;
+
+    const diff = lightDragStartX - lightDragCurrentX;
+    const threshold = 55; // pixels to trigger slide change
+
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0) {
+        // Dragged Left -> Next image in Lightbox
+        setActiveImgIndex((prev) => (prev + 1) % hotel.images.length);
+      } else {
+        // Dragged Right -> Previous image in Lightbox
+        setActiveImgIndex((prev) => (prev - 1 + hotel.images.length) % hotel.images.length);
+      }
+    }
+
+    setLightDragStartX(null);
+    setLightDragCurrentX(null);
+    setIsLightSwiping(false);
+  };
 
   // Lock body scroll when modal is active
   useEffect(() => {
@@ -115,18 +205,38 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 max-h-[90vh] lg:max-h-[85vh] overflow-y-auto">
             
             {/* Left: Interactive Image Slider Column (7 Rows large on LG) */}
-            <div className="lg:col-span-7 bg-gray-900 relative h-64 sm:h-96 lg:h-full min-h-[280px] sm:min-h-[380px] lg:min-h-[500px]">
+            <div 
+              className={`lg:col-span-7 bg-gray-900 relative h-64 sm:h-96 lg:h-full min-h-[280px] sm:min-h-[380px] lg:min-h-[500px] overflow-hidden select-none transition-colors ${
+                isMainSwiping ? 'cursor-grabbing bg-gray-950' : 'cursor-grab lg:cursor-zoom-in'
+              }`}
+              onTouchStart={(e) => handleMainDragStart(e.touches[0].clientX)}
+              onTouchMove={(e) => handleMainDragMove(e.touches[0].clientX)}
+              onTouchEnd={() => handleMainDragEnd()}
+              onMouseDown={(e) => {
+                // Ignore clicks originating from interactable overlay buttons inside container
+                const target = e.target as HTMLElement;
+                if (target.closest('button') || target.closest('a')) return;
+                if (e.button !== 0) return;
+                handleMainDragStart(e.clientX);
+              }}
+              onMouseMove={(e) => handleMainDragMove(e.clientX)}
+              onMouseUp={(e) => handleMainDragEnd(e)}
+              onMouseLeave={() => {
+                if (isMainSwiping) handleMainDragEnd();
+              }}
+            >
               <img
                 src={hotel.images[activeImgIndex]}
                 alt={`${hotel.name} - Imagem ${activeImgIndex + 1}`}
-                className="w-full h-full object-cover transition-all duration-300 lg:cursor-zoom-in hover:brightness-105"
-                onClick={handleImageClick}
+                className="w-full h-full object-cover transition-all duration-300 pointer-events-none"
                 referrerPolicy="no-referrer"
               />
               
               {/* Persistent helper badge in the top-left corner */}
               <button
-                onClick={handleOpenLightbox}
+                onClick={(e) => { e.stopPropagation(); handleOpenLightbox(); }}
+                onMouseDown={(e) => e.stopPropagation()}
+                onTouchStart={(e) => e.stopPropagation()}
                 className="absolute top-4 left-4 bg-dourado hover:bg-azul text-azul hover:text-white px-3.5 py-2 rounded-2xl z-20 transition-all duration-300 cursor-pointer border border-dourado/45 text-[10px] sm:text-xs flex items-center gap-1.5 font-extrabold uppercase tracking-widest shadow-xl active:scale-95"
               >
                 <span className="relative flex h-2 w-2">
@@ -144,7 +254,7 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     className="absolute inset-0 flex items-center justify-center p-4 bg-black/45 z-20 cursor-zoom-in"
-                    onClick={handleOpenLightbox}
+                    onClick={(e) => { e.stopPropagation(); handleOpenLightbox(); }}
                   >
                     <motion.div
                       animate={{
@@ -155,8 +265,10 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
                         repeat: Infinity,
                         ease: "easeInOut"
                       }}
-                      className="bg-azul border-2 border-dourado text-white p-6 rounded-3xl flex flex-col items-center justify-center shadow-[0_20px_50px_rgba(0,0,0,0.6)] backdrop-blur-md text-center max-w-[90%] sm:max-w-xs relative"
+                      className="bg-azul border-2 border-dourado text-white p-6 rounded-3xl flex flex-col items-center justify-center shadow-[0_20px_50px_rgba(0,0,0,0.6)] backdrop-blur-md text-center max-w-[90%] sm:max-w-xs relative cursor-default"
                       onClick={(e) => e.stopPropagation()}
+                      onMouseDown={(e) => e.stopPropagation()}
+                      onTouchStart={(e) => e.stopPropagation()}
                     >
                       {/* Self-dismiss cross icon */}
                       <button
@@ -164,6 +276,8 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
                           e.stopPropagation();
                           setShowZoomHint(false);
                         }}
+                        onMouseDown={(e) => e.stopPropagation()}
+                        onTouchStart={(e) => e.stopPropagation()}
                         className="absolute top-2.5 right-2.5 text-white/50 hover:text-white hover:bg-white/10 p-1 rounded-full transition-colors cursor-pointer border border-white/5"
                         title="Ocultar aviso"
                       >
@@ -184,7 +298,9 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
                       </p>
 
                       <button
-                        onClick={handleOpenLightbox}
+                        onClick={(e) => { e.stopPropagation(); handleOpenLightbox(); }}
+                        onMouseDown={(e) => e.stopPropagation()}
+                        onTouchStart={(e) => e.stopPropagation()}
                         className="mt-4 px-4 py-2 bg-dourado hover:bg-yellow-600 text-azul font-black rounded-full text-[10px] uppercase tracking-wider transition-colors shadow-md cursor-pointer"
                       >
                         Visualizar em HD
@@ -197,23 +313,33 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
               {/* Slider Arrows controls */}
               <button
                 onClick={handlePrevImage}
+                onMouseDown={(e) => e.stopPropagation()}
+                onTouchStart={(e) => e.stopPropagation()}
                 className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/75 text-white p-2 sm:p-3 rounded-full z-30 transition-all cursor-pointer border border-white/5 active:scale-95"
               >
                 <ChevronLeft size={18} />
               </button>
               <button
                 onClick={handleNextImage}
+                onMouseDown={(e) => e.stopPropagation()}
+                onTouchStart={(e) => e.stopPropagation()}
                 className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/75 text-white p-2 sm:p-3 rounded-full z-30 transition-all cursor-pointer border border-white/5 active:scale-95"
               >
                 <ChevronRight size={18} />
               </button>
 
               {/* Slider Dots indications */}
-              <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-1.5 bg-black/35 backdrop-blur-md px-3.5 py-1.5 rounded-full z-30">
+              <div 
+                className="absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-1.5 bg-black/35 backdrop-blur-md px-3.5 py-1.5 rounded-full z-30"
+                onMouseDown={(e) => e.stopPropagation()}
+                onTouchStart={(e) => e.stopPropagation()}
+              >
                 {hotel.images.map((_, idx) => (
                   <button
                     key={idx}
-                    onClick={() => setActiveImgIndex(idx)}
+                    onClick={(e) => { e.stopPropagation(); setActiveImgIndex(idx); }}
+                    onMouseDown={(e) => e.stopPropagation()}
+                    onTouchStart={(e) => e.stopPropagation()}
                     className={`w-2 h-2 rounded-full cursor-pointer transition-all ${activeImgIndex === idx ? 'bg-dourado scale-125' : 'bg-white/60'}`}
                   />
                 ))}
@@ -459,12 +585,33 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setIsLightboxOpen(false)}
-              className="fixed inset-0 bg-black/95 z-[100000] flex items-center justify-center p-4 md:p-8 cursor-zoom-out backdrop-blur-lg"
+              onClick={() => {
+                // If a drag took place, don't close
+                if (isLightMoving.current) return;
+                setIsLightboxOpen(false);
+              }}
+              className={`fixed inset-0 bg-black/95 z-[100000] flex items-center justify-center p-4 md:p-8 backdrop-blur-lg select-none transition-colors ${
+                isLightSwiping ? 'cursor-grabbing bg-black' : 'cursor-grab md:cursor-zoom-out'
+              }`}
+              onTouchStart={(e) => handleLightDragStart(e.touches[0].clientX)}
+              onTouchMove={(e) => handleLightDragMove(e.touches[0].clientX)}
+              onTouchEnd={() => handleLightDragEnd()}
+              onMouseDown={(e) => {
+                // Ignore clicks originating from interactive navigation structures
+                const target = e.target as HTMLElement;
+                if (target.closest('button')) return;
+                if (e.button !== 0) return;
+                handleLightDragStart(e.clientX);
+              }}
+              onMouseMove={(e) => handleLightDragMove(e.clientX)}
+              onMouseUp={() => handleLightDragEnd()}
+              onMouseLeave={() => { if (isLightSwiping) handleLightDragEnd(); }}
             >
               {/* Close button */}
               <button
-                onClick={() => setIsLightboxOpen(false)}
+                onClick={(e) => { e.stopPropagation(); setIsLightboxOpen(false); }}
+                onMouseDown={(e) => e.stopPropagation()}
+                onTouchStart={(e) => e.stopPropagation()}
                 className="absolute top-6 right-6 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full z-[100001] transition-colors cursor-pointer border border-white/20"
               >
                 <X size={24} />
@@ -473,6 +620,8 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
               {/* Slider control left */}
               <button
                 onClick={(e) => { e.stopPropagation(); handlePrevImage(e); }}
+                onMouseDown={(e) => e.stopPropagation()}
+                onTouchStart={(e) => e.stopPropagation()}
                 className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3.5 sm:p-4 rounded-full z-[100001] transition-all cursor-pointer border border-white/20 active:scale-95"
               >
                 <ChevronLeft size={24} />
@@ -481,6 +630,8 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
               {/* Slider control right */}
               <button
                 onClick={(e) => { e.stopPropagation(); handleNextImage(e); }}
+                onMouseDown={(e) => e.stopPropagation()}
+                onTouchStart={(e) => e.stopPropagation()}
                 className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3.5 sm:p-4 rounded-full z-[100001] transition-all cursor-pointer border border-white/20 active:scale-95"
               >
                 <ChevronRight size={24} />
@@ -493,13 +644,16 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
                 transition={{ type: 'spring', damping: 25, stiffness: 200 }}
                 src={hotel.images[activeImgIndex]}
                 alt={`${hotel.name} - Imagem ${activeImgIndex + 1}`}
-                className="max-w-full max-h-[85vh] md:max-h-[90vh] object-contain rounded-2xl shadow-2xl select-none"
+                className="max-w-full max-h-[85vh] md:max-h-[90vh] object-contain rounded-2xl shadow-2xl select-none pointer-events-none"
                 referrerPolicy="no-referrer"
-                onClick={(e) => e.stopPropagation()}
               />
 
               {/* Bottom info tag inside lightbox */}
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white border border-white/10 backdrop-blur-md px-6 py-2.5 text-xs sm:text-sm rounded-full flex items-center gap-4 shadow-xl select-none z-[100001]">
+              <div 
+                className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white border border-white/10 backdrop-blur-md px-6 py-2.5 text-xs sm:text-sm rounded-full flex items-center gap-4 shadow-xl select-none z-[100001]"
+                onMouseDown={(e) => e.stopPropagation()}
+                onTouchStart={(e) => e.stopPropagation()}
+              >
                 <span className="font-bold">{hotel.name}</span>
                 <span className="w-1 h-1 bg-white/30 rounded-full" />
                 <span className="text-white/80 font-mono">{(activeImgIndex + 1)} / {hotel.images.length}</span>
