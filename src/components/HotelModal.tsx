@@ -20,7 +20,13 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
       document.body.style.overflow = 'hidden';
       setActiveImgIndex(0); // Reset index
       setIsLightboxOpen(false); // Reset lightbox
-      setShowZoomHint(true); // Reset zoom animation helper
+      
+      // Only keep the big centered helper prompt on desktop screens
+      if (window.innerWidth < 1024) {
+        setShowZoomHint(false);
+      } else {
+        setShowZoomHint(true);
+      }
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -48,6 +54,16 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
     setShowZoomHint(false);
   };
 
+  const handleImageClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    // Desktop user uses mouse/cursor, clicking the photo directly to zoom is wonderful.
+    // Mobile user swiping to scroll pages or swipe photos can accidentally trigger lightbox if total image is clickable.
+    // Therefore, prevent image clicks on mobile and let them use the dedicated buttons.
+    if (window.innerWidth >= 1024) {
+      handleOpenLightbox();
+    }
+  };
+
   // Pre-fill WhatsApp URL link generator
   const getWhatsAppLink = () => {
     const text = `Olá! Gostaria de planejar minha viagem e fazer uma cotação especial para o hotel *${hotel.name}* (da rede ${hotel.categoryLabel}) com a Viva Destinos Experience. Aguardo contato de um consultor!`;
@@ -68,29 +84,32 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
           className="bg-white w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl relative my-auto flex flex-col pointer-events-auto border border-white/10"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Prominent Golden Header Alert for Zooming in HD - Placed before the scroll area */}
-          <div 
-            onClick={handleOpenLightbox}
-            className="bg-gradient-to-r from-dourado via-yellow-500 to-dourado text-azul pr-16 pl-6 py-4 flex items-center justify-center gap-3 cursor-pointer select-none font-display font-black text-xs sm:text-sm uppercase tracking-wider hover:brightness-105 transition-all shadow-md shrink-0 border-b-2 border-dourado/30 z-30 animate-pulse-subtle"
-            title="Clique para abrir galeria em HD"
-          >
-            <span className="relative flex h-3 w-3 shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-azul opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-azul"></span>
-            </span>
-            <span className="text-center font-extrabold tracking-widest">
-              🔎 CLIQUE NA FOTO OU AQUI PARA AMPLIAR EM ALTA DEFINIÇÃO (HD)! 📸
-            </span>
-          </div>
+          {/* Header Bar: contains the highly visible Zoom badge and the Close trigger side-by-side (No conflict, no overlap) */}
+          <div className="bg-azul p-3 sm:p-4 flex items-center justify-between border-b border-white/10 shrink-0 z-35 relative">
+            {/* Left/Center Alert Banner */}
+            <div 
+              onClick={handleOpenLightbox}
+              className="flex-1 flex items-center justify-center gap-2 sm:gap-2.5 cursor-pointer select-none bg-gradient-to-r from-dourado via-yellow-500 to-dourado text-azul px-3 sm:px-6 py-2.5 sm:py-3 rounded-2xl font-display font-black text-[9px] sm:text-xs uppercase tracking-wider hover:brightness-105 active:scale-[0.99] transition-all shadow-md animate-pulse-subtle shrink"
+              title="Clique para abrir galeria em HD"
+            >
+              <span className="relative flex h-2 w-2 shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-azul opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-azul"></span>
+              </span>
+              <span className="text-center font-extrabold tracking-widest leading-none sm:leading-tight">
+                🔎 CLIQUE NAS FOTOS PARA AMPLIAR EM HD! 📸
+              </span>
+            </div>
 
-          {/* Close trigger float - aligned and layered over the header banner */}
-          <button
-            onClick={onClose}
-            className="absolute top-3 right-4 bg-black/45 hover:bg-black/75 text-white p-2 rounded-full z-40 transition-colors cursor-pointer border border-white/10 shadow-lg"
-            title="Fechar Modal"
-          >
-            <X size={18} />
-          </button>
+            {/* Right Close Button */}
+            <button
+              onClick={onClose}
+              className="ml-2.5 sm:ml-4 bg-white/10 hover:bg-white/20 text-white p-2.5 sm:p-3 rounded-2xl transition-all cursor-pointer border border-white/10 shrink-0 active:scale-95 flex items-center justify-center shadow-lg"
+              title="Fechar Detalhes"
+            >
+              <X size={16} className="sm:w-[18px] sm:h-[18px]" />
+            </button>
+          </div>
 
           {/* Core content scrollbar wrapped grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 max-h-[90vh] lg:max-h-[85vh] overflow-y-auto">
@@ -100,8 +119,8 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
               <img
                 src={hotel.images[activeImgIndex]}
                 alt={`${hotel.name} - Imagem ${activeImgIndex + 1}`}
-                className="w-full h-full object-cover transition-all duration-300 cursor-zoom-in hover:brightness-105"
-                onClick={handleOpenLightbox}
+                className="w-full h-full object-cover transition-all duration-300 lg:cursor-zoom-in hover:brightness-105"
+                onClick={handleImageClick}
                 referrerPolicy="no-referrer"
               />
               
