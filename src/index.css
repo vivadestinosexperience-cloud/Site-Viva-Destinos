@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-azul: #061A35;
+  --color-azul2: #0B2F5B;
+  --color-dourado: #D9A441;
+  --color-claro: #F6F8FB;
+  --color-grafite: #111827;
+  --color-verde: #25D366;
+  
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+/* Custom fade animations and global enhancements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.whatsapp-shadow {
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+}
+
+.gold-glow {
+  box-shadow: 0 12px 30px rgba(217, 164, 65, 0.25);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #061A35;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9A441;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f1c46d;
+}
+
