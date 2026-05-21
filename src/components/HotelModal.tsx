@@ -68,12 +68,28 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
           className="bg-white w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl relative my-auto flex flex-col pointer-events-auto border border-white/10"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Close trigger float */}
+          {/* Prominent Golden Header Alert for Zooming in HD - Placed before the scroll area */}
+          <div 
+            onClick={handleOpenLightbox}
+            className="bg-gradient-to-r from-dourado via-yellow-500 to-dourado text-azul pr-16 pl-6 py-4 flex items-center justify-center gap-3 cursor-pointer select-none font-display font-black text-xs sm:text-sm uppercase tracking-wider hover:brightness-105 transition-all shadow-md shrink-0 border-b-2 border-dourado/30 z-30 animate-pulse-subtle"
+            title="Clique para abrir galeria em HD"
+          >
+            <span className="relative flex h-3 w-3 shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-azul opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-azul"></span>
+            </span>
+            <span className="text-center font-extrabold tracking-widest">
+              🔎 CLIQUE NA FOTO OU AQUI PARA AMPLIAR EM ALTA DEFINIÇÃO (HD)! 📸
+            </span>
+          </div>
+
+          {/* Close trigger float - aligned and layered over the header banner */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 bg-black/50 hover:bg-black/80 text-white p-2.5 rounded-full z-40 transition-colors cursor-pointer border border-white/10"
+            className="absolute top-3 right-4 bg-black/45 hover:bg-black/75 text-white p-2 rounded-full z-40 transition-colors cursor-pointer border border-white/10 shadow-lg"
+            title="Fechar Modal"
           >
-            <X size={20} />
+            <X size={18} />
           </button>
 
           {/* Core content scrollbar wrapped grid */}

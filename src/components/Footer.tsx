@@ -101,13 +101,31 @@ export default function Footer() {
         {/* Fourth Column - Seals */}
         <div className="lg:col-span-2 space-y-4">
           <h5 className="font-display font-bold text-sm uppercase tracking-wider text-dourado">
-            Selo de Ouro
+            Selo e Segurança
           </h5>
-          <div className="bg-white/5 p-4 rounded-xl border border-white/10 flex items-center gap-2.5 shadow-inner">
-            <Award size={28} className="text-dourado shrink-0 animate-pulse" />
-            <div className="leading-tight">
-              <span className="font-semibold text-xs text-white block">Agência Ouro</span>
-              <span className="text-[10px] text-white/60">Goiás Turismo</span>
+          <div className="space-y-3">
+            <div className="bg-white/5 p-3.5 rounded-xl border border-white/10 flex items-center gap-2.5 shadow-inner">
+              <Award size={24} className="text-dourado shrink-0 animate-pulse" />
+              <div className="leading-tight">
+                <span className="font-semibold text-xs text-white block">Agência Ouro</span>
+                <span className="text-[10px] text-white/50">Goiás Turismo</span>
+              </div>
+            </div>
+
+            {/* CADASTUR Seal */}
+            <div className="bg-white/5 p-3.5 rounded-xl border border-white/10 flex flex-col justify-center gap-2 shadow-inner">
+              <span className="text-[10px] uppercase font-bold tracking-wider text-white/60 text-center block border-b border-white/5 pb-1.5">
+                Selo Oficial
+              </span>
+              <img 
+                src="https://i.postimg.cc/RFrMfcRj/0ad2e3c47b4762f01df99af0cb2f01a7-768x315-removebg-preview.png"
+                alt="Selo Oficial CADASTUR - Ministério do Turismo"
+                className="h-10 object-contain mx-auto filter brightness-100 hover:brightness-110 transition-all"
+                referrerPolicy="no-referrer"
+              />
+              <div className="text-center">
+                <span className="text-[9px] text-[#A3B3C8] block leading-normal mt-0.5">Cadastrado no Ministério do Turismo</span>
+              </div>
             </div>
           </div>
         </div>

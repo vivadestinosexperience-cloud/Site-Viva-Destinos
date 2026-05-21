@@ -132,13 +132,29 @@ export default function Header() {
           </div>
 
           {/* Social Proof Badges preview */}
-          <div className="flex items-center gap-5 pt-6 text-white/60 text-xs tracking-wider border-t border-white/5">
-            <div className="flex -space-x-3">
-              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&q=80" alt="Avatar" className="w-8 h-8 rounded-full border border-azul object-cover" />
-              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=80&q=80" alt="Avatar" className="w-8 h-8 rounded-full border border-azul object-cover" />
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="Avatar" className="w-8 h-8 rounded-full border border-azul object-cover" />
+          <div className="flex flex-col sm:flex-row sm:items-center gap-6 pt-6 border-t border-white/5">
+            <div className="flex items-center gap-3 text-white/70 text-xs tracking-wider">
+              <div className="flex -space-x-3">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&q=80" alt="Avatar" className="w-8 h-8 rounded-full border border-azul object-cover" />
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=80&q=80" alt="Avatar" className="w-8 h-8 rounded-full border border-azul object-cover" />
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="Avatar" className="w-8 h-8 rounded-full border border-azul object-cover" />
+              </div>
+              <span>+15.000 clientes felizes</span>
             </div>
-            <span>+15.000 clientes felizes em Caldas Novas</span>
+
+            {/* Cadastur Seal */}
+            <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl px-4 py-2 self-start sm:self-auto backdrop-blur-xs hover:border-dourado/30 transition-colors">
+              <img 
+                src="https://i.postimg.cc/RFrMfcRj/0ad2e3c47b4762f01df99af0cb2f01a7-768x315-removebg-preview.png"
+                alt="Selo Oficial CADASTUR Ministério do Turismo"
+                className="h-7 object-contain"
+                referrerPolicy="no-referrer"
+              />
+              <div className="text-[9px] leading-tight text-white/80">
+                <span className="font-extrabold block text-dourado uppercase tracking-wider text-[10px]">Agência Certificada</span>
+                <span>CADASTUR Ministério do Turismo</span>
+              </div>
+            </div>
           </div>
         </motion.div>
 
