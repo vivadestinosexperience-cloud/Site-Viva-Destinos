@@ -864,27 +864,27 @@ export const REVIEWS_DATA: Review[] = [
     id: 'rev-1',
     name: 'Ana Júlia de Souza',
     location: 'Uberlândia - MG',
-    comment: 'Minha experiência no Lagoa Quente Hotel com a Viva Destinos foi absolutamente impecável! Nossas credenciais para o parque estavam totalmente prontas, e o suporte no WhatsApp nos deu excelentes dicas de restaurantes locais. Nota 10 pro atendimento do Capitão Destino!',
+    comment: 'Nossa estada no Lagoa Eco Towers foi simplesmente fantástica! O resort é super moderno, cercado pela natureza e com uma paz incrível. Toda a liberação do acesso ao parque aquático foi providenciada pela Viva Destinos sem qualquer stress. O suporte do Capitão via WhatsApp foi excepcional!',
     rating: 5,
-    hotelName: 'Lagoa Quente Hotel',
+    hotelName: 'Lagoa Eco Towers',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80_1'
   },
   {
     id: 'rev-2',
     name: 'Marcus Vinícius Carvalho',
     location: 'Goiânia - GO',
-    comment: 'Incrível! O L\'acqua diRoma superou muito minhas expectativas. A piscina de ondas do Jardins Acqua Park fez meus filhos se divertirem do amanhecer até o entardecer. Reservar pela Viva Destinos foi rápido, honesto e seguro.',
+    comment: 'Incrível! O Thermas diRoma superou muito minhas expectativas. A estrutura de lazer do hotel com suas piscinas termais e toboáguas é excelente, e o diRoma Acqua Park incluso fez a alegria das crianças todos os dias. O processo de reserva foi rápido, extremamente seguro e transparente.',
     rating: 5,
-    hotelName: 'L\'acqua diRoma',
+    hotelName: 'Thermas diRoma',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80_2'
   },
   {
     id: 'rev-3',
     name: 'Clara Maria Mendes',
     location: 'Brasília - DF',
-    comment: 'Viajei com meu noivo e optamos pelo diRoma Exclusive recomendado pelo quiz interativo. Que dica de ouro do Capitão! O quarto é super silencioso, as camas parecem nuvens e a iluminação azul de LED na piscina à noite é linda. Vamos voltar com certeza.',
+    comment: 'Viajei em família e nos hospedamos no Alta Vista Thermas Resort. Que dica de ouro da assessoria da Viva Destinos! Os apartamentos são extremamente confortáveis e espaçosos, perfeitos para descansar. A área de lazer e os ofurôs são fantásticos. Excelente custo-benefício e suporte nota dez!',
     rating: 5,
-    hotelName: 'diRoma Exclusive',
+    hotelName: 'Alta Vista Thermas Resort',
     avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80_3'
   }
 ];

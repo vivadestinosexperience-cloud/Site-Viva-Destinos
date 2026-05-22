@@ -75,43 +75,36 @@ export default function InteractiveQuiz({ onOpenHotelDetail }: InteractiveQuizPr
       // Companion evaluation
       if (hotel.bestFor === q1Answer) {
         score += 30;
-        if (q1Answer === 'família') matchingReasons.push('possui recreação infantil nota mil e estruturas seguras para crianças');
-        if (q1Answer === 'casal') matchingReasons.push('entrega clima intimista, silencioso e acolhedor para casais');
+        if (q1Answer === 'família') matchingReasons.push('possui recreação infantil de alto nível e estruturas perfeitas e seguras para toda a sua família');
+        if (q1Answer === 'casal') matchingReasons.push('entrega clima intimista, silencioso e acolhedor magnífico para casais');
         if (q1Answer === 'grupo') matchingReasons.push('oferece apartamentos imensos ideais para viagens de grupos e famílias extensas');
         if (q1Answer === 'luxo') matchingReasons.push('destaca-se pelo acabamento refinado de suas suítes e sofisticação premium');
       } else {
         // Fallbacks/Adjacencies
-        if (q1Answer === 'família' && (hotel.id === 'lacqua-diroma' || hotel.id === 'villas-diroma')) {
+        if (q1Answer === 'família' && (hotel.id === 'alta-vista' || hotel.id === 'eco-towers')) {
           score += 15;
-          matchingReasons.push('possui ótimos parques infantis anexos recomendados');
+          matchingReasons.push('possui excelente infraestrutura recreativa e playground perfeito para as crianças');
         }
       }
 
       // Desires evaluation
       if (q2Answer === 'parque') {
-        if (hotel.features.some(f => f.toLowerCase().includes('parque') || f.toLowerCase().includes('acesso grátis'))) {
+        if (hotel.features.some(f => f.toLowerCase().includes('parque') || f.toLowerCase().includes('acesso grátis')) || hotel.id === 'thermas-diroma' || hotel.id === 'eco-towers') {
           score += 20;
-          matchingReasons.push('oferece acesso totalmente grátis e ilimitado aos melhores parques termais de Caldas');
-        } else if (hotel.id === 'lagoa-quente' || hotel.id === 'lacqua-diroma') {
-          score += 20;
-          matchingReasons.push('possui parque aquático colossal anexo à hospedagem');
+          matchingReasons.push('oferece acesso espetacular aos maiores parques de diversão termal de Caldas Novas');
         }
       } else if (q2Answer === 'sossego') {
-        if (hotel.features.some(f => f.toLowerCase().includes('tranquilo') || f.toLowerCase().includes('privacidade') || f.toLowerCase().includes('jardim'))) {
+        if (hotel.features.some(f => f.toLowerCase().includes('tranquilo') || f.toLowerCase().includes('privacidade') || f.toLowerCase().includes('ofurô') || f.toLowerCase().includes('spa'))) {
           score += 20;
-          matchingReasons.push('apresenta atmosfera super pacífica rodeada de linda natureza verde para repousar');
-        } else if (hotel.category === 'lagoa' && hotel.id === 'lagoa-jardins') {
-          score += 20;
+          matchingReasons.push('apresenta uma atmosfera pacífica e ofurôs relaxantes no corpo d’água para descansar');
         }
       } else if (q2Answer === 'economico') {
-        if (hotel.id === 'hotel-roma' || hotel.id === 'lagoa-jardins' || hotel.id === 'diroma-fiori') {
-          score += 25;
-          matchingReasons.push('oferece tarifas altamente amigáveis com excelente custo-benefício central');
-        }
+        score += 10;
+        matchingReasons.push('oferece excelente relação custo-benefício com padrão de conforto inigualável');
       } else if (q2Answer === 'premium') {
-        if (hotel.bestFor === 'luxo' || hotel.id === 'thermas-diroma' || hotel.id === 'piazza-diroma') {
-          score += 20;
-          matchingReasons.push('apresenta serviços de culinária e piscinas diferenciadas de alto padrão');
+        if (hotel.id === 'thermas-diroma' || hotel.id === 'alta-vista') {
+          score += 25;
+          matchingReasons.push('apresenta serviços de culinária e piscinas diferenciadas de padrão internacional');
         }
       }
 

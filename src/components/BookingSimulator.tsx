@@ -209,7 +209,7 @@ ${specialNeeds.trim() ? `\n💬 *Observações Especiais:* ${specialNeeds.trim()
             <Calculator size={16} /> Planejador Integrado
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-white leading-tight">
-            Monte Seu <span className="text-transparent bg-clip-text bg-gradient-to-r from-dourado to-yellow-250 font-extrabold">Pacote Personalizado</span>
+            Monte Seu <span className="text-transparent bg-clip-text bg-gradient-to-r from-dourado via-yellow-200 to-dourado font-extrabold">Pacote Personalizado</span>
           </h2>
           <div className="w-16 h-1 bg-dourado rounded-full" />
           <p className="text-gray-150 leading-relaxed font-sans font-light text-base sm:text-lg">

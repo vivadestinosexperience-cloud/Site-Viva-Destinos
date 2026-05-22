@@ -33,7 +33,7 @@ export default function ExperiencePillars() {
     },
     {
       title: 'Os melhores destinos para você',
-      description: 'Selecionamos cirurgicamente as melhores redes hoteleiras de Caldas Novas (Lagoa e diRoma) para garantir alta qualidade.',
+      description: 'Selecionamos cirurgicamente as melhores redes hoteleiras de Caldas Novas para garantir alta qualidade.',
       icon: Compass,
       color: 'from-azul to-[#091e38]',
       accent: 'text-dourado',
