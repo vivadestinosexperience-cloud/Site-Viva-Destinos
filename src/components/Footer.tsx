@@ -90,8 +90,8 @@ export default function Footer() {
               <Mail size={16} className="text-dourado shrink-0 mt-0.5" />
               <div>
                 <strong className="block text-white font-semibold">E-mail de Suporte:</strong>
-                <a href="mailto:vivadestinosexperience@gmail.com" className="hover:text-dourado transition-colors">
-                  vivadestinosexperience@gmail.com
+                <a href="mailto:reservas@vivadestinosexperience.com" className="hover:text-dourado transition-colors">
+                  reservas@vivadestinosexperience.com
                 </a>
               </div>
             </li>
