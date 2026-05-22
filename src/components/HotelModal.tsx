@@ -202,11 +202,11 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
           </div>
 
           {/* Core content scrollbar wrapped grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 max-h-[90vh] lg:max-h-[85vh] overflow-y-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 max-h-[78vh] sm:max-h-[82vh] lg:max-h-[80vh] overflow-y-auto lg:overflow-hidden">
             
             {/* Left: Interactive Image Slider Column (7 Rows large on LG) */}
             <div 
-              className={`lg:col-span-7 bg-gray-900 relative h-64 sm:h-96 lg:h-full min-h-[280px] sm:min-h-[380px] lg:min-h-[500px] overflow-hidden select-none transition-colors ${
+              className={`lg:col-span-7 bg-gray-900 relative h-64 sm:h-96 lg:h-full min-h-[250px] sm:min-h-[350px] lg:min-h-[450px] overflow-hidden select-none transition-colors ${
                 isMainSwiping ? 'cursor-grabbing bg-gray-950' : 'cursor-grab lg:cursor-zoom-in'
               }`}
               onTouchStart={(e) => handleMainDragStart(e.touches[0].clientX)}
@@ -353,7 +353,7 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
             </div>
 
             {/* Right: Hotel features & reviews details column (5 Rows out of 12) */}
-            <div className="lg:col-span-5 p-6 md:p-8 flex flex-col justify-between space-y-6 overflow-y-auto bg-gradient-to-b from-white to-claro">
+            <div className="lg:col-span-5 p-6 md:p-8 flex flex-col justify-between space-y-6 overflow-visible lg:overflow-y-auto lg:max-h-[80vh] bg-gradient-to-b from-white to-claro">
               <div className="space-y-4">
                 {/* Category small Label heading */}
                 <div className="flex items-center gap-2">
