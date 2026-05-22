@@ -7,6 +7,7 @@ import HotelCatalog from './components/HotelCatalog';
 import BookingSimulator from './components/BookingSimulator';
 import CustomerReviews from './components/CustomerReviews';
 import Footer from './components/Footer';
+import TrustSection from './components/TrustSection';
 import WhatsAppWidget from './components/WhatsAppWidget';
 import HotelModal from './components/HotelModal';
 import { Hotel } from './types';
@@ -44,6 +45,9 @@ export default function App() {
 
       {/* 7. Social proof TripAdvisor comments */}
       <CustomerReviews />
+
+      {/* Trust section Cadastur */}
+      <TrustSection />
 
       {/* 8. Modern site footer */}
       <Footer />
