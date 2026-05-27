@@ -28,17 +28,17 @@ export default function App() {
       {/* 1. Hero banner and navigation */}
       <Header />
 
-      {/* 2. Brand Value Badges layout (5 Pillars) */}
+      {/* 2. Complete Hotel Dual-Chain catalog (Portfolio) */}
+      <HotelCatalog onOpenHotelDetail={handleOpenHotelDetail} />
+
+      {/* 3. Brand Value Badges layout (5 Pillars) */}
       <ExperiencePillars />
 
-      {/* 3. Travel Match Quiz with Capitão Destino */}
+      {/* 4. Travel Match Quiz with Capitão Destino */}
       <InteractiveQuiz onOpenHotelDetail={handleOpenHotelDetail} />
 
-      {/* 4. Mascot interactive presentation */}
+      {/* 5. Mascot interactive presentation */}
       <MascotSection />
-
-      {/* 5. Complete Hotel Dual-Chain catalog */}
-      <HotelCatalog onOpenHotelDetail={handleOpenHotelDetail} />
 
       {/* 6. Customized price calculator & WhatsApp request generator */}
       <BookingSimulator />
