@@ -1898,8 +1898,8 @@ export const HOTELS_DATA: Hotel[] = [
     tagline: 'O lendário e acolhedor pioneiro de Rio Quente, localizado literalmente a poucos passos do Parque das Fontes!',
     description: 'O Rio Quente Hotel Pousada representa a essência histórica e o ponto de partida de toda a magia geotermal do complexo. Mantendo o charme tradicional de suas origens, mas totalmente modernizado e perfeitamente integrado a jardins tropicais centenários, este hotel oferece o máximo em comodidade.\n\nSua localização é simplesmente imbatível dentro do complexo: posicionado a meros passos do deslumbrante Parque das Fontes, permitindo que você tome banhos termais relaxantes em piscinas naturais de águas quentes e correntes 24 horas por dia, com facilidade inigualável. Os quartos são muito confortáveis e climatizados, equipados com Smart TV, Wi-Fi excelente, secador de cabelo, amenidades e cofre.\n\nCom uma gastronomia regional deliciosa servida em fartos buffets e acesso gratuito irrestrito ao Hot Park, o Hotel Pousada é a escolha consagrada para gerações de famílias que valorizam conforto e localização primorosa.',
     images: [
-      'https://i.postimg.cc/pTh7RF3S/1047834.jpg',
       'https://i.postimg.cc/JnDgMk9V/1152065.jpg',
+      'https://i.postimg.cc/pTh7RF3S/1047834.jpg',
       'https://i.postimg.cc/k5hZ0cYp/1155469.jpg',
       'https://i.postimg.cc/W4fKBnYB/1155471.webp',
       'https://i.postimg.cc/bvFM7TV0/1155472.jpg',
@@ -2145,11 +2145,11 @@ export const HOTELS_DATA: Hotel[] = [
     tagline: 'O irresistível charme e aconchego de uma villa italiana com excelentes apartamentos duplex para toda a família!',
     description: 'O Rio Quente Hotel Giardino recria o clima romântico, bucólico e florido de uma graciosa vila do interior da Itália. Com fachada e detalhes ornamentados que transportam você para terras europeias, ele esbanja aconchego, calor humano e excelente relação de custo-benefício.\n\nOferece acomodações consideravelmente espaçosas, incluindo magníficos apartamentos duplex perfeitos para manter unidas as famílias de múltiplos componentes sem abrir mão do conforto. Sua deliciosa área de lazer possui piscina própria geotermal circundada por jardins impecavelmente cuidados e parquinho para diversão das crianças.\n\nO restaurante do Giardino convida a uma viagem clássica com farto café da manhã recheado de pães artesanais, bolos, frios e frutas suculentas. Oferece transporte circular grátis expresso constante de hóspedes ligando o hotel à entrada dos parques e ao místico Parque das Fontes.',
     images: [
+      'https://i.postimg.cc/x1Z3Y4YG/1459925.jpg',
       'https://i.postimg.cc/VkhW1V1k/1165476.jpg',
       'https://i.postimg.cc/htY1g5gG/1165478.jpg',
       'https://i.postimg.cc/BnzBsVs6/1165481.jpg',
       'https://i.postimg.cc/RZYL9D9h/1165482.jpg',
-      'https://i.postimg.cc/x1Z3Y4YG/1459925.jpg',
       'https://i.postimg.cc/jjJQj4d3/1459930.jpg',
       'https://i.postimg.cc/TPWqPJYr/1459931.jpg',
       'https://i.postimg.cc/nhWGZPZY/1459932.jpg',
