@@ -156,7 +156,7 @@ export default function InteractiveQuiz({ onOpenHotelDetail }: InteractiveQuizPr
         {/* Title area */}
         <div className="text-center mb-12 space-y-3">
           <span className="text-dourado text-sm font-bold tracking-widest uppercase block">
-            Descubra Caldas Novas
+            Sua Próxima Viagem
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-azul">
             Encontre o Seu Resort <span className="text-dourado">Ideal em segundos!</span>
@@ -201,7 +201,7 @@ export default function InteractiveQuiz({ onOpenHotelDetail }: InteractiveQuizPr
                     "Previsão de diversão e águas termais!"
                   </h3>
                   <p className="text-gray-650 leading-relaxed font-sans font-light">
-                    Olá! Sou o guia da Viva Destinos Experience. Preparei um teste interativo muito legal para descobrir qual hotel de Caldas Novas combina melhor com você e sua turma. Vamos voar juntos?
+                    Olá! Sou o guia da Viva Destinos Experience. Preparei um teste interativo muito legal para descobrir qual hotel de Caldas Novas ou Olímpia combina melhor com você e sua turma. Vamos voar juntos?
                   </p>
                 </div>
 

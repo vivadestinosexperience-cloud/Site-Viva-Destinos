@@ -856,6 +856,384 @@ export const HOTELS_DATA: Hotel[] = [
       'Piscina Interior',
       'Sauna'
     ]
+  },
+  {
+    id: 'hot-beach-suites',
+    name: 'Hot Beach Suítes',
+    category: 'olimpia',
+    categoryLabel: 'Hot Beach Olímpia',
+    tagline: 'O conforto de um lar de férias moderno com suítes para até 7 pessoas e portaria exclusiva para o parque!',
+    description: 'A união perfeita entre o aconchego de uma casa de veraneio e os serviços de alto padrão de um resort de excelência! O Hot Beach Suítes é o destino ideal de quem viaja com toda a família e precisa de muito espaço, oferecendo amplas e modernas acomodações planejadas para hospedar com extremo conforto até 7 pessoas.\n\nOferecemos suítes espaçosas de 1 ou 2 quartos equipadas com sala de estar acoplada, ar-condicionado em todos os cômodos, smart TVs interativas nos ambientes, além de uma fantástica varanda gourmet equipada com churrasqueira e uma cozinha inteligente totalmente equipada com cooktop, micro-ondas, geladeira e todos os utensílios domésticos necessários para sua total independência.\n\nA nossa infraestrutura de lazer de primeiro mundo conta com piscina de águas quentes termais exclusivas, espaço kids divertido com brinquedos lúdicos, equipe profissional de recreação monitorada, academia de fitness, lojas de conveniência integradas, além de bares elegantes e restaurante principal com o melhor das receitas regionais paulistas e de bônus: bebidas não alcoólicas já inclusas durante as refeições principais!\n\nO resort fica situado de forma anexa ao parque aquático Hot Beach Olímpia e à charmosa Vila Guarani, contando com uma portaria interna totalmente exclusiva para a livre circulação de nossos hóspedes. Durante toda a estadia, você conta com livre acesso a todas as atrações conforme o cronograma e dias normais de funcionamento.\n\n🚗 Informações sobre Estacionamento:\nEstacionamento com segurança disponível no local mediante taxa de R$ 25,00 por veículo/dia (valor sujeito a alteração sem aviso prévio por parte da administração).',
+    images: [
+      'https://i.postimg.cc/Kvrp2pS7/1486789.webp',
+      'https://i.postimg.cc/gkqtWtFV/1486790.webp',
+      'https://i.postimg.cc/gkqtWtFh/1486791.webp',
+      'https://i.postimg.cc/Kvrp2pS0/1486792.webp',
+      'https://i.postimg.cc/c4MkSkyM/1486793.webp',
+      'https://i.postimg.cc/YqwDTKVN/1486794.webp',
+      'https://i.postimg.cc/htDyP8c2/1486795.webp',
+      'https://i.postimg.cc/ncYSJSbG/1486797.webp',
+      'https://i.postimg.cc/ZKFsSstf/1486798.webp',
+      'https://i.postimg.cc/GhJgCgwf/1486799.webp',
+      'https://i.postimg.cc/qMdDWVY2/1486800.webp',
+      'https://i.postimg.cc/L6BQpQK7/1486801.webp',
+      'https://i.postimg.cc/vHL2s2Fc/1486802.webp',
+      'https://i.postimg.cc/ZKhsXtgr/1486808.webp'
+    ],
+    features: ['Varanda Gourmet com Churrasqueira', 'Acomodações Amplas para até 7 Pessoas', 'Acesso Grátis ao Parque Hot Beach e Vila', 'Portaria Exclusiva de Acesso Direto', 'Bebidas Não Alcoólicas Inclusas nas Refeições'],
+    captainRating: 9.7,
+    captainTip: 'Incomparável para famílias grandes! Poder fazer um churrasco na própria varanda gourmet, ter cozinha inteligente completa e contar com portaria exclusiva anexa ao parque é fantástico.',
+    highlight: 'Varanda gourmet com churrasqueira e conforto gigante',
+    bestFor: 'família',
+    strategicLocation: [
+      'Av Ferrasa, 150, Olímpia - SP',
+      'Anexo ao parque aquático Hot Beach Olímpia',
+      'Conexão direta e rápida com a Vila Guarani'
+    ],
+    services: [
+      'Acomodações de alto padrão de 1 ou 2 quartos',
+      'Varanda gourmet privativa com churrasqueira instalada',
+      'Cozinha acoplada completa com geladeira, cooktop e micro-ondas',
+      'Bebidas não alcoólicas inclusas durantes as refeições principais',
+      'Acesso livre com portaria exclusiva ao Parque Aquático e Vila Guarani'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Recepção 24 horas disponível',
+      breakfast: 'A partir das 7h00m Até às 10h30m'
+    },
+    generalServices: [
+      'Acessibilidade para Cadeira de Rodas',
+      'Internet sem fio / Wi-Fi Gratuito de alta estabilidade',
+      'Recepção 24 horas com atendimento cordial',
+      'Berço disponível mediante solicitação prévia',
+      'Serviço de Valet Parking com manobristas de confiança',
+      'Serviço de limpeza diário e rouparia especial',
+      'Elevador panorâmico e de serviço modernos',
+      'Lavanderia completa / Serviços de limpeza a seco',
+      'Área específica e reservada para Fumantes',
+      'Aceita os principais cartões de crédito e débito internacionais',
+      'Estacionamento privativo seguro mediante custo adicional',
+      'Garagem conveniente com taxa rotativa'
+    ],
+    restaurantsAndBars: [
+      'Restaurante Buffet com o melhor sabor da gastronomia regional',
+      'Bebidas não alcoólicas totalmente inclusas durante as refeições principais',
+      'Bar de Piscina com excelentes aperitivos e drinks',
+      'Bar Interno sofisticado e acolhedor',
+      'Serviços de Cocktails e bebidas especiais'
+    ],
+    wellnessAndSports: [
+      'Piscina térmica maravilhosa de água quente natural',
+      'Piscina Exterior com deck ensolarado e espreguiçadeiras',
+      'Espaço Kids / Brinquedoteca monitorada por recreadores',
+      'Parque Infantil completo ao ar livre e seguro',
+      'Mesa de Bilhar refinada e Sala de Jogos interativa',
+      'Academia climatizada completa para treinos rápidos',
+      'Lojas de conveniência internas'
+    ],
+    eventsAndConferences: [
+      'Serviço e assessoria completa de Casamentos e comemorações'
+    ]
+  },
+  {
+    id: 'hot-beach-resorts',
+    name: 'Hot Beach Resort',
+    category: 'olimpia',
+    categoryLabel: 'Hot Beach Olímpia',
+    tagline: 'Ambiente descontraído e divertido ao lado de Vila Guarani com acesso exclusivo ao parque!',
+    description: 'Viva momentos mágicos em um ambiente descontraído e divertido, com atividades para todas as idades! O Hot Beach Resort está localizado anexo ao parque aquático Hot Beach Olímpia, contando com uma portaria exclusiva para que nossos hóspedes acessem as atrações com toda comodidade possível.\n\nO resort oferece estrutura de lazer e bem-estar completíssima, contando com equipe de recreação especializada, clubinho infantil com atividades guiadas, sala de jogos, parquinho, bares aconchegantes, restaurante de excelência com buffet saboroso, academia equipada, loja de conveniência e uma espetacular piscina de águas termais com hidromassagem. Também está localizado estrategicamente ao lado da badalada Vila Guarani.\n\nDurante toda a sua estadia, está incluso o acesso gratuito e ilimitado ao Parque Aquático Hot Beach Olímpia e à Vila Guarani, respeitando-se os dias e horários normais de funcionamento de cada atração.\n\n🚗 Informações sobre Estacionamento e Taxas:\nEstacionamento seguro disponível no local mediante taxa de R$ 25,00 por veículo/dia (valor sujeito a alteração sem aviso prévio).',
+    images: [
+      'https://i.postimg.cc/9QgpmvxP/1500265.webp',
+      'https://i.postimg.cc/1twcK4yK/1500266.webp',
+      'https://i.postimg.cc/C1kH4dwC/1500267.webp',
+      'https://i.postimg.cc/d1rm9DJC/1500268.webp',
+      'https://i.postimg.cc/d1rm9DJT/1500269.webp',
+      'https://i.postimg.cc/sX79J13Q/1500270.webp',
+      'https://i.postimg.cc/7Lpn7Sr1/1500271.webp',
+      'https://i.postimg.cc/BvdBD2fF/1500272.webp',
+      'https://i.postimg.cc/GpZxYvn8/1500273.webp',
+      'https://i.postimg.cc/9fvYTyHX/1500274.webp',
+      'https://i.postimg.cc/VN3WMXPS/1500275.webp',
+      'https://i.postimg.cc/TPZJmnv1/1500276.webp',
+      'https://i.postimg.cc/25P7vnNm/1500277.webp',
+      'https://i.postimg.cc/nL6G7qft/1500278.webp',
+      'https://i.postimg.cc/XvTkF96S/1500279.webp',
+      'https://i.postimg.cc/SKXGJD3S/1500280.webp',
+      'https://i.postimg.cc/tgLNPFQK/1500281.webp',
+      'https://i.postimg.cc/FKfx7D89/1500282.webp',
+      'https://i.postimg.cc/bvGRs3W8/1500283.webp',
+      'https://i.postimg.cc/JhyQGPvL/1500284.webp',
+      'https://i.postimg.cc/tg1zY2fL/1500285.webp',
+      'https://i.postimg.cc/6Q7hyYS1/1500286.webp',
+      'https://i.postimg.cc/d079L4X6/1500287.webp',
+      'https://i.postimg.cc/Bv8CXMyM/1500288.webp',
+      'https://i.postimg.cc/Hkv2YfS6/1500293.webp',
+      'https://i.postimg.cc/JzYqr9TT/1500294.webp',
+      'https://i.postimg.cc/9Qgpmvxt/1500296.webp'
+    ],
+    features: ['Portaria Direta e Exclusiva ao Parque', 'Ambiente Familiar Descontraído', 'Piscina de Águas Termais com Hidro', 'Equipe de Recreação e Clubinho', 'Lado a Lado com a Vila Guarani'],
+    captainRating: 9.8,
+    captainTip: 'Perfeito para quem busca integração incomparável com o parque! Você atravessa uma portaria especial e já está se divertindo e relaxando com os pés na areia.',
+    highlight: 'Entrada exclusiva ao parque aquático e localização privilegiada',
+    bestFor: 'família',
+    strategicLocation: [
+      'Rua Edson Jesus de Abreu, 606 - Jardim Alfredo Zucca, Olímpia - SP',
+      'Anexo ao parque aquático Hot Beach Olímpia',
+      'Ao lado da Vila Guarani'
+    ],
+    services: [
+      'Acesso gratuito e ilimitado ao parque aquático e Vila Guarani',
+      'Portaria exclusiva rápida e direta para o parque',
+      'Equipe dedicada de recreação para todas as idades',
+      'Clubinho infantil e berço disponível mediante solicitação prévia'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Recepção 24 horas disponível',
+      breakfast: 'A partir das 7h00m Até às 10h00m'
+    },
+    generalServices: [
+      'Acessibilidade para Cadeira de Rodas',
+      'Internet sem fio / Wi-Fi Gratuito de alta velocidade',
+      'Recepção 24 horas',
+      'Elevador moderno',
+      'Guarda de Bagagem prático',
+      'Loja de Lembranças e Conveniência',
+      'Ambientes acessíveis / Quartos para Deficientes',
+      'Serviço de limpeza diário e enxovais impecáveis',
+      'Área de Fumantes reservada',
+      'Serviço de lavanderia / Limpeza a seco',
+      'Aceita os principais cartões de crédito e débito',
+      'Estacionamento seguro mediante custo diário'
+    ],
+    restaurantsAndBars: [
+      'Restaurante principal com buffet e opções saborosas',
+      'Bar interno elegante',
+      'Bar de Piscina com coquetéis e petiscos',
+      'Serviços exclusivos de Cocktails'
+    ],
+    wellnessAndSports: [
+      'Piscina de águas termais com hidromassagem',
+      'Piscina exterior aquecida e ensolarada',
+      'Academia de ginástica completa e gratuita',
+      'Espaço Kids / Clubinho Infantil monitorado',
+      'Parque Infantil ao ar livre',
+      'Sala de Jogos integrada para entretenimento',
+      'Jacuzzi relaxante com águas termais'
+    ],
+    eventsAndConferences: [
+      'Sala de Reuniões privativas',
+      'Serviço profissional de Casamentos'
+    ]
+  },
+  {
+    id: 'hot-beach-raizes',
+    name: 'Hot Beach Raízes',
+    category: 'olimpia',
+    categoryLabel: 'Hot Beach Olímpia',
+    tagline: 'Alto padrão, sofisticação e bem-estar exclusivo no centro turístico de Olímpia!',
+    description: 'Premiado, exclusivo e pensado sob medida para o seu bem-estar! O Hot Beach Raízes combina com perfeição uma estrutura de alto padrão e decoração sofisticada com um exuberante paisagismo verdejante e fantásticas piscinas abastecidas com águas naturalmente quentinhas.\n\nCom apenas 48 apartamentos e atendimento super personalizado, o hotel oferece uma fabulosa experiência de repouso silenciosa, tranquila e verdadeiramente premium. Conta com piscinas termais ativas 24 horas por dia, SPA completo equipado com sauna seca e a vapor, ofurôs relaxantes e uma magnífica piscina de recreação exclusiva. O resort dispõe ainda de academia de alta geração, quadra de areia para esportes praianos, área kids especial monitorada, além de restaurante requintado que serve o melhor da gastronomia nacional e brasileira com toques autorais.\n\nFabulosamente localizado no centro turístico de Olímpia, o resort fica situado a menos de 1 km dos principais parques da cidade. Durante toda a sua estada, todos os hóspedes contam com acesso inteiramente gratuito e ilimitado ao Parque Aquático Hot Beach Olímpia e à incrível Vila Guarani, seguindo os dias e horários normais de funcionamento das atrações.',
+    images: [
+      'https://i.postimg.cc/RZWtRqRV/1484541.webp',
+      'https://i.postimg.cc/Pr3ZY1mN/1484542.webp',
+      'https://i.postimg.cc/5N7vL8w6/1484543.webp',
+      'https://i.postimg.cc/QdF7bVbt/1484545.webp',
+      'https://i.postimg.cc/DyyLSx4Y/1484546.webp',
+      'https://i.postimg.cc/3xkGBWBD/1484547.webp',
+      'https://i.postimg.cc/138FH4H8/1484548.webp',
+      'https://i.postimg.cc/zG4gP5tS/1484550.webp',
+      'https://i.postimg.cc/Sxn9rjrd/1484551.webp',
+      'https://i.postimg.cc/kg2ScDcf/1484552.webp',
+      'https://i.postimg.cc/FsWc3008/1484553.webp',
+      'https://i.postimg.cc/qMbny28H/1484555.webp',
+      'https://i.postimg.cc/gkSR833f/1484556.webp',
+      'https://i.postimg.cc/7Ys70Sgw/1484557.webp',
+      'https://i.postimg.cc/y82ZrBQj/1484558.webp',
+      'https://i.postimg.cc/BQYDH2xs/1484560.webp',
+      'https://i.postimg.cc/bNCbk11m/1484561.webp',
+      'https://i.postimg.cc/x1BzFYxt/1484563.webp',
+      'https://i.postimg.cc/NjZHPYJ6/1484565.webp',
+      'https://i.postimg.cc/4NLtVppM/1484566.webp',
+      'https://i.postimg.cc/cLv3m6mm/1484568.webp',
+      'https://i.postimg.cc/RZ2Hb9p5/1484569.webp',
+      'https://i.postimg.cc/fR19gZ2P/1484570.webp',
+      'https://i.postimg.cc/bw4tF8CF/1484571.webp',
+      'https://i.postimg.cc/15C6wDp5/1484572.webp',
+      'https://i.postimg.cc/CLLkRcnt/1484695.webp',
+      'https://i.postimg.cc/bNNkZmS5/1484696.webp',
+      'https://i.postimg.cc/9Qs7NVgh/1486800.webp',
+      'https://i.postimg.cc/c44wvFtD/1500261.webp',
+      'https://i.postimg.cc/PrrYCSvb/1500262.webp',
+      'https://i.postimg.cc/YqqYvdL1/1500262-(1).webp',
+      'https://i.postimg.cc/SNNCngY6/1500263.webp',
+      'https://i.postimg.cc/X77drsBc/1500264.webp'
+    ],
+    features: ['Exclusividade de Apenas 48 Apartamentos', 'SPA Premium e Ofurôs Especiais', 'Acesso Grátis ao Parque Hot Beach e Vila', 'Piscina de Águas Termais 24 Horas', 'Gastronomia Brasileira do Mais Alto Padrão'],
+    captainRating: 9.9,
+    captainTip: 'Com apenas 48 apartamentos luxuosos, o Raízes é o refugio perfeito de exclusividade extrema! Ofurôs termais ao ar livre e piscinas 24h dão o tom do requinte.',
+    highlight: 'Design sustentável boutique e calmaria incomparável',
+    bestFor: 'casal',
+    strategicLocation: [
+      'Av. do Folclore, 1480, Olímpia - SP',
+      'No coração do centro turístico de Olímpia',
+      'Fabulosamente localizado a menos de 1 km dos principais parques'
+    ],
+    services: [
+      'Ingressos inclusos e ilimitados para o Parque Hot Beach',
+      'Atendimento e assessoria boutique ultra personalizada',
+      'Decks privativos cercados por abundante paisagismo botânico',
+      'Recreação e entretenimento exclusivo com equipe monitorada'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 12h00m',
+      reception: 'Recepção 24 horas disponível',
+      breakfast: 'A partir das 7h30m Até às 10h00m'
+    },
+    generalServices: [
+      'Estacionamento Gratuito seguro para hóspedes',
+      'Elegante SPA integrado',
+      'Conexão Wi-Fi Gratuita de alta performance',
+      'Acessibilidade para Cadeira de Rodas',
+      'Recepção 24 horas atenta',
+      'Aluguel de bicicletas prático para explorar a cidade',
+      'Berço disponível mediante solicitação prévia',
+      'Serviços completos de lavanderia / Limpeza a seco',
+      'Serviço de limpeza diário impecável',
+      'Área de Fumantes reservada',
+      'Guarda de Bagagem prático',
+      'Aceita os principais cartões de crédito e débito'
+    ],
+    restaurantsAndBars: [
+      'Restaurante Gourmet Principal',
+      'Restaurante Buffet com gastronomia brasileira selecionada',
+      'Bar de Piscina elegante',
+      'Bar Interno sofisticado',
+      'Serviços exclusivos de Cocktails premium'
+    ],
+    wellnessAndSports: [
+      'Piscinas de águas naturalmente quentinhas funcionando 24h',
+      'Piscina Exterior climatizada',
+      'Academia de ginástica completa gratuita',
+      'Espaço Kids / Clubinho Infantil monitorado',
+      'Parque Infantil completo ao ar livre',
+      'Ofurôs aquecidos ao ar livre e Spa relaxante',
+      'Sauna seca e a vapor integradas',
+      'Jacuzzi relaxante com águas termais',
+      'Mesa de Bilhar / Sala de jogos modernos',
+      'Serviço de massagens relaxantes sob agendamento',
+      'Personal Trainer qualificado sob solicitação prévia'
+    ],
+    eventsAndConferences: [
+      'Serviço e assessoria completa de Casamentos e celebrações'
+    ]
+  },
+  {
+    id: 'hot-beach-celebration',
+    name: 'Hot Beach Celebration',
+    category: 'olimpia',
+    categoryLabel: 'Hot Beach Olímpia',
+    tagline: 'O primeiro resort com categorias pet friendly de Olímpia, com muito lazer, conforto e diversão em família!',
+    description: 'Prepare-se para uma estada onde a alegria é garantida! O Hot Beach Celebration é o primeiro resort com categorias de apartamento pet friendly de Olímpia, ideal para quem busca conforto, praticidade e momentos inesquecíveis em família.\n\nDurante a estadia, você conta com acesso ilimitado ao parque aquático Hot Beach Olímpia e à Vila Guarani, além de transfer gratuito exclusivo para o parque. O resort oferece estrutura de resort completa, contando com equipe de recreação profissional, clubinho infantil com atividades monitoradas, sala de jogos moderna, parquinho ao ar livre, bares de drinks e restaurante buffet de excelência, além de academia bem equipada, sauna relaxante, SPA e loja de conveniência interna. Possui 3 piscinas de águas termais fantásticas, incluindo uma maravilhosa piscina de borda infinita. Está super bem localizado, próximo à área central da cidade de Olímpia e a menos de 1 km dos principais parques temáticos.\n\n🐾 Informações importantes sobre Hospedagem Pet:\nExclusivamente para apartamentos da categoria PET, é permitido até 2 pets de até 20kg cada por acomodação. É necessário apresentar carteirinha de vacinação regularizada e assinar o termo de responsabilidade no momento do check-in. O hóspede deve garantir o bem-estar do pet durante toda a estadia, mantendo-o sob adequada supervisão e respeitando as normas de boa convivência do resort.\n\n👶 Hospedagem de Menores:\nMenores só são hospedados mediante apresentação de documentação obrigatória por lei. Acompanhados de pai/mãe: documento de identificação original do menor + documento oficial com foto dos responsáveis. Acompanhados de terceiros: autorização por escrito com firma reconhecida em cartório ou autorização expressa judicial.\n\n🚗 Estacionamento de veículos conveniente no próprio local disponível sob taxa de R$ 15,00 por veículo/dia (valor sujeito a alteração sem aviso prévio).',
+    images: [
+      'https://i.postimg.cc/5yty2kKQ/1500187.webp',
+      'https://i.postimg.cc/tJgJ4mvJ/1500189.webp',
+      'https://i.postimg.cc/cCJCL5kn/1500190.webp',
+      'https://i.postimg.cc/Znqn5DsB/1500192.jpg',
+      'https://i.postimg.cc/90f0QNgM/1500193.webp',
+      'https://i.postimg.cc/Bbvbnw74/1500194.webp',
+      'https://i.postimg.cc/rmjzcLjz/1500195.webp',
+      'https://i.postimg.cc/wv23Hd27/1500197.webp',
+      'https://i.postimg.cc/9MbzVjbW/1500198.webp',
+      'https://i.postimg.cc/x8d81Fp1/1500199.webp',
+      'https://i.postimg.cc/Tw0hGX0Y/1500201.webp',
+      'https://i.postimg.cc/Tw0hGX9S/1500202.webp',
+      'https://i.postimg.cc/26G3mfws/1500203.webp',
+      'https://i.postimg.cc/Wz4z1fY4/1500204.webp',
+      'https://i.postimg.cc/NF0FjPCT/1500205.webp',
+      'https://i.postimg.cc/rmjzcLj6/1500206.webp',
+      'https://i.postimg.cc/k4sD9dsJ/1500208.webp',
+      'https://i.postimg.cc/LXDhRMTr/1500209.webp',
+      'https://i.postimg.cc/L5s580Qm/1500211.webp',
+      'https://i.postimg.cc/xC5qYS5S/1500213.webp',
+      'https://i.postimg.cc/3R1W7H1x/1500214.webp',
+      'https://i.postimg.cc/ydjWBzjH/1500215.webp',
+      'https://i.postimg.cc/qRwg0dLD/1500216.webp',
+      'https://i.postimg.cc/MTqXhG72/1500217.webp',
+      'https://i.postimg.cc/C5K5x6rR/1500218.webp',
+      'https://i.postimg.cc/4dPnZT58/1500219.webp',
+      'https://i.postimg.cc/DZ6mFKgN/1500220.webp',
+      'https://i.postimg.cc/k4sD9ds3/1500221.webp',
+      'https://i.postimg.cc/qR4g97sf/1500222.webp',
+      'https://i.postimg.cc/2y5ySX9q/1500223.webp',
+      'https://i.postimg.cc/W3TtQ4Mx/1500299.webp',
+      'https://i.postimg.cc/ydsWwNFw/1500300.webp'
+    ],
+    features: ['Atendimento Pet-Friendly Especializado', 'Palco com Atividades e Shows', 'Acesso Grátis ao Parque Hot Beach', 'Brinquedoteca e Clubinho Infantil', 'Excelente Relação Custo-Benefício'],
+    captainRating: 9.7,
+    captainTip: 'Eleito o rei da diversão em família com pet! Leve seu amiguinho de estimação sem preocupações e aproveite as 3 incríveis piscinas termais e o transfer gratuito direto para o parque.',
+    highlight: 'Estrutura pet friendly pioneira e super lazer',
+    bestFor: 'família',
+    strategicLocation: [
+      'Rua Francisco Vicente Blanco, 365, Olímpia - SP',
+      'Próximo à área central da cidade de Olímpia',
+      'A menos de 1 km dos principais parques aquáticos'
+    ],
+    services: [
+      'Duas categorias exclusivas de apartamento pet-friendly',
+      'Acesso incluso ao parque aquático Hot Beach e Vila Guarani',
+      'Transfer exclusivo diário de ida e volta para o parque',
+      'Recreação monitorada profissional para todas as idades',
+      'Copa do bebê completa equipada'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Recepção 24 horas disponível',
+      breakfast: 'A partir das 7h30m Até às 10h00m'
+    },
+    generalServices: [
+      'Acessibilidade para Cadeira de Rodas',
+      'Internet sem fio / Wifi Gratuito de alta velocidade',
+      'Recepção 24 horas',
+      'Guarda de Bagagem',
+      'Berço disponível mediante solicitação prévia',
+      'Loja de Lembranças e Conveniência',
+      'Quartos adaptados para Deficientes',
+      'Serviço de limpeza diário e enxoval',
+      'Área específica de fumantes',
+      'Elevador panorâmico e de serviço',
+      'Serviço de lavanderia / limpeza a seco',
+      'Aceita os principais cartões de crédito/débito',
+      'Estacionamento de ônibus',
+      'Estacionamento privativo com taxa'
+    ],
+    restaurantsAndBars: [
+      'Restaurante principal com buffet e à la carte',
+      'Bar de piscina completo com drinks e petiscos',
+      'Serviços gourmet de cocktails e bebidas exclusivas'
+    ],
+    wellnessAndSports: [
+      '3 piscinas de águas termais de temperatura agradável',
+      'Maravilhosa piscina de borda infinita',
+      'SPA completo e sauna relaxante',
+      'Espaço Kids / Brinquedoteca / Clubinho Infantil',
+      'Parque Infantil ao ar livre',
+      'Jacuzzi relaxante com águas termais',
+      'Mesa de Bilhar de alto padrão / Sala de jogos',
+      'Serviço de massagens e relaxamento sob agendamento'
+    ],
+    eventsAndConferences: [
+      'Salas de Conferências equipadas',
+      'Moderno Centro de Convenções',
+      'Sala de Reuniões privativas',
+      'Palco para apresentações e shows',
+      'Auditório confortável',
+      'Serviço e assessoria de Casamentos'
+    ]
   }
 ];
 

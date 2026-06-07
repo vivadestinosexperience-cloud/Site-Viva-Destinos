@@ -1,7 +1,7 @@
 export interface Hotel {
   id: string;
   name: string;
-  category: 'lagoa' | 'diroma' | 'viver-caldas';
+  category: 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia';
   categoryLabel: string;
   tagline: string;
   description: string;
