@@ -453,6 +453,34 @@ ${specialNeeds.trim() ? `\n💬 *Observações Especiais:* ${specialNeeds.trim()
               </div>
             )}
 
+            {selectedHotel.category === 'ctc' && (
+              <div className="bg-azul/5 border border-azul/15 rounded-xl p-3.5 text-xs text-azul flex items-center gap-2 font-medium">
+                <Gift size={16} className="text-dourado shrink-0 animate-pulse" />
+                <span>Sensacional! A sua reserva no <strong>{selectedHotel.name}</strong> (o carinhoso "lugar de gente feliz") garante acesso completo à fantástica estrutura de 14 piscinas termais, ofurôs, internet dedicada, espaço Home Office privativo com firewall e recarga cortesia para veículos elétricos!</span>
+              </div>
+            )}
+
+            {selectedHotel.category === 'olimpia' && (
+              <div className="bg-azul/5 border border-azul/15 rounded-xl p-3.5 text-xs text-azul flex items-center gap-2 font-medium">
+                <Ticket size={16} className="text-dourado shrink-0 animate-pulse" />
+                <span>Incrível escolha! O <strong>{selectedHotel.name}</strong> garante ingressos gratuitos e ilimitados ao <strong>Parque Aquático Hot Beach Olímpia</strong> e à charmosa <strong>Vila Guarani!</strong></span>
+              </div>
+            )}
+
+            {selectedHotel.category === 'sauipe' && (
+              <div className="bg-azul/5 border border-azul/15 rounded-xl p-3.5 text-xs text-azul flex items-center gap-2 font-medium">
+                <Gift size={16} className="text-dourado shrink-0 animate-pulse" />
+                <span>Fabuloso! Sua estadia contará com sistema de consumo <strong>All-Inclusive completo e premium (refeições, lanches e bebidas à vontade)</strong> e passe livre para toda a estrutura litorânea da <strong>Costa do Sauípe!</strong></span>
+              </div>
+            )}
+
+            {selectedHotel.category === 'rio-quente' && (
+              <div className="bg-azul/5 border border-azul/15 rounded-xl p-3.5 text-xs text-azul flex items-center gap-2 font-medium">
+                <Compass size={16} className="text-dourado shrink-0 animate-pulse" />
+                <span>Espetacular! A sua estadia no <strong>{selectedHotel.name}</strong> garante acesso gratuito e ilimitado ao incrível <strong>Parque das Fontes (aberto 24h) e o lendário Hot Park</strong> com fontes de águas naturalmente quentes da região!</span>
+              </div>
+            )}
+
             {/* Response Alerts */}
             {errorMessage && (
               <div className="bg-red-50 border border-red-200 text-red-650 text-xs sm:text-sm px-4 py-3.5 rounded-2xl font-medium leading-relaxed">

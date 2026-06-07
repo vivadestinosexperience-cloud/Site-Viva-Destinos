@@ -858,6 +858,105 @@ export const HOTELS_DATA: Hotel[] = [
     ]
   },
   {
+    id: 'hotel-ctc',
+    name: 'Hotel CTC',
+    category: 'ctc',
+    categoryLabel: 'Rede CTC',
+    tagline: 'O tradicional e carinhoso "lugar de gente feliz" com rico parque aquático termal de 14 piscinas!',
+    description: 'O Hotel CTC — Caldas Termas Clube, situado em Caldas Novas, Goiás, é um dos mais tradicionais da região e mescla a essência da hotelaria clássica com um atendimento caloroso e personalizado. Tanto é que somos reconhecidos por nossos hóspedes nas redes sociais como ‘o lugar de gente feliz’.\n\nEm meio à natureza exuberante, oferecemos um ambiente familiar e sereno.\n\nNosso parque aquático conta com 14 piscinas e dois ofurôs abastecidos por águas termais minerais, que brotam a mais de 50°C – em certas épocas do ano, até mais!\n\nEstas águas são diariamente tratadas para assegurar a mais alta qualidade balnear.\n\nNosso pacote de comodidades ainda oferece sauna úmida, sala de massagem e uma ampla variedade gastronômica no restaurante gastronômico.\n\nAlém disso, oferecemos Wi-Fi gratuito em todas as áreas e um Espaço Home Office, equipado com internet dedicada, para que você possa trabalhar em um ambiente confortável e tranquilo.',
+    images: [
+      'https://i.postimg.cc/kMtQFcxL/140474813.jpg',
+      'https://i.postimg.cc/L4ZtBTtF/140474817.jpg',
+      'https://i.postimg.cc/XNyfc8wR/171988895.jpg',
+      'https://i.postimg.cc/wxsXcVX9/171989923.jpg',
+      'https://i.postimg.cc/RCn7QR7m/171989928.jpg',
+      'https://i.postimg.cc/nVQ4Yk4t/171989934.jpg',
+      'https://i.postimg.cc/zXZndg73/171989939.jpg',
+      'https://i.postimg.cc/pVnfYZf9/183645896.jpg',
+      'https://i.postimg.cc/h47LbrLX/183647261.jpg',
+      'https://i.postimg.cc/pVnfYZfy/183647296.jpg',
+      'https://i.postimg.cc/rFXShrj0/183647439.jpg',
+      'https://i.postimg.cc/ZYy8FcrM/4433365.jpg',
+      'https://i.postimg.cc/65JdHvc8/4816423.jpg',
+      'https://i.postimg.cc/Y2m6f36G/4816479.jpg',
+      'https://i.postimg.cc/90TymmmZ/4816490.jpg',
+      'https://i.postimg.cc/BbD2SSSc/4816699.jpg',
+      'https://i.postimg.cc/Wzr0NNN1/4816766.jpg',
+      'https://i.postimg.cc/Fzc0rrrs/4816792.jpg',
+      'https://i.postimg.cc/Hn5bYYYj/4816818.jpg',
+      'https://i.postimg.cc/fyXYzzzL/4816878.jpg',
+      'https://i.postimg.cc/tCQhrxkX/4816911.jpg',
+      'https://i.postimg.cc/j2NyxxxR/513307082.jpg',
+      'https://i.postimg.cc/fyXYzzzw/513307268.jpg',
+      'https://i.postimg.cc/yx90111B/513307427.jpg',
+      'https://i.postimg.cc/qqn2JJJ4/513307505.jpg',
+      'https://i.postimg.cc/gkFvMZs0/51468385.jpg',
+      'https://i.postimg.cc/mZFYNwQJ/76498253.jpg',
+      'https://i.postimg.cc/NGr6741V/76498262.jpg',
+      'https://i.postimg.cc/L5fj999j/76498879.jpg',
+      'https://i.postimg.cc/pr8KWWWD/76498902.jpg',
+      'https://i.postimg.cc/QxGp6TmW/76498921.jpg'
+    ],
+    features: ['14 Piscinas e 2 Ofurôs Termais', 'Águas Termais a mais de 50°C', 'Tomadas para Veículos Elétricos', 'Espaço Home Office Equipado', 'Essência da Hotelaria Clássica', 'Acolhedor Lugar de Gente Feliz'],
+    captainRating: 9.7,
+    captainTip: 'Um dos pioneiros mais cheios de vida em Caldas Novas! Carinhosamente reconhecido por nossos hóspedes como o lugar de gente feliz. O parque aquático conta com 14 piscinas e dois ofurôs termais legítimos brutais que brotam a mais de 50°C! Também conta com duas tomadas elétricas automotivas e excelente espaço home office com firewall para seus negócios.',
+    highlight: 'O carismático oásis das águas termais de "Gente Feliz" com 14 piscinas legítimas',
+    bestFor: 'família',
+    strategicLocation: [
+      'Av. Orlandino de Oliveira, S/N - Centro, Caldas Novas - GO',
+      'Muito bem situado na tradicional e nobre região de Caldas Novas',
+      'Permite fácil e rápida caminhada para os principais comércios do centro urbano'
+    ],
+    services: [
+      'Parque aquático completo integrando 14 piscinas termais, dois ofurôs quentes e sauna úmida relaxante',
+      'Espaço Home Office equipado com sofás, mesas aconchegantes, rede de internet rápida e segurança de firewall',
+      'Comodidade e futuro ambiental trazendo duas estações de recarga convenientes para veículos elétricos',
+      'Auditório projetado para receber até 66 convidados provido de áudio de alta qualidade e TVs de ponta'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Recepção 24 horas disponível (Aberto das 0h00m até às 0h00m)',
+      breakfast: 'Café da Manhã: das 7h00m às 9h30m'
+    },
+    generalServices: [
+      'Guarda de Bagagem',
+      'Berço disponivel a pedido',
+      'Loja de Lembranças',
+      'Quartos para Deficientes',
+      'Aceita os principais cartões de crédito',
+      'Equipe Multilíngue',
+      'Acessibilidade para Cadeira de Rodas',
+      'Serviço de limpeza diário',
+      'Área de Fumantes',
+      'Recepção 24 horas',
+      'Estacionamento Gratuito',
+      'Elevador',
+      'Wifi Gratuito',
+      'Babá a Pedido',
+      'Acesso direto à praia'
+    ],
+    restaurantsAndBars: [
+      'Bar',
+      'Restaurante (Café da manhã das 07h às 09h30, almoço das 11h30 às 14h30 e jantar das 19h às 21h30)',
+      'Bar de Piscina'
+    ],
+    wellnessAndSports: [
+      'SPA',
+      'Serviço de Massagens',
+      'Piscina Exterior',
+      'Aluguel de bicicletas',
+      'Espaço Kids',
+      'Campo de Ténis',
+      'Parque Infantil',
+      'Academia de ginástica gratuita'
+    ],
+    eventsAndConferences: [
+      'Serviço de Casamentos',
+      'Centro de Convenções'
+    ]
+  },
+  {
     id: 'hot-beach-suites',
     name: 'Hot Beach Suítes',
     category: 'olimpia',
@@ -1233,6 +1332,960 @@ export const HOTELS_DATA: Hotel[] = [
       'Palco para apresentações e shows',
       'Auditório confortável',
       'Serviço e assessoria de Casamentos'
+    ]
+  },
+  {
+    id: 'sauipe-mar-premium',
+    name: 'Sauipe Mar Premium',
+    category: 'sauipe',
+    categoryLabel: 'Costa do Sauípe',
+    tagline: 'O maravilhoso refúgio à beira-mar que combina o aconchego baiano e as grandes navegações!',
+    description: 'No coração da Costa do Sauipe, o Mar Premium combina a energia e o acolhimento único da Bahia. Os ambientes resgatam a história das grandes navegações, com quadros, grafismos e peças requintadas que remetem às caravelas de época.\n\nOferece um completo regime All Inclusive repleto de pratos regionais marcantes, frutas tropicais frescas e o tradicional acarajé preparado todos os dias no Quiosque da Baiana. Além do restaurante principal com buffet de sabores regionais primorosos, você dispõe do bar do lobby e cafeteria com funcionamento ininterrupto 24 horas, repletos de refinados drinks e petiscos.\n\nSua maravilhosa infraestrutura de lazer apresenta piscinas de adulto com bar molhado, piscina infantil, além de uma piscina exclusiva dedicada ao Clube de Férias. Ideal para casais e famílias que buscam máximo conforto, lazer, cultura e praticidade em um só lugar de frente para o mar.',
+    images: [
+      'https://i.postimg.cc/ZKNQ7PLB/5193497.jpg',
+      'https://i.postimg.cc/PrD73bM1/5193498.jpg',
+      'https://i.postimg.cc/xTmZxGP5/5193499.jpg',
+      'https://i.postimg.cc/zG1c9Ldp/5193500.jpg',
+      'https://i.postimg.cc/VLthG9Ft/5193501.jpg',
+      'https://i.postimg.cc/fRhr63HB/5193502.jpg',
+      'https://i.postimg.cc/wjdGStWV/5193503.jpg',
+      'https://i.postimg.cc/nhtP6sd1/5193504.jpg',
+      'https://i.postimg.cc/7YzRs1Ns/5193505.jpg',
+      'https://i.postimg.cc/X75PHKg2/5193506.jpg',
+      'https://i.postimg.cc/GhDf7PjQ/5193507.jpg',
+      'https://i.postimg.cc/L6PWCkVt/5193508.jpg',
+      'https://i.postimg.cc/qMKFbcG8/5193509.jpg',
+      'https://i.postimg.cc/DyGNjQcQ/5193510.jpg',
+      'https://i.postimg.cc/jSrFGW81/5193511.jpg',
+      'https://i.postimg.cc/Z5hM197z/5193512.jpg',
+      'https://i.postimg.cc/dtCfHR9y/5193513.jpg',
+      'https://i.postimg.cc/6pNmD7jN/5193514.jpg',
+      'https://i.postimg.cc/9Qjnv4xS/5193515.jpg',
+      'https://i.postimg.cc/VLthG9F0/5193516.jpg'
+    ],
+    features: ['Temática Fascinante de Caravela', 'Exclusivo Quiosque com Acarajé Diário', 'Lobby Bar & Cafeteria 24h Disponíveis', 'Clube de Férias com Piscina Reservada', 'Apartamentos Espaçosos de até 157m²'],
+    captainRating: 9.8,
+    captainTip: 'Perfeito para famílias e casais que procuram o equilíbrio de sofisticação e conforto! A cafeteria fica aberta 24h e o Quiosque da Baiana serve acarajé quentinho feito na hora todos os dias.',
+    highlight: 'O charme histórico das grandes caravelas emoldurado pela exuberante Costa do Sauípe',
+    bestFor: 'luxo',
+    strategicLocation: [
+      'Rodovia BA-099, Km 76, Costa do Sauípe, Mata de São João - BA',
+      'Localização privilegiada à beira-mar, cercada pela beleza exuberante do complexo',
+      'Próximo a passarelas e charmosas orlas integradas do resort'
+    ],
+    services: [
+      'Acarajé baiano autêntico preparado todos os dias no Quiosque da Baiana',
+      'Amenities de alto padrão, cofre inteligente, smart TV, secador de cabelo e ar-condicionado em todas as suítes',
+      'Atendimento e assessoria atenciosa e de alto padrão litorâneo',
+      'Programação completa de lazer diária voltada para todas as idades e gostos'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 15h00m',
+      checkOut: 'Check-out até 12h00m',
+      reception: 'Recepção 24 horas disponível (Aberto das 0h00m até às 0h00m)',
+      breakfast: 'Café da Manhã: das 7h00m às 10h30m'
+    },
+    generalServices: [
+      'Guarda de Bagagem prático e seguro',
+      'Berço disponível mediante solicitação prévia (a pedido)',
+      'Loja de Lembranças e presentes tradicionais',
+      'Quartos espaçosos adaptados para Deficientes (PCD) com acessibilidade',
+      'Aceita os principais cartões de crédito e débito nacionais e internacionais',
+      'Equipe Multilíngue amigável altamente capacitada',
+      'Acessibilidade com rampas para Cadeira de Rodas',
+      'Serviço profissional de limpeza diário impecável',
+      'Área de Fumantes reservada ao ar livre',
+      'Recepção calorosa disponível 24 horas por dia',
+      'Estacionamento privativo inteiramente Gratuito para hóspedes',
+      'Elevador panorâmico rápido e moderno comercial',
+      'Internet sem fio / Wifi Gratuito de ótima velocidade',
+      'Serviço de Babá qualificado sob agendamento (a pedido)',
+      'Acesso direto e privativo à maravilhosa praia da Costa'
+    ],
+    restaurantsAndBars: [
+      'Bar do lobby atencioso funcionando das 11h00m à 1h00m',
+      'Restaurante principal servindo um completo buffet de sabores regionais (Café da manhã das 7h às 10h30, almoço das 12h30 às 15h e jantar das 19h às 22h)',
+      'Bar de Piscina completo servindo deliciosas bebidas refrescantes das 8h00m às 19h00m',
+      'Exclusiva Cafeteria do resort com atendimento ininterrupto funcionando 24h por dia',
+      'Quiosque da Baiana preparando delicioso acarajé tradicional feito na hora todos os dias'
+    ],
+    wellnessAndSports: [
+      'SPA sofisticado proporcionando excelentes rituais e hidromassagens',
+      'Serviço profissional de Massagens terapêuticas e estéticas',
+      'Piscina Exterior de adulto incrível com bar molhado e piscina infantil interativa',
+      'Piscina do Clube de Férias exclusiva e reservada para mergulhos tranquilos',
+      'Aluguel de bicicletas prático para passear e explorar as belezas locais',
+      'Espaço Kids animado (Espaço de brincar) e excelente sala de jogos completa',
+      'Campo de Ténis de saibro refinado e quadra poliesportiva integradas',
+      'Parque Infantil no jardim ao ar livre para as crianças se divertirem',
+      'Academia de ginástica completa e gratuita com ótimos aparelhos modernos'
+    ],
+    eventsAndConferences: [
+      'Lindo serviço de Casamentos pé-na-areia sob demanda do cliente',
+      'Centro de Convenções moderno estruturado e totalmente equipado'
+    ]
+  },
+  {
+    id: 'sauipe-terra-resort',
+    name: 'Sauipe Terra Resort',
+    category: 'sauipe',
+    categoryLabel: 'Costa do Sauípe',
+    tagline: 'Toda a praticidade do sistema All Inclusive de alimentação, acesso a 8 piscinas e recreação non stop fabulosa!',
+    description: 'Bem-vindo ao Sauipe Terra Resort - All Inclusive, onde a experiência de hospedagem é uma viagem por cores, texturas, aromas, sabores e sons que conectam os visitantes à atmosfera local e à cultura brasileira e baiana.\n\nAqui você encontra a piscina mais divertida entre as alas, tem programação intensa, com muito axé, funk, zumba e entretenimento non stop.\n\nAo se hospedar no Terra Resorts, você terá uma experiência única, que proporciona uma imersão na cultura local de forma inesquecível e alegre.\n\nNo Sauipe Terra Resort - All Inclusive, o buffet all-inclusive oferece opções deliciosas para café da manhã, almoço, jantar, petiscos na piscina, lanche da tarde e ceia.\n\nO café da manhã é completo e inclui opções saudáveis para começar bem o dia. Já o almoço tem uma grande variedade de pratos, com ênfase na rica cultura brasileira. No jantar, o buffet é ainda mais diversificado, com pratos específicos e em destaque, incluindo frutos do mar, massas e delícias da culinária nordestina.\n\nAs sobremesas também são um espetáculo à parte, com diversas especialidades brasileiras e baianas para adoçar o paladar.',
+    images: [
+      'https://i.postimg.cc/MK0Df9DD/1147935.jpg',
+      'https://i.postimg.cc/J4CxhfbP/1147936.jpg',
+      'https://i.postimg.cc/SxyG6c1Q/1147937.jpg',
+      'https://i.postimg.cc/c47mtFhS/1147938.jpg',
+      'https://i.postimg.cc/bwzRx1Vf/1147951.webp',
+      'https://i.postimg.cc/4Nv5HW52/1147956.webp',
+      'https://i.postimg.cc/GhnKpWkx/1147958.webp',
+      'https://i.postimg.cc/wj6kXD48/1165302.jpg',
+      'https://i.postimg.cc/hP8rQ2rM/1165307.jpg',
+      'https://i.postimg.cc/pXMCdwDB/1165308.jpg',
+      'https://i.postimg.cc/9FHbf6Gz/1165777.jpg',
+      'https://i.postimg.cc/bNfgv7QD/1165778.jpg',
+      'https://i.postimg.cc/K8Z5Ptp8/1165981.jpg',
+      'https://i.postimg.cc/MKJ5GCyD/1165982.jpg',
+      'https://i.postimg.cc/28dwL0Gr/1165983.jpg',
+      'https://i.postimg.cc/02GfKVfc/1165984.jpg',
+      'https://i.postimg.cc/28dwL0wP/1168897.jpg',
+      'https://i.postimg.cc/MK0Df9DC/1168898.jpg',
+      'https://i.postimg.cc/YCpx6QDk/1168899.jpg',
+      'https://i.postimg.cc/jdYcjpzj/1386011.jpg',
+      'https://i.postimg.cc/QxZmM2pH/1386015.jpg',
+      'https://i.postimg.cc/sfhKsjZg/1386025.jpg',
+      'https://i.postimg.cc/hvT0rsqV/1386030.jpg',
+      'https://i.postimg.cc/66vztWG3/1386031.jpg',
+      'https://i.postimg.cc/MZQtq6fC/1386032.jpg',
+      'https://i.postimg.cc/wxmFgqsK/1386035.jpg',
+      'https://i.postimg.cc/tRxDpqVg/1386036.jpg',
+      'https://i.postimg.cc/wMLkV2dR/1386041.jpg',
+      'https://i.postimg.cc/NFmx4Dw9/1386042.jpg',
+      'https://i.postimg.cc/MZQtq6fg/1386043.jpg',
+      'https://i.postimg.cc/NGHbBsrv/1386044.jpg',
+      'https://i.postimg.cc/3NmZB1HD/1386045.jpg',
+      'https://i.postimg.cc/dQynwsT3/1386051.jpg'
+    ],
+    features: ['Praticidade do Sistema All Inclusive', 'Acesso Livre a 8 Maravilhosas Piscinas', 'Programação de Lazer Diária e Intensa', 'Grande Variedade de Doces e Sobremesas', 'Maravilhosa Imersão na Atmosfera Local'],
+    captainRating: 9.6,
+    captainTip: 'Para quem adora agito, atividades na água e imersão total no clima baiano! Oferece a piscina mais divertida do complexo com uma equipe fantástica que anima o dia todo de zumba, axé e brincadeiras.',
+    highlight: 'Uma verdadeira viagem por cores, sabores e sons da cultura baiana com sistema All Inclusive',
+    bestFor: 'família',
+    strategicLocation: [
+      'Rodovia BA-099, Km 76, Costa do Sauípe, Mata de São João - BA',
+      'No coração das atrações e das alas integradas da Costa',
+      'Próximo às famosas orlas integradas e com fácil caminhada'
+    ],
+    services: [
+      'Sistema All-Inclusive completo trazendo refeições saborosas e petiscos livres na piscina',
+      'Recreação non stop ativa com aulas de axé, zumba, funk e atividades na água',
+      'Acesso livre e garantido a 8 piscinas espetaculares dentro de todo o complexo',
+      'Ritmos e sons brasileiros contagiantes para conectar as suas férias com a cultura local'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 15h00m',
+      checkOut: 'Check-out até 12h00m',
+      reception: 'Recepção 24 horas disponível (Aberto das 0h00m até às 0h00m)',
+      breakfast: 'Café da Manhã: das 7h00m às 10h30m'
+    },
+    generalServices: [
+      'Loja de Lembranças e presentes no interior do resort',
+      'Quartos e instalações práticos adaptados para Deficientes',
+      'Aceita os principais cartões de crédito e débito nacionais e estrangeiros',
+      'Equipe Multilíngue altamente preparada para receber você',
+      'Acessibilidade com rampas qualificadas para Cadeira de Rodas',
+      'Serviço profissional de limpeza diário e higienização impecáveis',
+      'Sala de Jogos completa com mesa de bilhar e diversão garantida',
+      'Área de Fumantes reservada e confortável ao ar livre',
+      'Recepção calorosa disponível 24 horas por dia',
+      'Estacionamento privativo inteiramente Gratuito para hóspedes',
+      'Garagem moderna e espaçosa para estacionar',
+      'Elevador panorâmico rápido e moderno',
+      'Internet sem fio / Wifi Gratuito de ótima conexão nas dependências',
+      'Serviço de Babá qualificado disponível (a pedido)',
+      'Acesso direto e privativo à maravilhosa praia da Costa'
+    ],
+    restaurantsAndBars: [
+      'Serviço de Quarto disponível sob demanda e sob agendamento 24 horas por dia (das 8h às 23h)',
+      'Lobby Bar para relaxar e conversar rodado de excelentes drinques das 10h00m à 01h00m',
+      'Bar acolhedor com excelentes coquetéis e rótulos selecionados',
+      'Bar de Piscina servindo deliciosos coquetéis refrescantes e petiscos das 10h00m às 18h00m',
+      'Restaurante principal buffet completo com opções deliciosas locais, nacionais e massas',
+      'Café da Manhã: das 7h00m às 10h30m completo com excelentes opções saudáveis',
+      'Almoço: das 12h30m às 15h00m com ênfase na farta e rica cultura brasileira',
+      'Chá da Tarde: das 17h00m às 19h00m recheado de deliciosas quitutes baianas',
+      'Jantar: das 19h00m às 22h00m diversificado incluindo frutos do mar e culinária nordestina',
+      'Ceia: das 23h30m às 05h00m para lanches e petiscos providenciais na madrugada',
+      'Incrível carrossel de sobremesas típicas brasileiras e baianas para adoçar o paladar'
+    ],
+    wellnessAndSports: [
+      'SPA requintado oferecendo momentos de relaxamento absoluto',
+      'Serviço profissional de Massagens faciais e corporais relaxantes',
+      'Salão de Beleza integrado com excelentes tratamentos capilares e estéticos',
+      'Acesso estendido a 8 piscinas espetaculares e divertidas para refrescar',
+      'Aluguel de bicicletas prático para deliciosos passeios integrados no resort',
+      'Espaço Kids acolhedor com programações lúdicas monitoradas',
+      'Campo de Ténis profissional e quadras poliesportivas no complexo',
+      'Sauna úmida e a vapor integradas para relaxamento saudável',
+      'Parque Infantil projetado ao ar livre para alegria e lazer dos pequenos',
+      'Academia de ginástica completa e gratuita com excelentes equipamentos',
+      'Massagens relaxantes e terapias sob demanda para revigorar (a pedido)'
+    ],
+    eventsAndConferences: [
+      'Salas de Conferências amplas e modernas com equipamentos de ponta',
+      'Serviço de Casamentos profissional pé-na-areia sob o sol baiano',
+      'Centro de Convenções completo de altíssima classificação e estrutura',
+      'Palco contemporâneo integrado ideal para apresentações e pocket shows',
+      'Auditório confortável estruturado e climatizado para congregar palestras'
+    ]
+  },
+  {
+    id: 'sauipe-sol-grand-premium',
+    name: 'Sauipe Sol Grand Premium',
+    category: 'sauipe',
+    categoryLabel: 'Costa do Sauípe',
+    tagline: 'O renascimento de um hotel emblemático para grandes momentos em família à beira-mar com sistema All Inclusive Premium superior!',
+    description: 'A reabertura do Sauipe Sol Grand Premium - All Inclusive marca o início de uma nova fase para um dos hotéis mais emblemáticos da Costa do Sauípe. Com mais beleza, conforto e comodidade, o hotel oferece uma experiência única para que cada momento dos nossos hóspedes seja tranquilo, agradável e inesquecível.\n\nO novo Sauipe Sol Grand Premium - All Inclusive nasce para entregar uma hospedagem superior, com todo o acolhimento e bem-estar que só a Bahia pode oferecer. Pensado para grandes momentos em família, o hotel traz ambientes modernos, piscinas adulto e infantil exclusivas, localização à beira-mar e uma programação variada de lazer. Tudo isso com o conforto e os serviços que fazem do Sauipe Sol Grand Premium - All Inclusive um verdadeiro refúgio de tranquilidade.\n\nA gastronomia também foi renovada, com opções deliciosas em todos os momentos do dia, no sistema all inclusive. São refeições completas e petiscos variados, além de uma carta de bebidas com rótulos nacionais e importados de altíssimo padrão.',
+    images: [
+      'https://i.postimg.cc/1t9PPCJY/09B7EF024DCFB01D07EA3C9EFC6EA37D.jpg',
+      'https://i.postimg.cc/C1m0KG2x/10AE7815DEA97375C680AACE0773E4D5-sol-quarto-standard-cam-02.jpg',
+      'https://i.postimg.cc/1z1s756m/1147533.webp',
+      'https://i.postimg.cc/QMZhYx5X/1169761.jpg',
+      'https://i.postimg.cc/BnKJC189/1385918.jpg',
+      'https://i.postimg.cc/7Z2qNTCy/1385921.jpg',
+      'https://i.postimg.cc/DwX7cbWT/1385945.jpg',
+      'https://i.postimg.cc/25Nr98vN/1385957.jpg',
+      'https://i.postimg.cc/Bvf47QDG/1385958.jpg',
+      'https://i.postimg.cc/SKLqBF7V/1481052.jpg',
+      'https://i.postimg.cc/zfY82XWb/1481053.jpg',
+      'https://i.postimg.cc/d0RvbPm8/1481054.jpg',
+      'https://i.postimg.cc/Pqbhgszp/1481055.jpg',
+      'https://i.postimg.cc/Bv5sr9ch/1481056.jpg',
+      'https://i.postimg.cc/xdVnpTHd/1481058.jpg',
+      'https://i.postimg.cc/YSNk5KfN/1481059.jpg',
+      'https://i.postimg.cc/qRk00bjD/1481060.jpg',
+      'https://i.postimg.cc/sgh3JZBC/1481061.jpg',
+      'https://i.postimg.cc/nLKZybYW/1481063.jpg',
+      'https://i.postimg.cc/PqbhgszL/1481064.jpg',
+      'https://i.postimg.cc/vm7MJFLc/1481065.jpg',
+      'https://i.postimg.cc/CKpSrLDk/1481066.jpg',
+      'https://i.postimg.cc/Jh3mfVcQ/1481067.jpg',
+      'https://i.postimg.cc/Y9pkknbR/1491883.jpg',
+      'https://i.postimg.cc/rm8ccnf2/360FEC60AA3ACEF5FD73BD4C9A63BBC5-sol-suite-jr-cam-01.jpg',
+      'https://i.postimg.cc/k4fC5QHM/3DF97D78DA9B018E14D056EFD84FCADD.jpg',
+      'https://i.postimg.cc/rm8ccnf8/41A21082AAD9115EB644B2DAF675D119-sol-quarto-standard-cam-01.jpg',
+      'https://i.postimg.cc/vBQMMq0H/48752200C8419B0F0B4F65738910578C-sol-estar-jr-cam-03.jpg',
+      'https://i.postimg.cc/Y9pkknbT/8F70770AF34DCB0B49F69139436626B2-sol-banheiro-presidencial.jpg',
+      'https://i.postimg.cc/9MJ2fdkc/F7EEA771CDDD46BEEF8DBD0A121B840C.jpg'
+    ],
+    features: ['Sistema All-Inclusive Grand Premium', 'Welcome Drink & Garçons na Piscina', 'Check-in às 15h com consumo liberado', 'Copa Baby & Transporte a cada 20min', 'Localização Privilegiada Beira-Mar'],
+    captainRating: 9.8,
+    captainTip: 'Um hotel histórico totalmente renascido! Perfeito para famílias, traz uma programação impecável com piscinas exclusivas, beira-mar, copa baby de alto padrão e carta de bebidas com vinhos importados e whisky 12 anos!',
+    highlight: 'O renascimento de um dos hotéis mais emblemáticos da Bahia com conforto e sofisticação de padrão superior',
+    bestFor: 'familia',
+    strategicLocation: [
+      'Rodovia BA-099, Km 76, Costa do Sauípe, Mata de São João - BA',
+      'Localização excepcional pé-na-areia à beira-mar',
+      'Rodeado por um exuberante ambiente de natureza preservada na Costa'
+    ],
+    services: [
+      'Acolhimento de boas-vindas marcante com delicioso Welcome drink',
+      'Atendimento e serviço diferenciado de garçons na área da piscina',
+      'Copa baby completa para facilidade no preparo de papinhas e mamadeiras',
+      'Transporte interno circular conveniente no resort a cada 20 minutos',
+      'Check-in facilitado às 15h00m com liberação imediata do consumo'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 15h00m',
+      checkOut: 'Check-out até 12h00m',
+      reception: 'Recepção 24 horas (Aberto das 0h00m até às 0h00m)',
+      breakfast: 'A partir das 7h00m Até às 10h30m'
+    },
+    generalServices: [
+      'Berço disponível mediante solicitação prévia (a pedido)',
+      'Loja de Lembranças e presentes no local',
+      'Quartos confortáveis e adequados para Deficientes',
+      'Aceita os principais cartões de crédito para maior flexibilidade',
+      'Equipe Multilíngue capacitada para melhor acolhimento',
+      'Acessibilidade avançada para Cadeira de Rodas',
+      'Serviço profissional de limpeza diário impecável',
+      'Sala de Jogos completa com mesa de bilhar e entretenimento (em breve)',
+      'Área de Fumantes reservada e arejada ao ar livre',
+      'Recepção calorosa disponível 24 horas por dia',
+      'Estacionamento privativo totalmente gratuito para hóspedes',
+      'Elevador silencioso panorâmico moderno',
+      'Internet sem fio / Wi-Fi Gratuito de excelente alcance e velocidade',
+      'Babá disponível sob demanda qualificada (a pedido)',
+      'Acesso direto e exclusivo à bela praia da Costa'
+    ],
+    restaurantsAndBars: [
+      'Duas copas do bebê equipadas e dois fraldários de fácil acesso',
+      'Espaço sofisticado e aconchegante para um delicioso Chá da tarde',
+      'Serviço de Quarto disponível sob agendamento 24 horas por dia',
+      'Restaurante principal buffet all inclusive (Café da manhã, almoço, jantar, petiscos, lanche da tarde e ceia)',
+      'Espetacular Cozinha Show com preparações ao vivo e ilhas temáticas no jantar',
+      'Lobby Bar aconchegante funcionando das 11h00m às 01h00m com drinks, cervejas, cafés especiais e petiscos',
+      'Bar na área da piscina oferecendo acarajé feito na hora, pizzas, petiscos e churrasco completo no almoço',
+      'Bebidas inclusas: 5 marcas Lager do portfólio Ambev, drinks com destilados premium nacionais/importados, espumante brut e moscatel nacional, vinhos finos (branco e tinto) importados, Whiskies 8 e 12 anos importados, Vodka e Gin nacionais premium ou importados',
+      'Frigobar/Minibar no apartamento abastecido diariamente com água mineral, refrigerantes diversos e cervejas'
+    ],
+    wellnessAndSports: [
+      'Piscinas em 3 ambientes integrados diferenciados (sendo 1 infantil de lazer dedicada), funcionando das 09h às 18h',
+      'Atividades recreativas dinâmicas e serviços exclusivos de entretenimento',
+      'Brinquedoteca lúdica equipada com jogos e recreadores capacitados (em breve)',
+      'SPA luxuoso completo para massagens e rituais estéticos sob demanda',
+      'Serviço profissional de massagens relaxantes corporais para revigorar',
+      'Salão de beleza completo dentro das dependências do complexo',
+      'Aluguel de bicicletas prático para explorar a Costa do Sauípe',
+      'Espaço Kids monitorado com ampla programação educativa de lazer',
+      'Campo de tênis de saibro refinado e quadras poliesportivas no complexo',
+      'Sauna seca e a vapor para desintoxicação saudável',
+      'Parque infantil projetado sob a sombra de árvores nativas',
+      'Academia de ginástica moderna com excelentes aparelhos gratuita',
+      'Sessões de massagens revigorantes sob demanda (a pedido)'
+    ],
+    eventsAndConferences: [
+      '8 salas corporativas sofisticadas para reuniões e congressos',
+      'Lindo Palco estruturado para palestras, shows e apresentações',
+      'Centro de Convenções completo de primeira classe',
+      'Serviço profissional e cenários para Casamentos pé-na-areia'
+    ]
+  },
+  {
+    id: 'sauipe-brisa-grand-premium',
+    name: 'Sauipe Brisa Grand Premium',
+    category: 'sauipe',
+    categoryLabel: 'Costa do Sauípe',
+    tagline: 'O auge do luxo exclusivista e design contemporâneo com toques de baianidade e sistema All Inclusive Premium superior!',
+    description: 'Quando você busca nada menos do que há de melhor, o Sauipe Brisa Grand Premium é a escolha absoluta. Suas férias em plenitude em um cenário para contemplar e descansar. O resort recebe você com estilo e nos mais amplos e confortáveis quartos. A piscina exclusiva é de borda infinita para uma paisagem a perder de vista.\n\nAqui você tem mais liberdade, pode explorar tudo o que acontece em outras alas de Costa do Sauípe, ou optar por ficar mais reservado e desfrutar da alta gastronomia do hotel, contendo ilhas temáticas com frutos do mar e carnes nobres, servidos no almoço e no jantar, como pratos que são uma verdadeira viagem pela história da gastronomia Brasileira e de serviços e experiências que só têm aqui.\n\nDesde a sua chegada ao hotel, a primeira impressão é o aroma peculiar, a música suave brasileira e as texturas agradáveis da decoração com um ambiente cercado por natureza. Como em um ritual de acolhimento com toque de baianidade, você receberá toalhinhas frescas e perfumadas para assumir o clima de conforto, que o preparam para as magníficas acomodações, com camas especialmente criadas para o Sauipe Brisa Grand Premium e cobertas com enxoval cuidadosamente selecionado de algodão que te transportam a um paraíso reservado exclusivamente para quem busca conforto, estilo e exclusividade.\n\nO resort une conforto e estilo, com tranquilidade e elegância, oferecendo o prazer de viver uma experiência Premium e reservada. Seus principais diferenciais são a piscina de borda infinita e os serviços exclusivos para quem está hospedado. Você poderá usufruir de todas as atrações do complexo em acomodações exclusivas, com quartos amplos e confortáveis, e uma vista espetacular das praias e piscinas do resort. Perfeito para grandes momentos!',
+    images: [
+      'https://i.postimg.cc/Pxqc2B6T/088344FCC43C2AF926FF412F8C3636FC.jpg',
+      'https://i.postimg.cc/wvbrP0P2/3881044A4CC98CF18C0F13BDEB018071.jpg',
+      'https://i.postimg.cc/SR2PpcFH/4234FCB6EDC92D9FE5EF931F4C31C43A.jpg',
+      'https://i.postimg.cc/fytPhYn8/4466DF61AE42FE86790898BEE7B83709.jpg',
+      'https://i.postimg.cc/PJp7k1s2/79883EDE5AFEF900F50A77BBF30EA5B0.jpg',
+      'https://i.postimg.cc/fytPhYQn/8587E9DAD8F7FE7B7A9C00FC9BDEB7CF.jpg',
+      'https://i.postimg.cc/ZRqgV1fv/8704D564C59063F1445F806E7EFB8551.jpg',
+      'https://i.postimg.cc/NM0VpWNg/8789611B44D4748C0C8B0E7EA818DD95.jpg',
+      'https://i.postimg.cc/W34KXQ9N/972356C38A85CEF7446F3C735833CF91.jpg',
+      'https://i.postimg.cc/C162tmt2/9978E4D0AFBBC499AF8A25E7F7B9CDA1.jpg',
+      'https://i.postimg.cc/tTmcf2fx/9A21DD8D46109E338C43D4EFECF3FD58.jpg',
+      'https://i.postimg.cc/W3fyKXKC/9DC0BB2AF6CFDEF37E0E672D2EDC769D.jpg',
+      'https://i.postimg.cc/sxQLR5d6/9E1707DD15759B4BEDA5D31DCC1E941D.jpg',
+      'https://i.postimg.cc/BbLzG29z/A1C10F1A679CA4AE9AD3466842383589.jpg',
+      'https://i.postimg.cc/Y0GPwQBw/A8D1261EF8FDA4A5861A2C86C783B279.jpg',
+      'https://i.postimg.cc/V6HhTDT4/ADF1935A0110F5766A15194A4FF6FB98.jpg',
+      'https://i.postimg.cc/QtMP0R65/B5C39C9DE8039BCED5CD18CAE81F4E90.png',
+      'https://i.postimg.cc/qR7Yj9mv/B6D0D11666C89E40F0C7FCEF59A89965.jpg',
+      'https://i.postimg.cc/wvbrP0PQ/C1126A531D0B12C7729D6B4B200B5441.jpg',
+      'https://i.postimg.cc/KzYVJd9M/CB32044100073D1C2EE6D08AEBDDE36D.jpg',
+      'https://i.postimg.cc/hvzYqVRg/D693A2A08B1E0C066B94202346D6A6BF.jpg',
+      'https://i.postimg.cc/gJ05NfM8/E18A533E7FFF055B3B482A179A4368B9.jpg',
+      'https://i.postimg.cc/wvbrP0PD/E2527866207CD46318D457D8BE241329.jpg',
+      'https://i.postimg.cc/6q2PNCJD/F3616678C49AD2A1DEA9671A42B2607E.jpg',
+      'https://i.postimg.cc/4dF0MBMc/F55F80932CF2706752795061D3A045D9.jpg'
+    ],
+    features: ['All Inclusive Premium', 'Piscina de Borda Infinita Monumental', 'Serviços de Enxovais Nobres de Algodão', 'Toalhinhas Frescas e Perfumadas na Chegada', 'Acesso Livre a todo o Complexo da Costa'],
+    captainRating: 9.9,
+    captainTip: 'O Brisa Grand Premium oferece o melhor sistema All-Inclusive do complexo, com ilhas de frutos do mar e carnes nobres grelhadas na hora servidas no almoço e jantar!',
+    highlight: 'O ápice do requinte e elegância praiana baiana no Sauípe',
+    bestFor: 'luxo',
+    strategicLocation: [
+      'Rodovia BA-099, Km 76, Costa do Sauípe, Mata de São João - BA',
+      'Localizado à beira-mar com acesso privado direto para a praia da Costa do Sauípe',
+      'Anexo à charmosa Vila Nova da Praia e integrado ao exuberante ambiente natural'
+    ],
+    services: [
+      'Acolhimento especial com toalhinhas aromáticas frescas e música brasileira suave na chegada',
+      'Piscina de borda infinita com uma vista espetacular das praias e coqueiros',
+      'Serviços exclusivos para hóspedes sob regime All-Inclusive Premium',
+      'Livre acesso para explorar tudo o que acontece nas demais alas da Costa do Sauípe'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 15h00m',
+      checkOut: 'Check-out até 12h00m',
+      reception: 'Recepção 24 horas disponível',
+      breakfast: 'Café da Manhã: das 7h00m às 10h30m'
+    },
+    generalServices: [
+      'Recepção acolhedora disponível 24 horas',
+      'Berço disponível mediante solicitação prévia (a pedido)',
+      'Acesso direto e exclusivo à bela praia da Costa',
+      'Estacionamento privativo totalmente gratuito para hóspedes',
+      'Internet sem fio / Wi-Fi de alta velocidade e gratuito',
+      'Loja de Lembranças e souvenirs diferenciados no próprio hotel',
+      'Elevador moderno panorâmico',
+      'Aceita os principais cartões de crédito e débito nacionais e internacionais',
+      'Serviço profissional de arrumação e limpeza diário impecável'
+    ],
+    restaurantsAndBars: [
+      'Restaurante principal com alta gastronomia, ilhas temáticas gourmet no almoço e jantar',
+      'Café da manhã rico e completo (das 7h00m às 10h30m)',
+      'Almoço completo com frutos do mar e carnes nobres (das 12h30m às 15h00m)',
+      'Chá da Tarde delicioso para renovar as energias (das 17h00m às 19h00m)',
+      'Jantar elegante com pratos que contam histórias do Brasil (das 19h00m às 22h00m)',
+      'Ceia Noturna providencial para a madrugada (das 23h30m às 05h00m)',
+      'Lobby Bar relaxante e sofisticado (das 10h00m à 01h00m)',
+      'Bar de Piscina completo com drinks exóticos (das 10h00m às 18h00m)',
+      'Serviço de Quarto disponível sob demanda (das 8h00m às 23h00m)'
+    ],
+    wellnessAndSports: [
+      'Exclusiva Piscina com borda infinita de frente para a enseada',
+      'SPA requintado com rituais de massagens e estética para relaxamento absoluto',
+      'Aluguel de bicicletas prático para desbravar e passear por todo o resort',
+      'Espaço Kids monitorado com brinquedos e lazer divertido',
+      'Ambientes cercados por uma belíssima natureza preservada',
+      'Passeio à Vila Nova da Praia e orlas integradas'
+    ]
+  },
+  {
+    id: 'incasa-private-residence',
+    name: 'InCasa Private Residence Club',
+    category: 'rio-quente',
+    categoryLabel: 'Rio Quente',
+    tagline: 'O auge da exclusividade, privacidade e requinte em residências boutique com serviços personalizados premium!',
+    description: 'O InCasa Private Residence Club redefine o conceito de luxo e privacidade na exuberante região de Rio Quente. Um condomínio fechado boutique de altíssimo padrão que oferece residências luxuosas, espaçosas e inteiramente planejadas, unindo a privacidade de uma sofisticada casa de férias com os serviços de hotelaria de primeira classe.\n\nCada residência conta com amplas suítes com enxovais nobres e macios, cozinha de design planejada equipada com eletrodomésticos de última geração, sala de estar integrada e uma esplêndida varanda gourmet privativa com churrasqueira suspensa da linha premium e piscina própria ou lounges integrados.\n\nHóspedes contam com transporte circular exclusivo expresso para transitar pelo complexo do Rio Quente Resorts, onde dispõem de acesso ilimitado e prioritário ao Hot Park com a maravilhosa Praia do Cerrado, e ao lendário Parque das Fontes de águas naturalmente quentes, correntes e relaxantes.',
+    images: [
+      'https://i.postimg.cc/hhF2SZVv/1550382.webp',
+      'https://i.postimg.cc/fySHQQSx/1550383.webp',
+      'https://i.postimg.cc/Znvfzzvp/1550384.webp',
+      'https://i.postimg.cc/XXMsV19p/1550385.webp',
+      'https://i.postimg.cc/kGRjPPR8/1550386.webp',
+      'https://i.postimg.cc/D04C334X/1550387.webp',
+      'https://i.postimg.cc/tJnrGGnZ/1550388.webp',
+      'https://i.postimg.cc/8cfyggf7/1550389.webp',
+      'https://i.postimg.cc/zvHdYYHV/1550390.webp',
+      'https://i.postimg.cc/XqB266B7/1550391.webp',
+      'https://i.postimg.cc/1XVW11Vz/1550392.webp',
+      'https://i.postimg.cc/gjLMbbL2/1550393.webp',
+      'https://i.postimg.cc/BbPhffPZ/1550394.webp'
+    ],
+    features: ['Privacidade de Casas Boutique', 'Serviço de Concierge Exclusivo', 'Acesso Ilimitado ao Hot Park e Parque das Fontes', 'Churrasqueira e Varanda Gourmet Privativas', 'Cozinha Planejada e Equipada Premium'],
+    captainRating: 9.9,
+    captainTip: 'O auge absoluto do luxo reservado em Rio Quente! Oferece residências espetaculares de alto padrão perfeitas para famílias que desejam total tranquilidade de uma vila boutique com todo o lazer dos parques termais inclusos.',
+    highlight: 'Sofisticação e privacidade total em residências boutique com assessoria vip',
+    bestFor: 'luxo',
+    strategicLocation: [
+      'Complexo Rio Quente Resorts, Rio Quente - GO',
+      'Área nobre, reservada e de privacidade do complexo termal',
+      'Acesso vip e prioritário ao Hot Park e ao Parque das Fontes'
+    ],
+    services: [
+      'Serviço personalizado de concierge para planejamento de passeios e estada',
+      'Acesso livre prioritário ao fabuloso Hot Park com Praia do Cerrado',
+      'Acesso 24 horas liberado às águas termais correntes do Parque das Fontes',
+      'Serviço exclusivo de buffet e churrasco privativo na residência (a pedido)'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 15h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Portaria e recepção exclusivas 24 horas (Aberto 24h)',
+      breakfast: 'Serviço sob demanda de café da manhã entregue na residência'
+    },
+    generalServices: [
+      'Recepção calorosa disponível 24 horas por dia',
+      'Portaria e equipe exclusiva de segurança 24 horas no condomínio',
+      'Internet sem fio / Wifi Gratuito de banda larga de alta velocidade dedicada',
+      'Estacionamento privativo inteiramente Gratuito para hóspedes (múltiplas vagas)',
+      'Acessibilidade com rampas estruturadas para Cadeira de Rodas',
+      'Quartos espaçosos adaptados para Deficientes com banheiros providenciais',
+      'Berço e cadeira alta disponíveis mediante solicitação prévia (a pedido)',
+      'Serviço diário de arrumação profissional e higienização impecáveis',
+      'Ar-condicionado regulável moderno em todos os cômodos',
+      'Aceita cartão de crédito, débito e as principais bandeiras'
+    ],
+    restaurantsAndBars: [
+      'Espaço gourmet com churrasqueira de design na varanda de cada residência',
+      'Serviço de entrega com cardápio gastronômico no próprio chalé ou casa',
+      'Acesso irrestrito a todos os bares, churrascarias e restaurantes do complexo'
+    ],
+    wellnessAndSports: [
+      'Acesso prioritário livre ao maravilhoso Parque das Fontes do complexo termal',
+      'Acesso ilimitado ao Hot Park com múltiplos toboáguas e atrações radicais',
+      'Academia moderna completa de ginástica com aparelhos de primeira linha',
+      'Quadras de saibro de tênis e poliesportivas no complexo do resort'
+    ],
+    eventsAndConferences: [
+      'Área privativa excelente para eventos e pequenas comemorações íntimas'
+    ]
+  },
+  {
+    id: 'rio-quente-refugio-grand-premium',
+    name: 'Rio Quente Refúgio Grand Premium',
+    category: 'rio-quente',
+    categoryLabel: 'Rio Quente',
+    tagline: 'O ápice da hotelaria contemporânea requintada com fontes de água termais exclusivas e atendimento impecável!',
+    description: 'O Rio Quente Refúgio Grand Premium surge como o novo padrão em termos de luxo contemporâneo, elegância e acolhimento na região termal. Criado detalhe por detalhe para quem busca pleno descanso, privacidade e conexão profunda com as águas miraculosas do complexo, ele apresenta arquitetura elegante perfeitamente casada com a biodiversidade local.\n\nSuas suítes acolhedoras ostentam varandas privativas com vistas privilegiadas do parque, além de enxoval de altíssimo padrão, ar-condicionado de última geração e mimos personalizados. O hotel conta com uma formidável piscina privativa de águas termais correntes que nascem diretamente das fontes geotermais do local.\n\nSeus hóspedes dispõem de assessoria completa e prioritária para curtir o complexo aquático Hot Park, o exuberante Parque das Fontes e as belas atrações lúdicas integradas.',
+    images: [
+      'https://i.postimg.cc/X7wRr9XY/1448971.jpg',
+      'https://i.postimg.cc/3J5Mrt8L/2234989.jpg',
+      'https://i.postimg.cc/Kvn61t4G/2234990.jpg',
+      'https://i.postimg.cc/HsQqrbjD/2234992.jpg',
+      'https://i.postimg.cc/gkF9cgzv/2234993.jpg',
+      'https://i.postimg.cc/ncb8V3Vf/2234994.jpg',
+      'https://i.postimg.cc/m2QvP7kK/2234995.jpg',
+      'https://i.postimg.cc/WbMBd0tv/2234996.jpg',
+      'https://i.postimg.cc/sDdFfTjt/2234997.jpg',
+      'https://i.postimg.cc/5Ndc9s4S/2235000.jpg',
+      'https://i.postimg.cc/sDdFfTjm/2235001.jpg',
+      'https://i.postimg.cc/BQ9WZmZJ/2235002.jpg',
+      'https://i.postimg.cc/L6Kd4x42/2235003.jpg',
+      'https://i.postimg.cc/Ghw03XLQ/2235005.jpg',
+      'https://i.postimg.cc/VLQysKfG/2235006.jpg',
+      'https://i.postimg.cc/TYM82t2X/2235008.jpg',
+      'https://i.postimg.cc/xTKwXLqQ/2235009.jpg',
+      'https://i.postimg.cc/SNF0QgSV/2235010.jpg',
+      'https://i.postimg.cc/15hxRvmD/2235011.jpg',
+      'https://i.postimg.cc/05JRqTsW/2235012.jpg',
+      'https://i.postimg.cc/jd0VqMxM/2235014.jpg',
+      'https://i.postimg.cc/nVQbtyJ3/2235015.jpg'
+    ],
+    features: ['Piscina Termal de Águas Correntes Exclusiva', 'Design Contemporâneo de Alto Padrão', 'Acesso Vip Ilimitado ao Hot Park', 'Serviço de Concierge Dedicado', 'Mimos e Confortos Personalizados'],
+    captainRating: 9.8,
+    captainTip: 'O hotel boutique mais sofisticado e luxuoso de todo o complexo de Rio Quente! Oferece piscinas privativas termais deliciosas e tratamento personalizado de concierge. Perfeito para casais exigentes que valorizam os detalhes de qualidade.',
+    highlight: 'Hospitalidade refinada contemporânea e exclusividade geotermal',
+    bestFor: 'luxo',
+    strategicLocation: [
+      'Complexo Rio Quente Resorts, Esplanada, Rio Quente - GO',
+      'Posição reservada, cercada de jardins e com extrema privacidade',
+      'Acesso direto e privativo ao Parque das Fontes e Hot Park'
+    ],
+    services: [
+      'Check-in e check-out express com atendimento prioritário e concierge',
+      'Serviço atencioso e exclusivo de garçom na exuberante piscina privativa',
+      'Acesso prioritário ilimitado a todas as atrações termais do complexo',
+      'Amenities ecológicos finos e rouparia francesa de fios egípcios'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 15h00m',
+      checkOut: 'Check-out até 12h00m',
+      reception: 'Recepção calorosa disponível 24 horas por dia (Aberto 24h)',
+      breakfast: 'A partir das 7h00m Até às 11h00m com receitas gourmet'
+    },
+    generalServices: [
+      'Recepção 24 horas premium com conciência',
+      'Internet sem fio / Wifi Gratuito de altíssima velocidade em todo o hotel',
+      'Estacionamento privativo Gratuito para hóspedes (com manobrista de cortesias)',
+      'Instalações e suítes com acessibilidade certificada para Cadeira de Rodas',
+      'Acomodações requintadas adaptadas para Deficientes e PCD',
+      'Berço e equipamentos infantis disponíveis mediante solicitação prévia (a pedido)',
+      'Serviço profissional de limpeza diário impecável e higienização refinada',
+      'Elevador moderno panorâmico rápido e inteligente',
+      'Aceita os principais cartões de crédito e débito internacionais e nacionais'
+    ],
+    restaurantsAndBars: [
+      'Restaurante Grand Refúgio com completa gastronomia contemporânea e pratos de autor',
+      'Lobby pianobar acolhedor com carta de vinhos seleta e cafés especiais nacionais',
+      'Bar de Piscina com coquetelaria fina assinada por mixologistas experientes'
+    ],
+    wellnessAndSports: [
+      'Espetacular Piscina privativa termal com águas correntes e lounges',
+      'Acesso integral livre ao magnífico complexo aquático Hot Park',
+      'Acesso 24 horas liberado às belas nascentes termais do Parque das Fontes',
+      'Academia com aparelhos modernos de ginástica com bela vista panorâmica',
+      'SPA requintado com rituais de massagens exclusivas e rituais relaxantes'
+    ],
+    eventsAndConferences: [
+      'Salas requintadas corporativas e assessoria no centro de eventos do resort'
+    ]
+  },
+  {
+    id: 'rio-quente-hotel-pousada',
+    name: 'Rio Quente Hotel Pousada',
+    category: 'rio-quente',
+    categoryLabel: 'Rio Quente',
+    tagline: 'O lendário e acolhedor pioneiro de Rio Quente, localizado literalmente a poucos passos do Parque das Fontes!',
+    description: 'O Rio Quente Hotel Pousada representa a essência histórica e o ponto de partida de toda a magia geotermal do complexo. Mantendo o charme tradicional de suas origens, mas totalmente modernizado e perfeitamente integrado a jardins tropicais centenários, este hotel oferece o máximo em comodidade.\n\nSua localização é simplesmente imbatível dentro do complexo: posicionado a meros passos do deslumbrante Parque das Fontes, permitindo que você tome banhos termais relaxantes em piscinas naturais de águas quentes e correntes 24 horas por dia, com facilidade inigualável. Os quartos são muito confortáveis e climatizados, equipados com Smart TV, Wi-Fi excelente, secador de cabelo, amenidades e cofre.\n\nCom uma gastronomia regional deliciosa servida em fartos buffets e acesso gratuito irrestrito ao Hot Park, o Hotel Pousada é a escolha consagrada para gerações de famílias que valorizam conforto e localização primorosa.',
+    images: [
+      'https://i.postimg.cc/pTh7RF3S/1047834.jpg',
+      'https://i.postimg.cc/JnDgMk9V/1152065.jpg',
+      'https://i.postimg.cc/k5hZ0cYp/1155469.jpg',
+      'https://i.postimg.cc/W4fKBnYB/1155471.webp',
+      'https://i.postimg.cc/bvFM7TV0/1155472.jpg',
+      'https://i.postimg.cc/KYsV6NpL/1155473.webp',
+      'https://i.postimg.cc/XvDhR81w/1155474.webp',
+      'https://i.postimg.cc/PqFcg4V6/1155477.webp',
+      'https://i.postimg.cc/TPHSz9NC/1155479.webp',
+      'https://i.postimg.cc/KYsV6Np0/1155484.webp',
+      'https://i.postimg.cc/hjzwcdNy/1165501.jpg',
+      'https://i.postimg.cc/pTh7RF3g/1168488.jpg',
+      'https://i.postimg.cc/PqFcg4V4/1168489.jpg',
+      'https://i.postimg.cc/xdF7wRpF/1168490.jpg',
+      'https://i.postimg.cc/fbgFGKqc/1261126.jpg',
+      'https://i.postimg.cc/FRdqNL2m/1448970.jpg',
+      'https://i.postimg.cc/hG3wkrZH/751189.jpg',
+      'https://i.postimg.cc/fLtFD91G/751191.jpg'
+    ],
+    features: ['Localização Central Espetacular', 'A Meros Passos do Parque das Fontes', 'Tradição e Hospitalidade Históricas', 'Acesso Grátis ao Hot Park e Atrações', 'Apartamentos Renovados e Aconchegantes'],
+    captainRating: 9.7,
+    captainTip: 'A melhor e mais icônica localização de todo o Rio Quente! Ficar hospedado na Pousada significa ter as piscinas e as fontes de águas quentes literalmente na porta do seu quarto. Excelente para famílias com crianças pequenas e idosos.',
+    highlight: 'O charmoso e icônico pioneiro das águas quentes do complexo',
+    bestFor: 'família',
+    strategicLocation: [
+      'Complexo Rio Quente Resorts, Esplanada, Rio Quente - GO',
+      'No coração do complexo, colado no Parque das Fontes',
+      'A poucos passos das principais pontes e do toldo de eventos'
+    ],
+    services: [
+      'Acesso imediato, prioritário e ilimitado ao Parque das Fontes e Hot Park',
+      'Programação cultural animada para todas as faixas de idade no Toldo do Bosque',
+      'Copa do bebê limpa e providencial totalmente equipada para os hóspedes',
+      'Atendimento caloroso, prestativo e tradicional de alto de padrão'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 15h00m',
+      checkOut: 'Check-out até 12h00m',
+      reception: 'Recepção 24 horas disponível (Aberto 24h)',
+      breakfast: 'A partir das 7h00m Até às 10h30m'
+    },
+    generalServices: [
+      'Recepção calorosa disponível 24 horas por dia',
+      'Internet sem fio / Wifi Gratuito de excelente velocidade nas dependências',
+      'Estacionamento amplo e gratuito para uso dos hóspedes',
+      'Acessibilidade com rampas de inclinação suave para Cadeira de Rodas',
+      'Quartos confortáveis e acessíveis para Deficientes e PCD',
+      'Berço disponível nas suítes mediante solicitação prévia (a pedido)',
+      'Serviço profissional de limpeza diária de quartos',
+      'Guarda de Bagagem prático no saguão',
+      'Aceita os principais cartões de crédito e débito nacionais'
+    ],
+    restaurantsAndBars: [
+      'Restaurante da Pousada servindo farto buffet de pratos regionais deliciosos',
+      'Bar de Piscina servindo sucos, cervejas trincando e petiscos goianos clássicos',
+      'Cafeteria e Lobby Bar aconchegante com drinks e cafés tradicionais'
+    ],
+    wellnessAndSports: [
+      'Localização vizinha com acesso 24h liberado ao lindo Parque das Fontes',
+      'Acesso ilimitado e prioritário ao complexo termal Hot Park',
+      'Brinquedoteca e Espaço Kids com equipe atenciosa de monitores',
+      'Quadras esportivas e de saibro de tênis integradas ao complexo'
+    ],
+    eventsAndConferences: [
+      'Acesso direto e simplificado ao centro de convenções principal do complexo'
+    ]
+  },
+  {
+    id: 'rio-quente-hotel-cristal',
+    name: 'Rio Quente Hotel Cristal',
+    category: 'rio-quente',
+    categoryLabel: 'Rio Quente',
+    tagline: 'O luxuoso e sustentável oásis de arquitetura exuberante com a belíssima Piscina Infinitus!',
+    description: 'O Rio Quente Hotel Cristal destaca-se no complexo como referência internacional de sustentabilidade de alto padrão, harmonizando perfeitamente luxo e respeito rigoroso à biodiversidade com paisagismo exuberante de renomados arquitetos brasileiros.\n\nSua principal joia é a Piscina Infinitus: uma majestosa piscina termal privativa com borda infinita e águas naturalmente aquecidas correntes que descortinam uma esplêndida paisagem florestal do vale botânico. Os apartamentos primam pela decoração e uso inteligente de materiais sustentáveis nobres, varandas enormes que acolhem sofás de relaxamento e completo enxoval de grife.\n\nHóspedes desfrutam de requintada gastronomia autoral, e contam com trânsito circular expresso gratuito para aproveitar ao máximo a Praia do Cerrado no Hot Park e os encantos do Parque das Fontes.',
+    images: [
+      'https://i.postimg.cc/fL9H6h9V/1145053.jpg',
+      'https://i.postimg.cc/QCZ6DnQC/1145055.webp',
+      'https://i.postimg.cc/brf6PFxV/1145057.webp',
+      'https://i.postimg.cc/NMHNWwHy/1145058.jpg',
+      'https://i.postimg.cc/Bbfh3wTg/1145060.jpg',
+      'https://i.postimg.cc/Bbfh3wTL/1145062.jpg',
+      'https://i.postimg.cc/zvYdNPCk/1145343.jpg',
+      'https://i.postimg.cc/J03pzcxp/1152069.jpg',
+      'https://i.postimg.cc/tJGrbm3n/1154202.jpg',
+      'https://i.postimg.cc/Wzc9VfGg/1154207.jpg',
+      'https://i.postimg.cc/L5FyS0tB/1165470.jpg',
+      'https://i.postimg.cc/L5FyS0tt/1165472.jpg',
+      'https://i.postimg.cc/MHJswr7R/1261127.jpg',
+      'https://i.postimg.cc/DZXCtKXf/1490386.jpg',
+      'https://i.postimg.cc/RhxPmb7n/1490387.jpg',
+      'https://i.postimg.cc/J0CT8dNG/1490388.jpg',
+      'https://i.postimg.cc/762Bpy27/1490390.jpg',
+      'https://i.postimg.cc/1X1WSYG4/1490391.jpg',
+      'https://i.postimg.cc/SRbZ4t63/1490392.jpg',
+      'https://i.postimg.cc/hvRCn3Lm/1490393.jpg',
+      'https://i.postimg.cc/yxCfKrmG/1490394.jpg',
+      'https://i.postimg.cc/PJbS5zy6/1490395.jpg',
+      'https://i.postimg.cc/7hrB4Q39/1490396.jpg',
+      'https://i.postimg.cc/4yR8GF6W/1490397.jpg',
+      'https://i.postimg.cc/xCzsWSzL/1490398.jpg',
+      'https://i.postimg.cc/wvmWSdm3/1490399.jpg',
+      'https://i.postimg.cc/D0Qxwd6j/1490400.jpg'
+    ],
+    features: ['Piscina Infinitus de Borda Infinita', 'Arquitetura Sustentável Premium', 'Varandas Espaçosas Panorâmicas', 'Acesso Prioritário ao Hot Park', 'Gastronomia Regional e Contemporânea Fina'],
+    captainRating: 9.8,
+    captainTip: 'Um dos hotéis de maior prestígio e beleza estética do resort! Sua piscina Infinitus possui águas quentes espetaculares de borda infinita com vista incrível. Excelente gastronomia contemporânea e facilidades vip de atendimento.',
+    highlight: 'A formidável fusão de design orgânico sustentável, águas aquecidas e requinte',
+    bestFor: 'luxo',
+    strategicLocation: [
+      'Complexo Rio Quente Resorts, Esplanada, Rio Quente - GO',
+      'Localização panorâmica e proeminente no topo da esplanada',
+      'Facilmente conectado por transporte circular expresso circular gratuito'
+    ],
+    services: [
+      'Check-in facilitado de alto nível com serviço de conciência no saguão',
+      'Serviço atencioso de buffet de gastronomia contemporânea seleta',
+      'Transporte circular gratuito entre as atrações e pontos do complexo',
+      'Assessoria prioritária para curtir as grandes atrações do Hot Park'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 15h00m',
+      checkOut: 'Check-out até 12h00m',
+      reception: 'Recepção elegante 24 horas disponível (Aberto 24h)',
+      breakfast: 'A partir das 7h00m Até às 10h30m'
+    },
+    generalServices: [
+      'Recepção de alto padrão disponível 24 horas',
+      'Internet sem fio / Wifi Gratuito de banda larga em todos os andares',
+      'Estacionamento seguro e gratuito privativo para os hóspedes',
+      'Caminhos arborizados e rampas com acessibilidade para Cadeira de Rodas',
+      'Suítes contemporâneas adaptadas com acessibilidade para Deficientes e PCD',
+      'Berço de madeira de lei disponível mediante solicitação prévia (a pedido)',
+      'Serviço profissional de limpeza de quartos e higienização impecáveis',
+      'Equipe Multilíngue altamente capacitada preparada para acolher você',
+      'Elevadores modernos de excelente circulação e silenciosos',
+      'Aceita cartão de crédito, débito e as principais bandeiras litorâneas'
+    ],
+    restaurantsAndBars: [
+      'Restaurante da Mata Buffet servindo extraordinários sabores contemporâneos e regionais',
+      'Bar de Piscina Infinitus com extraordinária mixologia de cocktails finos e sumos',
+      'Lobby Bar requintado com carta de vinhos finos e ótimos aperitivos gourmet'
+    ],
+    wellnessAndSports: [
+      'Espetacular Piscina Infinitus privativa termal com borda infinita deslumbrante',
+      'Acesso 24 horas garantido e livre às nascentes de águas quentes do Parque das Fontes',
+      'Acesso de primeira classe com bilheteria prioritária para curtir o Hot Park',
+      'Brinquedoteca e Espaço Kids com atividades de educação ambiental monitorada'
+    ],
+    eventsAndConferences: [
+      'Ambientes para reuniões corporativas e pacotes de comemorações'
+    ]
+  },
+  {
+    id: 'rio-quente-hotel-luupi',
+    name: 'Rio Quente Hotel Luupi',
+    category: 'rio-quente',
+    categoryLabel: 'Rio Quente',
+    tagline: 'Apartamentos gigantes de até 2 banheiros perfeitamente desenhados para férias imensas de famílias numerosas!',
+    description: 'O Rio Quente Hotel Luupi é a escolha soberana do complexo quando o objetivo é espaço generoso, praticidade inteligente e grande custo-benefício para grupos ou famílias de múltiplos integrantes. Sediado a curta e prática distância da guarita central, ele oferece apartamentos colossais que acolhem de forma super aconchegante até 7 hóspedes com total conforto.\n\nPossui em suas dependências uma maravilhosa piscina exclusiva de águas termais aquecidas, ideais para mergulhos relaxantes sob a sombra de árvores após o agito dos parques aquáticos. O Luupi oferece gastronomia deliciosa com o seu café da manhã saboroso completo incluído na diária, recheado de pães, salgados goianos e deliciosos doces.\n\nHóspedes ainda usufruem de trânsito circular expresso gratuito circular e de livre acesso ao imenso complexo do Hot Park e ao deslumbrante Parque das Fontes.',
+    images: [
+      'https://i.postimg.cc/PqLKwkKM/1155394.jpg',
+      'https://i.postimg.cc/1zgMqZM0/1155395.jpg',
+      'https://i.postimg.cc/1zgMqZMv/1155396.jpg',
+      'https://i.postimg.cc/vm1XVdXq/1155397.jpg',
+      'https://i.postimg.cc/vZ23Tm76/1155398.jpg',
+      'https://i.postimg.cc/W4DSkPS8/1155399.jpg',
+      'https://i.postimg.cc/XY1QqvK5/1155403.jpg',
+      'https://i.postimg.cc/R03GHzGn/1165425.jpg',
+      'https://i.postimg.cc/pd9kFtkk/1165434.jpg',
+      'https://i.postimg.cc/0N6ZwqZf/1165436.jpg',
+      'https://i.postimg.cc/htZpvG8d/1165439.jpg',
+      'https://i.postimg.cc/NjCpF08m/1167136.jpg',
+      'https://i.postimg.cc/FKfGLQGS/1167137.jpg',
+      'https://i.postimg.cc/SKXVMpVM/1167138.jpg',
+      'https://i.postimg.cc/R03GHzGP/1167139.jpg',
+      'https://i.postimg.cc/7LCX2yXM/1167140.jpg',
+      'https://i.postimg.cc/3wy9vH9p/1167149.jpg',
+      'https://i.postimg.cc/GmgqtpP8/1261129.jpg',
+      'https://i.postimg.cc/JhyKkWKY/1448964.jpg',
+      'https://i.postimg.cc/XY1QqvKv/1449034.jpg',
+      'https://i.postimg.cc/L8QN5sk8/1449035.jpg',
+      'https://i.postimg.cc/0yXcjNG5/1449036.jpg',
+      'https://i.postimg.cc/kgYfG5NX/1449038.jpg',
+      'https://i.postimg.cc/bwV3rv0z/1449039.jpg',
+      'https://i.postimg.cc/Z5sVnqPZ/1449040.jpg',
+      'https://i.postimg.cc/YCDb0SNw/1449041.jpg',
+      'https://i.postimg.cc/nhS0rLKn/1449044.jpg',
+      'https://i.postimg.cc/K8pJjY7X/1449045.jpg',
+      'https://i.postimg.cc/XY1QqvK6/1449046.jpg',
+      'https://i.postimg.cc/zG20vfw8/1449047.jpg',
+      'https://i.postimg.cc/Cxrm5KCT/1449048.jpg'
+    ],
+    features: ['Suítes Imensas com 2 Banheiros', 'Ideal para Famílias de até 7 Pessoas', 'Grande Custo-Benefício e Espaço', 'Acesso Livre ao Hot Park', 'Circular Expresso Gratuito a Cada 20 Minutos'],
+    captainRating: 9.6,
+    captainTip: 'A escolha mais econômica e de excelente conforto para famílias grandes! Apartamentos gigantescos com até dois banheiros, que garantem o conforto de todos. Contam com piscina própria termal e transporte circular veloz e grátis para os parques.',
+    highlight: 'A escolha insuperável para famílias que precisam de muito espaço e excelente tarifa',
+    bestFor: 'família',
+    strategicLocation: [
+      'Complexo Rio Quente Resorts, Esplanada, Rio Quente - GO',
+      'Posição prática anexa com guarita de fácil transporte interno',
+      'Servido por circular expresso regular de hóspedes a cada 20 minutos'
+    ],
+    services: [
+      'Circular interno e gratuito circulando a cada 20 minutos para os parques',
+      'Acesso garantido ilimitado ao Hot Park com Praia do Cerrado',
+      'Acesso 24 horas liberado às místicas fontes naturais do Parque das Fontes',
+      'Copa do bebê limpa e com facilidade para preparos básicos'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 15h00m',
+      checkOut: 'Check-out até 12h00m',
+      reception: 'Recepção 24 horas disponível (Aberto 24h)',
+      breakfast: 'A partir das 7h00m Até às 10h30m'
+    },
+    generalServices: [
+      'Recepção acolhedora disponível 24 horas por dia',
+      'Internet sem fio / Wi-Fi Gratuito de ótima velocidade nos quartos e áreas comuns',
+      'Estacionamento privativo e totalmente gratuito para hóspedes no local',
+      'Acessibilidade com rampas de fácil trânsito para Cadeira de Rodas',
+      'Quartos e instalações com suporte excelente para Deficientes e PCD',
+      'Elevadores rápidos de excelente conservação e sinalizados',
+      'Berço disponível nas suítes mediante solicitação prévia (a pedido)',
+      'Serviço prestativo de limpeza e arrumação de quartos diário',
+      'Aceita os principais cartões de crédito e débito nacionais'
+    ],
+    restaurantsAndBars: [
+      'Restaurante do Luupi com amplo e diversificado buffet de café da manhã goiano',
+      'Bar de Piscina familiar com bebidas refrescantes, porções e espetinhos gostosos'
+    ],
+    wellnessAndSports: [
+      'Excelente Piscina termal aquecida com espreguiçadeiras e quiosque próprio',
+      'Acesso integral ilimitado ao complexo aquático Hot Park',
+      'Acesso livre 24 horas ao espetacular Parque das Fontes',
+      'Brinquedoteca alegre e área infantil monitorada'
+    ],
+    eventsAndConferences: [
+      'Facilidade de uso do moderno centro de convenções do resort'
+    ]
+  },
+  {
+    id: 'rio-quente-hotel-giardino',
+    name: 'Rio Quente Hotel Giardino',
+    category: 'rio-quente',
+    categoryLabel: 'Rio Quente',
+    tagline: 'O irresistível charme e aconchego de uma villa italiana com excelentes apartamentos duplex para toda a família!',
+    description: 'O Rio Quente Hotel Giardino recria o clima romântico, bucólico e florido de uma graciosa vila do interior da Itália. Com fachada e detalhes ornamentados que transportam você para terras europeias, ele esbanja aconchego, calor humano e excelente relação de custo-benefício.\n\nOferece acomodações consideravelmente espaçosas, incluindo magníficos apartamentos duplex perfeitos para manter unidas as famílias de múltiplos componentes sem abrir mão do conforto. Sua deliciosa área de lazer possui piscina própria geotermal circundada por jardins impecavelmente cuidados e parquinho para diversão das crianças.\n\nO restaurante do Giardino convida a uma viagem clássica com farto café da manhã recheado de pães artesanais, bolos, frios e frutas suculentas. Oferece transporte circular grátis expresso constante de hóspedes ligando o hotel à entrada dos parques e ao místico Parque das Fontes.',
+    images: [
+      'https://i.postimg.cc/VkhW1V1k/1165476.jpg',
+      'https://i.postimg.cc/htY1g5gG/1165478.jpg',
+      'https://i.postimg.cc/BnzBsVs6/1165481.jpg',
+      'https://i.postimg.cc/RZYL9D9h/1165482.jpg',
+      'https://i.postimg.cc/x1Z3Y4YG/1459925.jpg',
+      'https://i.postimg.cc/jjJQj4d3/1459930.jpg',
+      'https://i.postimg.cc/TPWqPJYr/1459931.jpg',
+      'https://i.postimg.cc/nhWGZPZY/1459932.jpg',
+      'https://i.postimg.cc/LsZBs36P/1459933.jpg',
+      'https://i.postimg.cc/bw598B8g/1459935.webp',
+      'https://i.postimg.cc/hG7bG1Pb/1459936.jpg',
+      'https://i.postimg.cc/DwNPFMFg/1459937.jpg',
+      'https://i.postimg.cc/LsZBs363/1459938.jpg',
+      'https://i.postimg.cc/mrFNry23/1459939.jpg',
+      'https://i.postimg.cc/VNbBNWLn/1459940.jpg',
+      'https://i.postimg.cc/25BF578s/1459941.jpg',
+      'https://i.postimg.cc/mrFNry2V/1459942.jpg',
+      'https://i.postimg.cc/y8GyBbBm/1459943.jpg',
+      'https://i.postimg.cc/MGjbGmKY/1459944.jpg',
+      'https://i.postimg.cc/vm6LmtHK/1459945.jpg',
+      'https://i.postimg.cc/8CrBCmPW/1459946.jpg',
+      'https://i.postimg.cc/Cx2sYQYq/1459962.jpg',
+      'https://i.postimg.cc/Gmfxr5r8/1459963.jpg',
+      'https://i.postimg.cc/jjJQj4S0/1459966.jpg'
+    ],
+    features: ['Temática Romântica de Vila Italiana', 'Apartamentos Espaçosos Duplex', 'Piscina de Água Termal Privada', 'Acesso Grátis ao Hot Park e Atrações', 'Excelente Custo-Benefício'],
+    captainRating: 9.6,
+    captainTip: 'Um dos ambientes de clima mais gostoso e poético do resort! Os apartamentos duplex confortáveis são perfeitos para organizar as famílias maiores com excelente privacidade. Possui transporte rotativo prático e frequente.',
+    highlight: 'O encanto poético das vilas italianas envolvido pelas águas termais de Rio Quente',
+    bestFor: 'família',
+    strategicLocation: [
+      'Complexo Rio Quente Resorts, Esplanada, Rio Quente - GO',
+      'Apenas 800 metros da portaria central das famosas termas',
+      'Fácil acesso rotativo através do circular regular de hóspedes gratuito'
+    ],
+    services: [
+      'Transporte expresso circular de passageiros a cada 20 minutos gratuito',
+      'Acesso ilimitado e prioritário ao Hot Park com Praia do Cerrado',
+      'Acesso 24 horas garantido e livre às piscinas termais do Parque das Fontes',
+      'Copa baby limpa e equipada para preparos práticos rápidos e mamadeiras'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 15h00m',
+      checkOut: 'Check-out até 12h00m',
+      reception: 'Recepção 24 horas disponível (Aberto 24h)',
+      breakfast: 'A partir das 7h00m Até às 10h30m'
+    },
+    generalServices: [
+      'Loja de Lembranças e presentes artesanais no próprio lobby',
+      'Quartos duplex consideravelmente espaçosos e adaptados para Deficientes',
+      'Aceita os principais cartões de crédito e débito nacionais e bandeiras',
+      'Equipe Multilíngue altamente prestativa e amigável',
+      'Acessibilidade com rampas qualificadas de fácil trânsito para Cadeira de Rodas',
+      'Serviço profissional de arrumação e limpeza diário impecáveis',
+      'Recepção calorosa disponível 24 horas por dia',
+      'Estacionamento seguro inteiramente Gratuito para hóspedes',
+      'Elevador moderno panorâmico e silencioso de ótima velocidade',
+      'Internet sem fio / Wifi Gratuito de ótima conexão no hotel',
+      'Serviço de Babá qualificado disponível sob agendamento (a pedido/tarifa extra)'
+    ],
+    restaurantsAndBars: [
+      'Restaurante Giardino com farto café da manhã e pratos da culinária italiana e goiana',
+      'Bar de Piscina com ótimos petiscos, porções fritas e refrescos deliciosos',
+      'Bistrô charmoso no lobby com vinhos e queijos especiais nacionais'
+    ],
+    wellnessAndSports: [
+      'Acesso estendido prioritário a todas as atrações termais do complexo',
+      'Acesso ilimitado ao Hot Park e Praia do Cerrado',
+      'Piscina privativa termal com lindo paisagismo e jardins floridos',
+      'Academia com ótimos aparelhos modernos de ginástica gratuita no resort',
+      'Brinquedoteca alegre e área infantil monitorada'
+    ],
+    eventsAndConferences: [
+      'Salas para convenções corporativas modernas e equipadas no complexo'
+    ]
+  },
+  {
+    id: 'rio-quente-eco-chales',
+    name: 'Rio Quente Eco Chalés',
+    category: 'rio-quente',
+    categoryLabel: 'Rio Quente',
+    tagline: 'O abraço rústico da natureza em chalés privativos silenciosos rodeados por belos bosques do Cerrado!',
+    description: 'O Rio Quente Eco Chalés é a joia bucólica e pacífica do complexo para viajantes que privilegiam total desconexão do estresse urbano, repouso no pé da serra e contato integral com a biodiversidade. Sediado em área privativa e cercado por majestosas árvores nativas do Cerrado paulista e goiano, ele exala um clima de pura tranquilidade.\n\nSuas acomodações consistem em charmosos chalés térmicos individuais com varanda privativa munida de preguiçosa rede de balanço, ar-condicionado, frigobar e banheiros reformados. Hóspedes deliciam-se com um formidável café da manhã da fazenda repleto de delícias da roça cozinhadas com carinho.\n\nSua área de lazer oferece piscina termal própria silenciosa cercada por árvores nativas. Através do transporte circular gratuito integrado, seus hóspedes alcançam as grandes atrações do Hot Park e podem se banhar no Parque das Fontes termais 24 horas por dia.',
+    images: [
+      'https://i.postimg.cc/9FFd9hQb/1154274.jpg',
+      'https://i.postimg.cc/bNCQHBZ0/1154275.jpg',
+      'https://i.postimg.cc/5NNBzV23/1154276.jpg',
+      'https://i.postimg.cc/ncRvYPXv/1154277.jpg',
+      'https://i.postimg.cc/KvqnrH1L/1154284.jpg',
+      'https://i.postimg.cc/hPy9b5X0/1158963.jpg',
+      'https://i.postimg.cc/NfJ17zK7/1158964.jpg',
+      'https://i.postimg.cc/4NLzbSYQ/1158965.jpg',
+      'https://i.postimg.cc/FsWjgBYD/1165395.jpg',
+      'https://i.postimg.cc/zXtnScy7/1165396.jpg',
+      'https://i.postimg.cc/kX1xFp2Q/1165443.jpg',
+      'https://i.postimg.cc/655rZXph/1165451.jpg',
+      'https://i.postimg.cc/KvqnrH1t/1165454.jpg',
+      'https://i.postimg.cc/yYYmRH8n/1261123.png',
+      'https://i.postimg.cc/vHqWLN40/1448966.jpg'
+    ],
+    features: ['Chalés Rústicos Confortáveis com Rede', 'Completo Contato com a Natureza do Cerrado', 'Diárias Mais Econômicas do Complexo', 'Piscina Privativa de Água Quente Silenciosa', 'Silêncio e Desconexão Total'],
+    captainRating: 9.5,
+    captainTip: 'O segredo mais bem compartilhado para quem busca silêncio, sossego e contato íntimo com o verde! Os chalés têm um clima rústico delicioso com redes para descansar. Excelente relação de custo-benefício e transporte circular contínuo grátis para os parques termais.',
+    highlight: 'Dormir ao cantar dos pássaros em confortáveis chalés ecológicos nativos',
+    bestFor: 'economico',
+    strategicLocation: [
+      'Complexo Rio Quente Resorts, Esplanada, Rio Quente - GO',
+      'Sítio botânico preservado em área de paz absoluta fora do miolo de barulho',
+      'Transporte expresso circular regular e gratuito de passageiros'
+    ],
+    services: [
+      'Transporte expresso circular de ligação interna frequente',
+      'Acesso completo irrestrito ao Hot Park e Praia do Cerrado',
+      'Acesso 24 horas liberado às quentes piscinas naturais do Parque das Fontes',
+      'Atendimento caloroso, com sotaque da fazenda e ótimas histórias'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 15h00m',
+      checkOut: 'Check-out até 12h00m',
+      reception: 'Portaria e recepção das 07h00m às 22h00m e apoio central 24h',
+      breakfast: 'Café da Manhã: das 7h00m às 10h30m caipira'
+    },
+    generalServices: [
+      'Saguão rústico de recepção de excelente acolhimento do Cerrado',
+      'Estacionamento privativo seguro inteiramente gratuito para os hóspedes',
+      'Internet sem fio / Wifi Gratuito de ótima conexão no sítio',
+      'Chalés confortáveis adaptados sob solicitação prévia',
+      'Acessibilidade de caminhos planos de pedras ao ar livre',
+      'Serviço voluntário de limpeza de quartos e arrumação diária',
+      'Aceita os principais cartões de crédito e débito e PIX'
+    ],
+    restaurantsAndBars: [
+      'Restaurante das Palmeiras servindo delicioso café da manhã caipira da fazenda',
+      'Bar rústico acolhedor servindo cervejas locais e cachaças artesanais saborosas'
+    ],
+    wellnessAndSports: [
+      'Piscina termal própria aquecida e silenciosa sob as copas das árvores',
+      'Deliciosas caminhadas botânicas e observação de fauna monitorada',
+      'Acesso integral livre a todo o fantástico parque aquático Hot Park',
+      'Acesso 24 horas garantido e livre às nascentes do Parque das Fontes',
+      'Parquinho infantil ecológico de areia sob as sombras das árvores'
     ]
   }
 ];

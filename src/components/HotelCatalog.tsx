@@ -10,7 +10,7 @@ interface HotelCatalogProps {
 
 export default function HotelCatalog({ onOpenHotelDetail }: HotelCatalogProps) {
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeTab, setActiveTab ] = useState<'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia'>('todos');
+  const [activeTab, setActiveTab ] = useState<'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc'>('todos');
   const [selectedFeature, setSelectedFeature] = useState<string>('todos');
 
   // Key feature tags for rapid filtration
@@ -105,10 +105,28 @@ export default function HotelCatalog({ onOpenHotelDetail }: HotelCatalogProps) {
                 Viver Caldas ({HOTELS_DATA.filter(h => h.category === 'viver-caldas').length})
               </button>
               <button
+                onClick={() => { setActiveTab('ctc'); }}
+                className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'ctc' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
+              >
+                Rede CTC ({HOTELS_DATA.filter(h => h.category === 'ctc').length})
+              </button>
+              <button
                 onClick={() => { setActiveTab('olimpia'); }}
                 className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'olimpia' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
               >
                 Hot Beach Olímpia ({HOTELS_DATA.filter(h => h.category === 'olimpia').length})
+              </button>
+              <button
+                onClick={() => { setActiveTab('sauipe'); }}
+                className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'sauipe' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
+              >
+                Costa do Sauípe ({HOTELS_DATA.filter(h => h.category === 'sauipe').length})
+              </button>
+              <button
+                onClick={() => { setActiveTab('rio-quente'); }}
+                className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'rio-quente' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
+              >
+                Rio Quente ({HOTELS_DATA.filter(h => h.category === 'rio-quente').length})
               </button>
             </div>
 

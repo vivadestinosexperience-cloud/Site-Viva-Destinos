@@ -81,9 +81,14 @@ export default function Footer() {
               <Phone size={16} className="text-dourado shrink-0 mt-0.5" />
               <div>
                 <strong className="block text-white font-semibold">WhatsApp Comercial:</strong>
-                <a href="https://wa.me/556421310045" className="hover:text-dourado transition-colors">
-                  (64) 2131-0045
-                </a>
+                <div className="flex flex-col gap-1">
+                  <a href="https://wa.me/556421310045" className="hover:text-dourado transition-colors block">
+                    (64) 2131-0045
+                  </a>
+                  <a href="https://wa.me/556421310046" className="hover:text-dourado transition-colors block">
+                    (64) 2131-0046
+                  </a>
+                </div>
               </div>
             </li>
             <li className="flex items-start gap-2.5">

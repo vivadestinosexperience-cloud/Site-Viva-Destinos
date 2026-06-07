@@ -201,7 +201,7 @@ export default function InteractiveQuiz({ onOpenHotelDetail }: InteractiveQuizPr
                     "Previsão de diversão e águas termais!"
                   </h3>
                   <p className="text-gray-650 leading-relaxed font-sans font-light">
-                    Olá! Sou o guia da Viva Destinos Experience. Preparei um teste interativo muito legal para descobrir qual hotel de Caldas Novas ou Olímpia combina melhor com você e sua turma. Vamos voar juntos?
+                    Olá! Sou o guia da Viva Destinos Experience. Preparei um teste interativo muito legal para descobrir qual hotel de Caldas Novas, Olímpia ou Costa do Sauípe combina melhor com você e sua turma. Vamos voar juntos?
                   </p>
                 </div>
 
