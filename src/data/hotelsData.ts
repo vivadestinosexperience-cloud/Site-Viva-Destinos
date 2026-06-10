@@ -2287,6 +2287,560 @@ export const HOTELS_DATA: Hotel[] = [
       'Acesso 24 horas garantido e livre às nascentes do Parque das Fontes',
       'Parquinho infantil ecológico de areia sob as sombras das árvores'
     ]
+  },
+  {
+    id: 'wam-dom-pedro-laguna',
+    name: 'Dom Pedro Laguna Beach Resort & Golf by WAM Experience',
+    category: 'wam',
+    categoryLabel: 'Rede WAM Experience',
+    tagline: 'Resort de padrão internacional à beira-mar no fascinante paraíso de Aquiraz - CE!',
+    description: 'Situado na costa litorânea do Ceará, o Dom Pedro Laguna é certamente o melhor lugar para uma estadia memorável em Aquiraz (CE), próximo a Fortaleza. O resort funciona em regime de meia pensão com café da manhã e jantar inclusos. Venha viver a vida nesse paraíso! Afinal, acreditamos que qualidade se traduz em conforto, experiências únicas e bons momentos.\n\nNossa localização também reflete a atenção e cuidado com quem nos escolhe, já que estamos localizados ao lado de um mar de águas calmas e cristalinas. O Dom Pedro Laguna pensa na felicidade da sua família, cuida do aconchego de quem você ama e faz de tudo por você. Somos a sua ponte para a felicidade no Ceará. Dom Pedro Laguna é um dos maiores empreendimentos turísticos do Brasil de padrão internacional, numa área total de 300 hectares, com 58 hectares de área de Proteção Ambiental e 1.800 metros de frente mar. Venha viver essa experiência!',
+    images: [
+      'https://i.postimg.cc/9039L6Br/1529283.webp',
+      'https://i.postimg.cc/T1rDFtkG/1529288.webp',
+      'https://i.postimg.cc/yxFZtLfV/1543647.jpg',
+      'https://i.postimg.cc/rsSr3fhy/1543649.jpg',
+      'https://i.postimg.cc/0jpwFVt9/1544440.webp',
+      'https://i.postimg.cc/0jpwFVty/1549537.jpg'
+    ],
+    features: ['Meia Pensão Inclusa (Café e Jantar)', 'Padrão Internacional à Beira-Mar', 'Lindo Campo de Golfe Privativo', 'Lanchas e Barcos de Transporte', 'Contato com a Área de Proteção'],
+    captainRating: 9.8,
+    captainTip: 'Um dos resorts mais sofisticados do Nordeste! Meia pensão inclusa com gastronomia primorosa, e você pode passear de barco privativo pelos canais de água cristalina conectando os chalés do complexo. Simplesmente espetacular!',
+    highlight: 'A sofisticação internacional sobre as águas à beira-mar no Ceará',
+    bestFor: 'luxo',
+    strategicLocation: [
+      'Aquiraz, Ceará - CE (região praiana metropolitana de Fortaleza)',
+      'Frente mar em praia de águas quentes e cristalinas com 1.800m de extensão',
+      'Próximo ao famoso Beach Park e de fácil chegada a Fortaleza'
+    ],
+    services: [
+      'Hospedagem em regime de Meia Pensão (café de manhã e jantar de excelente nível)',
+      'Transporte diferenciado em barquinhos na lagoa artificial do hotel',
+      'Apoio integral com berços montados a pedido caso viaje com bebês',
+      'Serviço de câmbio de moedas estrangeiras no lobby'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Recepção e portaria disponíveis 24 horas por dia',
+      breakfast: 'Café da manhã: das 07h30m às 10h00m'
+    },
+    generalServices: [
+      'Estacionamento privativo e totalmente gratuito para hóspedes no local',
+      'Recepção calorosa disponível 24 horas por dia',
+      'Serviço de Quarto 24 horas sob solicitação direta',
+      'Berço disponível mediante solicitação prévia (a pedido)',
+      'Serviço profissional de câmbio de moedas estrangeiras',
+      'Internet Wi-Fi gratuita de ótima velocidade em todo o hotel'
+    ],
+    restaurantsAndBars: [
+      'Restaurante de padrão internacional com bufete e jantares sofisticados',
+      'Bar de Piscina refinado para coquetéis e petiscos frescos',
+      'Restaurante de alta gastronomia no interior do resort'
+    ],
+    wellnessAndSports: [
+      'Grande Piscina Exterior sob os coqueirais cearenses',
+      'Espaço Kids completo com equipe dedicada e atividades',
+      'Campo de Golfe profissional espetacular cercado da natureza'
+    ]
+  },
+  {
+    id: 'wam-buzios-beach-resort',
+    name: 'Búzios Beach Resort by WAM Experience',
+    category: 'wam',
+    categoryLabel: 'Rede WAM Experience',
+    tagline: 'O maior resort da Região dos Lagos, pé na areia na charmosa Praia de Tucuns!',
+    description: 'O Búzios Beach Resort by WAM Experience está localizado na cidade de Armação dos Búzios. Pé na areia da Praia de Tucuns, a 15 minutos do centro da cidade e dos principais pontos turísticos da cidade como a Rua das Pedras e a Orla Bardot. Somos o maior Resort da Região dos Lagos, um lugar para relaxar e fazer com que você não se preocupe com nada! Seu descanso é mais que merecido! Nossa pensão completa te trará conforto e comodidade. Uma enorme e completa infraestrutura de lazer e entretenimento trarão a você, sorrisos inesquecíveis. Não podemos esquecer da nossa recreação, por aqui é atividade e desenvolvimento sadio todo o dia para os pequenos!\n\nDispomos de total estrutura de lazer e entretenimento, como: piscina adulta e infantil, kids club, cantinho do bebê, fitness, serviço de estética e massagem (cobrados a parte), quadra de tênis, quadra de vôlei de praia, campo de futebol de areia, pista de skate, minigolfe, boliche (maiores de 12 anos; cobrado a parte), salão de jogos, fliperama (cobrado a parte), arco e flecha (maiores de 12 anos), trapézio, além de ampla programação com atividades durante todo o dia. Tudo isso com um único objetivo: Deixar a sua estadia ainda mais agradável e fazer da sua viagem em família, a melhor de todas!',
+    images: [
+      'https://i.postimg.cc/s2qG2kq4/115952.jpg',
+      'https://i.postimg.cc/Pq9vqg92/115953.jpg',
+      'https://i.postimg.cc/nLg9Lyg2/115956.jpg',
+      'https://i.postimg.cc/nLCQpFRH/1546413.jpg',
+      'https://i.postimg.cc/xdcbnfxf/1546414.jpg',
+      'https://i.postimg.cc/W4hJTNWc/1546417.jpg'
+    ],
+    features: ['Diárias em Pensão Completa Inclusa', 'Pé na Areia da Linda Praia de Tucuns', 'Mega Estrutura de Lazer Familiar', 'Mini Golfe, Trapézio e Quadras', 'Centro de Convenções Integrado'],
+    captainRating: 9.7,
+    captainTip: 'Um dos maiores complexos de lazer do Sudeste! Ideal para famílias que querem relaxar sabendo que têm excelente alimentação inclusa no buffet, boliche, mini golfe, trapézio e recreadores profissionais de alto astral cuidando dos filhos.',
+    highlight: 'O maior resort de lazer pé na areia da Região dos Lagos em Búzios',
+    bestFor: 'família',
+    strategicLocation: [
+      'Armação dos Búzios, Região dos Lagos - RJ',
+      'Localizado pé na areia da sossegada e maravilhosa Praia de Tucuns',
+      'Fica a apenas 15 minutos do miolo da Rua das Pedras e Orla Bardot'
+    ],
+    services: [
+      'Regime de Pensão Completa com café, almoço e jantar inclusos',
+      'Recreação infantil diária monitorada por profissionais',
+      'Serviços opcionais de SPA, massagem e estética',
+      'Serviço impecável de limpeza de quartos diário'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Recepção aberta 24 horas disponível para hóspedes',
+      breakfast: 'Café da manhã: das 07h00m às 10h00m'
+    },
+    generalServices: [
+      'Recepção calorosa disponível 24 horas',
+      'Acessibilidade total de Cadeira de Rodas com rampas qualificadas',
+      'Estacionamento conveniente inteiramente gratuito para os hóspedes',
+      'Quartos e suítes confortáveis adaptados para Deficientes',
+      'Serviço de lavanderia disponível sob tarifa adicional',
+      'Internet Wi-Fi gratuita em todas as instalações'
+    ],
+    restaurantsAndBars: [
+      'Restaurante central com generoso buffet de culinária nacional',
+      'Bar de piscina completo com deliciosos coquetéis tropicais'
+    ],
+    wellnessAndSports: [
+      'Gigantesca Piscina Adulta com raia e deck com espreguiçadeiras',
+      'Quadra de Tênis e Quadra de Vôlei de areia para práticas esportivas',
+      'Mini Golfe, Pista de Skate, Arco e Flecha e Trapézio fascinante',
+      'Piscina Infantil, Kids Club monitorado e Cantinho de Bebê acolhedor'
+    ]
+  },
+  {
+    id: 'wam-ondas-praia-resort',
+    name: 'Ondas Praia Resort by WAM Experience',
+    category: 'wam',
+    categoryLabel: 'Rede WAM Experience',
+    tagline: 'O luxuoso e paradisíaco beira-mar de Porto Seguro com águas mornas e areia fina!',
+    description: 'Somos o Ondas Praia Resort por um motivo: o natural nos pertence. Como o Brasil, também somos casas de um verde exuberante, árvores típicas e temos uma relação intima com o mar. Somos cercados por ele e ficamos a metros da areia da praia. Ainda temos programações de pura diversão para você e sua família, adultos e crianças. Isso tudo banhado pelo delicioso sol baiano e animado por nossos recreadores incansáveis.\n\nLocalizado em uma das praias mais deslumbrantes de Porto Seguro, o Ondas Praia Resort combina o conforto de um resort com a descontração de estar com os pés na areia. Com ondas calmas e águas mornas, é o refúgio perfeito para quem busca relaxamento e diversão. O empreendimento beira-mar compreende 32000 metros quadrados de área. O hotel também conta com uma estrutura dotada de 484 quartos com 44,5 metros quadrados, a fim de comportar famílias inteiras confortavelmente.',
+    images: [
+      'https://i.postimg.cc/vHbgDLqK/1529501.webp',
+      'https://i.postimg.cc/4Ns7nbLr/1529503.webp',
+      'https://i.postimg.cc/9FCRzt8N/1529504.webp',
+      'https://i.postimg.cc/bNpDdHC7/1546765.webp',
+      'https://i.postimg.cc/4NPKc7jX/1546766.jpg',
+      'https://i.postimg.cc/vHbgDLqW/1546767.jpg'
+    ],
+    features: ['Frente-Mar com Ondas Calmas', 'Amplas Suítes com 44,5 metros²', '32.000m² de Verde Exuberante', 'Sol Baiano com Recreadores Incansáveis', 'Excelente Jacuzzi e Ofurôs'],
+    captainRating: 9.6,
+    captainTip: 'A Praia do Mutá tem águas incrivelmente quentinhas e sem ondas, uma verdadeira piscina natural fantástica para caminhar com os pés descalços! As suítes de 44,5m² acomodam famílias inteiras com extrema facilidade.',
+    highlight: 'O abraço do mar da Bahia em uma mega infraestrutura moderna de turismo',
+    bestFor: 'família',
+    strategicLocation: [
+      'Porto Seguro, Sul da Bahia - BA',
+      'Rodeado de coqueiros pé na areia na paradisíaca e tranquila Praia do Mutá',
+      'Localização excelente com acesso a pé prático para barracas famosas'
+    ],
+    services: [
+      'Acesso direto e privativo para a areia da Praia de Porto Seguro',
+      'Recreação animada profissional com shows e atividades na piscina',
+      'Berços e banheiras para bebês mediante solicitação (a pedido)',
+      'Serviço de Quarto eficiente 24 horas'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Recepção calorosa disponível 24 horas por dia',
+      breakfast: 'Café da manhã: das 07h00m às 10h00m'
+    },
+    generalServices: [
+      'Recepção permanente 24h para hóspedes',
+      'Acessibilidade garantida com rampas adaptadas para Cadeira de Rodas',
+      'Quartos espaçosos adaptados para PCD e Deficientes',
+      'Estacionamento gratuito seguro e conveniente interno',
+      'Aceita os principais cartões de crédito, débito e PIX'
+    ],
+    restaurantsAndBars: [
+      'Restaurante central refinado com buffet de café, almoço e jantar baianos',
+      'Bar na piscina servindo deliciosos coquetéis premium e sucos naturais'
+    ],
+    wellnessAndSports: [
+      'Espetacular Piscina Exterior revestida cercada por espreguiçadeiras',
+      'Espaço Kids brinquedoteca muito completa com programações lúdicas',
+      'Jacuzzi aquecida sensacional ao ar livre para repousar profundamente',
+      'Academia moderna gratuita para hóspedes'
+    ]
+  },
+  {
+    id: 'wam-encontro-das-aguas-resort',
+    name: 'Encontro das Águas Thermas Resort by WAM',
+    category: 'wam',
+    categoryLabel: 'Rede WAM Experience',
+    tagline: 'O refúgio de águas termais perfeito de Caldas Novas às margens do Lago Corumbá!',
+    description: 'Situado às margens do Lago Corumbá, o Encontro das Águas Thermas Resort é o local ideal para quem busca lazer, bem-estar e conforto. Localizado a apenas 10 minutos do centro de Caldas Novas e próximo aos principais parques aquáticos da região, este resort oferece uma experiência única para todas as idades.\n\nCom 100 apartamentos distribuídos em três modernos prédios (Pier, Cais e Porto), o resort possui opções que atendem desde famílias menores até grupos maiores. As acomodações são equipadas com ar-condicionado, TV a cabo e cozinha americana, proporcionando total autonomia para você e sua família.\n\nCom 6 piscinas, incluindo opções infantis e para adultos, 2 ofurôs aquecidos e sauna molhada, o resort oferece a combinação perfeita de relaxamento e diversão. O restaurante Estação do Sabor oferece um buffet completo com uma variedade de pratos deliciosos.',
+    images: [
+      'https://i.postimg.cc/QtcCdHpx/701589.webp',
+      'https://i.postimg.cc/T1GwLf9K/701590.webp',
+      'https://i.postimg.cc/rscm0MJK/701591.webp',
+      'https://i.postimg.cc/90VMRCpQ/701592.webp',
+      'https://i.postimg.cc/7hD6GwVH/701593.webp',
+      'https://i.postimg.cc/fyZLtDKM/701594.webp'
+    ],
+    features: ['Margens Tranquilas do Lago Corumbá', '6 Piscinas de Águas Termais', 'Ofurôs Quentes e Sauna Molhada', '8 Quiosques com Churrasqueiras', 'Apartamentos Modernos com Cozinha'],
+    captainRating: 9.5,
+    captainTip: 'Um dos resorts mais tranquilos de Caldas Novas! Para quem quer relaxar, a vista das margens do Lago Corumbá é belíssima. Alugue um dos quiosque com churrasqueira para fazer um delicioso churrasco em família ao entardecer!',
+    highlight: 'O sossego e a magia das águas termais às margens do Lago Corumbá',
+    bestFor: 'família',
+    strategicLocation: [
+      'Caldas Novas, Lago Corumbá - GO',
+      'Situado às margens do Lago Corumbá, com vista panorâmica exuberante',
+      'A apenas 10 minutos do centro turístico de Caldas Novas'
+    ],
+    services: [
+      'Happy Hour diferenciado de coquetéis das 15h às 17h',
+      'Recepção prestativa e atalho exclusivo para atividades de lago',
+      'Serviço voluntário de arrumação e limpeza diário impecáveis',
+      'Disponibilização de berços para bebês sob agendamento (a pedido)'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Recepção 24 horas permanente disponível no lobby',
+      breakfast: 'Café da manhã Station: das 07h00m às 10h00m'
+    },
+    generalServices: [
+      'Estacionamento rotativo e gratuito para hóspedes no interior do resort',
+      'Recepção acolhedora disponível 24 horas por dia',
+      'Acessibilidade completa com rampas e elevadores modernos',
+      'Quartos bem equipados e adaptados PCD',
+      'Internet Wi-Fi de ótima velocidade em todas as instalações',
+      'Aceita os principais cartões de crédito, débito e PIX'
+    ],
+    restaurantsAndBars: [
+      'Restaurante Estação do Sabor com excelente buffet variado regional',
+      'Bar da Piscina rústico para drinques, espetinhos e bebidas quentes'
+    ],
+    wellnessAndSports: [
+      '6 Piscinas sendo termais infantis e adultas aquecidas',
+      '2 Ofurôs quentes ao ar livre excelentes para relaxamento',
+      'Sauna úmida relaxante com as águas naturais',
+      'Espaço Kids brinquedoteca, parquinho infantil e sala de jogos'
+    ]
+  },
+  {
+    id: 'wam-ilhas-do-lago',
+    name: 'Ilhas do Lago Eco Resort by WAM Experience',
+    category: 'wam',
+    categoryLabel: 'Rede WAM Experience',
+    tagline: 'O luxuoso oásis de 72.600m² com piscina de borda infinita de frente ao Lago Corumbá!',
+    description: 'Se você busca uma experiência inesquecível de descanso, lazer e tranquilidade, o Ilhas do Lago Eco Resort é o destino perfeito. Localizado às margens do deslumbrante Lago Corumbá, este resort foi cuidadosamente projetado para oferecer aos seus visitantes o melhor em conforto e diversão.\n\nCom uma área total de 72.600 m², o resort conta com 150 apartamentos modernos e aconchegantes, alguns com vista privilegiada para o lago. Sua ampla estrutura aquática inclui 5 piscinas aquecidas, 1 piscina fria com borda infinita e 3 ofurôs, perfeitas para momentos de lazer e bem-estar. A experiência gastronômica é diversificada e deliciosa, com o Restaurante Varandas oferecendo buffet variado e o Sport Bar excelente lazer.',
+    images: [
+      'https://i.postimg.cc/m2mDkx10/5222569.jpg',
+      'https://i.postimg.cc/5N4yf9jf/5222570.jpg',
+      'https://i.postimg.cc/gkgJj9L1/5222571.jpg'
+    ],
+    features: ['Território Gigante de 72.600 m²', 'Piscina de Borda Infinita de Frente ao Lago', '5 Piscinas Aquecidas e 3 Ofurôs', 'Noites Gastronômicas Temáticas', 'Sport Bar com Sinuca e Diversão'],
+    captainRating: 9.6,
+    captainTip: 'A piscina fria de borda infinita desse hotel oferece uma vista inesquecível do pôr-do-sol sobre o Lago Corumbá! Os apartamentos Luxo são consideravelmente grandes, ideais para comportar até 5 hóspedes em plena comodidade.',
+    highlight: 'O requinte moderno de uma estada ecológica com piscinas de borda infinita à beira do lago',
+    bestFor: 'família',
+    strategicLocation: [
+      'Caldas Novas, Lago Corumbá - GO',
+      'Instalado à beira-lago com magnífica área preservada de 72.600 metros quadrados',
+      'Fácil acesso rodoviário livre do trânsito confuso do miolo central'
+    ],
+    services: [
+      'Gastronomia tematizada no Restaurante Corumbá',
+      'Copa do bebê muito bem equipada para as mães',
+      'Lazer com shows e atividades sob o palco no local',
+      'Serviço profissional de massagens relaxantes'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Recepção 24 horas permanente no lobby',
+      breakfast: 'Café da manhã Varandas: das 07h00m às 10h00m'
+    },
+    generalServices: [
+      'Estacionamento rotativo e gratuito para hóspedes no subsolo e térreo',
+      'Recepção calorosa disponível 24 horas por dia',
+      'Internet Wi-Fi gratuita de transmissão rápida em todo o hotel',
+      'Acessibilidade com rampas e elevadores modernos integrados',
+      'Instalações adaptadas para Deficientes e PCD',
+      'Aceita os principais cartões de crédito, débito e PIX'
+    ],
+    restaurantsAndBars: [
+      'Restaurante Varandas com farto buffet nacional contemporâneo',
+      'Restaurante Corumbá especializado em jantares típicos temáticos',
+      'Sport Bar vibrante para jogos acompanhados de excelentes petiscos',
+      'Bar na Piscina para refrescar-se dentro e fora da água'
+    ],
+    wellnessAndSports: [
+      '5 Piscinas termails aquecidas e maravilhosa piscina fria de borda infinita',
+      '3 Ofurôs relaxantes de águas naturais aquecidas',
+      'Academia climatizada completa e sauna a vapor',
+      'Brinquedoteca, parquinho, cinema, sala de jogos e palco de atrações'
+    ]
+  },
+  {
+    id: 'wam-praias-do-lago',
+    name: 'Praias do Lago Eco Resort by WAM Experience',
+    category: 'wam',
+    categoryLabel: 'Rede WAM Experience',
+    tagline: 'A sua própria praia artificial de águas termais com incrível conforto para toda a família!',
+    description: 'Se você busca uma experiência inesquecível de descanso, lazer, tranquilidade e um ambiente familiar, o Praias do Lago Eco Resort é o destino perfeito para você. Situado às margens do Lago Corumbá, nosso resort foi cuidadosamente planejado para oferecer o melhor em conforto e diversão para toda a família.\n\nNossos apartamentos modernos e aconchegantes garantem momentos relaxantes. A estrutura aquática é de tirar o fôlego, com 7 piscinas, incluindo uma coberta, com águas frias e aquecidas, além de 4 ofurôs e 2 piscinas infantis com água fria e brinquedos aquáticos, ideais para diversão e atividades recreativas.',
+    images: [
+      'https://i.postimg.cc/Kz7cyCyH/742692.webp',
+      'https://i.postimg.cc/JnC7vMS5/742691.webp',
+      'https://i.postimg.cc/QtgNrvrn/742693.webp',
+      'https://i.postimg.cc/k4NMdLdY/742694.webp',
+      'https://i.postimg.cc/V69sc2c7/742695.webp'
+    ],
+    features: ['Incrível Praia Artificial de Areia Termal', '7 Piscinas com Opção Coberta', 'Cinema e Grande Sala Teens de Video Game', 'Espetacular Lazer à Beira-Lago', 'Apartamentos de Múltiplos Quartos'],
+    captainRating: 9.7,
+    captainTip: 'O grande ás na manga daqui é a praia artificial de areia com águas termais, excelente para as crianças sentirem a vibe da praia em meio ao interior! E a Sala de Games Teens com consoles modernos é um verdadeiro ímã de alegria para os adolescentes.',
+    highlight: 'A maravilhosa sensação de estar na praia com a magia térmica do Lago Corumbá',
+    bestFor: 'família',
+    strategicLocation: [
+      'Caldas Novas, Lago Corumbá - GO',
+      'Frente-lago integrada a um dos trechos mais bonitos do Lago Corumbá',
+      'Acesso fácil com segurança e privacidade total para famílias'
+    ],
+    services: [
+      'Equipe de Monitoria qualificada para as crianças pequenas e adolescentes',
+      'Copa da Mamãe completa com microondas e facilitadores para mamadeiras',
+      'Cinema de excelente qualidade acústica livre para os hóspedes',
+      'Lazer com shows e brincadeiras sob o Palco principal'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Recepção 24h permanentemente aberta no lobby central',
+      breakfast: 'Café da manhã Buffet: das 07h00m às 10h00m'
+    },
+    generalServices: [
+      'Estacionamento rotativo e gratuito seguro no próprio resort',
+      'Recepção prestativa e calorosa disponível 24 horas',
+      'Internet Wi-Fi gratuita de transmissão excelente em todas as áreas',
+      'Acessibilidade com rampas de inclinação correta para Cadeira de Rodas',
+      'Elevadores modernos de comando digital rápidos',
+      'Aceita os principais cartões de crédito, débito e PIX'
+    ],
+    restaurantsAndBars: [
+      'Restaurante da Praia com buffet variado farto continental goiano',
+      'Bar na Piscina servindo sucos, aperitivos deliciosos e caipirinhas',
+      'Sorveteria interna com deliciosos sabores para as crianças se refrescarem'
+    ],
+    wellnessAndSports: [
+      '7 Piscinas de águas limpas, aquecidas, frias e piscina coberta térmica',
+      '4 Ofurôs relaxantes e 2 piscinas infantis de brinquedos aquáticos',
+      'Quadra esportiva de areia, Mini Golfe e Academia completa',
+      'Cinema, Brinquedoteca, Sala de Jogos e Sala Teens de Vídeo Games'
+    ]
+  },
+  {
+    id: 'wam-prive-thermas',
+    name: 'Prive Thermas Hotel by WAM Experience',
+    category: 'wam',
+    categoryLabel: 'Rede WAM Experience',
+    tagline: 'Tradição carinhosa e diversão histórica no centro turístico com acesso grátis a 3 parques!',
+    description: 'O Privé Thermas Hotel é o destino ideal para quem busca momentos inesquecíveis com a família. Uma estrutura completa de lazer, relaxamento e gastronomia, em meio a natureza e com acesso facilitado aos parques aquáticos Clube Privé e Water Park.\n\nDiversão e Lazer para Todas as Idades:\n• Lazer completo com 5 piscinas termais, piscina infantil e natural\n• Bar molhado para curtir sem sair da água\n• Playground ao ar livre, brinquedoteca e sala de jogos para a criançada\n• Sauna e academia equipada para relaxar e manter o ritmo',
+    images: [
+      'https://i.postimg.cc/kMcMYrsG/5222604.webp',
+      'https://i.postimg.cc/PJ2tCZNH/5222605.webp',
+      'https://i.postimg.cc/fyBwVXy8/5222606.webp',
+      'https://i.postimg.cc/C5mFRDdp/5222607.webp',
+      'https://i.postimg.cc/prq2m8r6/5222608.webp'
+    ],
+    features: ['Ingressos Grátis para 3 Parques Externos', '5 Piscinas Termais e Bar Molhado', 'O Clássico Bar Seresta com Música ao Vivo', 'Localização Imbatível no Centro Turístico', 'Conforto Extraordinário na Copa do Bebê'],
+    captainRating: 9.6,
+    captainTip: 'O grande segredo daqui é o acesso gratuito ilimitado ao Clube Privé e ao Water Park que ficam literalmente do lado do hotel! Além disso, o Bar Seresta oferece uma música ao vivo e gastronomia formidáveis nos finais de semana.',
+    highlight: 'O hotel termal mais tradicional e bem localizado de Caldas Novas com acesso livre a três parques externos',
+    bestFor: 'família',
+    strategicLocation: [
+      'Centro Hoteleiro de Caldas Novas - GO',
+      'Localização estratégica ao lado dos melhores parques termais: Clube Privé e Water Park',
+      'Excelente trânsito a pé para os bares, feiras e comércio do centro hoteleiro'
+    ],
+    services: [
+      'Acesso livre ilimitado aos parques aquáticos Clube Privé, Water Park e Náutico',
+      'Atendimento especial de berços e banheiras infantis no quarto',
+      'Copa da Mamãe limpa e bem guarnecida para preparos de leite e papinhas',
+      'Serviço voluntário de lavanderia sob solicitação de tarifa extra'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Recepção climatizada e portaria permanente 24h',
+      breakfast: 'Café da manhã regional: das 07h00m às 10h00m'
+    },
+    generalServices: [
+      'Acessibilidade integral com rampas de fácil acesso para Cadeira de Rodas',
+      'Estacionamento rotativo seguro disponível no local',
+      'Internet Wi-Fi gratuita de ótima cobertura em todo o hotel',
+      'Elevadores amplos e rápidos de excelente conservação',
+      'Quartos espaçosos adaptados para Deficientes',
+      'Aceita os principais cartões de crédito e faturamento PIX'
+    ],
+    restaurantsAndBars: [
+      'Restaurante central refinado com buffet completo contemporâneo',
+      'Bar Molhado integrado para petiscar sem deixar de relaxar na água quente',
+      'Bar Seresta refinado com música ao vivo e saborosos drinks regionais'
+    ],
+    wellnessAndSports: [
+      '5 Piscinas termais, incluindo piscina natural e piscina infantil termal',
+      'Sauna úmida aquecida relaxante e academia equipada interna',
+      'Playground ao ar-livre, Brinquedoteca colorida e Sala de Jogos'
+    ]
+  },
+  {
+    id: 'wam-boulevard-suite',
+    name: 'Boulevard Suite Hotel by WAM Experience',
+    category: 'wam',
+    categoryLabel: 'Rede WAM Experience',
+    tagline: 'Elegância, sofisticação e lazer de alto luxo em suítes espetaculares no coração de Caldas Novas!',
+    description: 'No Hotel Boulevard cada momento é pensado para oferecer uma experiência única de elegância, conforto e sofisticação. Seja para relaxar ou celebrar momentos especiais, temos tudo o que você precisa.\n\nEstrutura Completa para seu Conforto:\n• Gastronomia Variada: Com restaurantes e bares que atendem a todos os gostos, como o Restaurante Buffet e a Sorveteria.\n• Lazer e Bem-estar:\n• Áreas Aquáticas: 7 piscinas, sendo 6 termais e 1 fria, além de ofurôs para momentos de puro relaxamento (funcionamento das 17h às 23h) e sauna.\n• Academia Completa, Sala de Jogos e Brinquedoteca para todas as idades.',
+    images: [
+      'https://i.postimg.cc/fbmDx1kH/5222513.webp',
+      'https://i.postimg.cc/j5TKvvJZ/5222514.webp',
+      'https://i.postimg.cc/CKkSj9dP/5222515.webp',
+      'https://i.postimg.cc/mrCBQKhw/5222516.webp',
+      'https://i.postimg.cc/9fZCGszF/5222517.webp'
+    ],
+    features: ['7 Piscinas de alto padrão', 'Choperia Boulevard com música ao vivo', 'Suítes Super Luxo Modernas com Sacada', 'Centro de Convenções Champs-Élysées', 'Ofurôs relaxantes de águas naturais'],
+    captainRating: 9.7,
+    captainTip: 'A Choperia Boulevard integrada serve um dos chopes mais gelados da cidade e possui ótimos petiscos com shows ao vivo excepcionais! Os apartamentos Super Luxo são consideravelmente requintados.',
+    highlight: 'A sofisticação marcante de uma estada elegante de águas termais no centro',
+    bestFor: 'casal',
+    strategicLocation: [
+      'Bairro Turístico, Caldas Novas - GO',
+      'Muito bem posicionado de frente para as principais avenidas gastronômicas',
+      'Excelente facilidade para passear a pé para o comércio e termas da região'
+    ],
+    services: [
+      'Estilo refinado de atendimento com garçons zelosos',
+      'Ofurôs aquecidos relaxantes operando no místico horário das 17h às 23h',
+      'Berços e banheiras para bebês mediante marcação (a pedido)',
+      'Internet Wi-Fi de ótima consistência livre no lobby e quartos'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Recepção e Saguão abertos 24 horas permanentes',
+      breakfast: 'Café da manhã de alta gastronomia: das 07h00m às 10h00m'
+    },
+    generalServices: [
+      'Elevadores amplos e silenciosos no centro do hotel',
+      'Estacionamento rotativo de vagas limitadas para hóspedes',
+      'Acessibilidade total de Cadeira de Rodas no lobby e piscinas',
+      'Instalações adaptadas para Deficientes e PCD',
+      'Aceita os principais cartões de crédito e débito nacionais'
+    ],
+    restaurantsAndBars: [
+      'Restaurante Boulevard com farto buffet nacional de alta cozinha',
+      'A Choperia Boulevard requintada com alta gastronomia internacional',
+      'Sorveteria refrescante na área aquática com opções coloridas'
+    ],
+    wellnessAndSports: [
+      '7 Piscinas sendo 6 termais de águas quentes e 1 piscina fri',
+      'Ofurôs aquecidos relaxantes e sauna úmida térmica',
+      'Academia moderna climatizada gratuita e sala de jogos com brinquedoteca'
+    ]
+  },
+  {
+    id: 'wam-riviera-park',
+    name: 'Riviera Park Hotel by WAM Experience',
+    category: 'wam',
+    categoryLabel: 'Rede WAM Experience',
+    tagline: 'O maior hotel de águas termais do Brasil com espetaculares 12 piscinas e águas quentes 24h!',
+    description: 'Seja bem-vindo ao Riviera, o maior hotel da rede WAM Experience, com impressionantes 382 apartamentos e uma estrutura de lazer completa para toda a família! Localizado no principal ponto turístico de Caldas Novas, o Riviera é a escolha ideal para quem busca conforto, comodidade e momentos inesquecíveis.\n\n💦 Lazer sem limites para todas as idades:\n• 12 piscinas incríveis, sendo 9 termais e 3 frias\n• Parque aquático infantil monitorado\n• Piscina coberta e bar molhado aquecido\n• Sauna e SPA completo com serviços de bem-estar\n• Sala de cinema, brinquedoteca e sala de jogos moderna',
+    images: [
+      'https://i.postimg.cc/9XJVtdX6/251686.jpg',
+      'https://i.postimg.cc/mZ8RNYZK/251684.jpg',
+      'https://i.postimg.cc/PrJH6CN0/251687.jpg',
+      'https://i.postimg.cc/FszvPY12/251688.jpg',
+      'https://i.postimg.cc/vHTyP4Dk/251689.jpg'
+    ],
+    features: ['Mega Estrutura de Lazer com 12 Piscinas', 'Quartos Estilos Pet Friendly do Brasil', 'Parque Aquático Infantil Exclusivo', 'Localização Perfeita a passos do Clube Privé e Water Park', 'SPA e Sala de Cinema Integrada'],
+    captainRating: 9.7,
+    captainTip: 'O Riviera é gigante e tem lazer para absolutamente todos os gostos! Além das 12 piscinas, é um dos poucos hotéis termais totalmente Pet Friendly da região. Seu pet vai amar a viagem.',
+    highlight: 'O gigante termal de Caldas Novas com infraestrutura completa e aceitação pet',
+    bestFor: 'família',
+    strategicLocation: [
+      'Caldas Novas, GO (região turística privilegiada central)',
+      'A poucos passos dos renomados parques aquáticos Clube Privé e Water Park',
+      'Excelente mobilidade com acesso a feiras tradicionais e pontos de apoio'
+    ],
+    services: [
+      'Atendimento certificado Pet para hospedagem de até dois cãezinhos',
+      'Apoio completo de monitoramento e equipe de recreadores animada',
+      'Sala completa de cinema com sessões divertidas de filmes',
+      'SPA acolhedor com ampla cartela de tratamentos adicionais'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Recepção 24h aberta permanente com hall climatizado',
+      breakfast: 'Café da manhã Tropicalis: das 07h00m às 10h00m'
+    },
+    generalServices: [
+      'Estacionamento rotativo privado gratuito confortável no local',
+      'Recepção calorosa disponível 24 horas por dia',
+      'Acessibilidade integral padrão com rampas bem anguladas',
+      'Quartos espaçosos adaptados para PCD',
+      'Internet Wi-Fi gratuita de transmissão excelente',
+      'Aceita os principais cartões de crédito e faturamento PIX'
+    ],
+    restaurantsAndBars: [
+      'Restaurante Tropicalis servindo buffet diário farto variado',
+      'Pizzaria Firenze instalada no local com pizzas tradicionais',
+      'Cafeteria Riviera com bolos, quitutes e lanches naturais'
+    ],
+    wellnessAndSports: [
+      '12 Piscinas sendo 9 termais de águas quentes e 3 piscinas frias',
+      'Parque Aquático Infantil de brinquedos, escorregadores e chuveiros',
+      'Sauna e SPA prestativo para relaxamento profundo',
+      'Sala de Cinema moderna, Brinquedoteca colorida e Sala de Jogos'
+    ]
+  },
+  {
+    id: 'wam-resort-do-lago',
+    name: 'Resort do Lago by WAM Experience',
+    category: 'wam',
+    categoryLabel: 'Rede WAM Experience',
+    tagline: 'Modernidade impecável à beira-lago com simulador de surf exclusivo e toboáguas panorâmicos!',
+    description: 'Às margens do deslumbrante Lago Corumbá, o Resort do Lago oferece uma experiência única de lazer e descanso para toda a família. Nosso resort é o refúgio perfeito para quem busca conforto, natureza e diversão.\n\nCom 103 apartamentos distribuídos entre unidades de 1 e 2 quartos, além de duplex exclusivos, nosso resort oferece ambientes amplos e bem equipados, pensados para seu máximo conforto e conveniência. Todos os apartamentos contam com cozinha americana, TV nos quartos e na sala, varanda privativa e muito mais.',
+    images: [
+      'https://i.postimg.cc/DZ7k1Ztp/596232.jpg',
+      'https://i.postimg.cc/nL4fs7wY/596233.jpg',
+      'https://i.postimg.cc/LXmKjXcd/596234.jpg',
+      'https://i.postimg.cc/sX3d5Xt8/596235.webp',
+      'https://i.postimg.cc/Dzr3WsYQ/596236.jpg'
+    ],
+    features: ['Único Simulador de Surf de Caldas Novas', 'Passeios de Lancha, Caiaque e Acquabike', 'Borda Infinita de frente para o Lago Corumbá', 'Toboágua com Vista Panorâmica', 'Tradicional Feijoada com Música aos Sábados'],
+    captainRating: 9.8,
+    captainTip: 'É o único hotel termal da região com um simulador de surf emocionante integrado no parque aquático! Faça o passeio de lancha e coma a fantástica feijoada no sábado.',
+    highlight: 'Aventura aquática espetacular e sofisticação às margens do Lago Corumbá',
+    bestFor: 'família',
+    strategicLocation: [
+      'Caldas Novas, Lago Corumbá - GO',
+      'Frente-lago instalada diretamente às margens do charmoso Lago Corumbá',
+      'Fácil acesso de veículos e trânsito limpo para atividades náuticas'
+    ],
+    services: [
+      'Aero-Monitoramento aquático nas aventuras de lancha e caiaque',
+      'Serviço profissional de limpeza de quartos diário',
+      'Organização de feijoada tradicional Goiana com música aos sábados',
+      'Disponibilidade de berços montados nas unidades sob aviso (a pedido)'
+    ],
+    hours: {
+      checkIn: 'Check-in a partir das 14h00m',
+      checkOut: 'Check-out até 11h00m',
+      reception: 'Recepção 24h aberta e operante no lobby principal',
+      breakfast: 'Café da manhã do Lago: das 07h00m às 10h00m'
+    },
+    generalServices: [
+      'Estacionamento rotativo privado gratuito confortável no local',
+      'Recepção permanente 24h com facilidade no check-in',
+      'Internet Wi-Fi gratuita de transmissão excelente em todo o resort',
+      'Acessibilidade total estrutural para Cadeira de Rodas com rampas',
+      'Elevadores modernos amplos panorâmicos',
+      'Aceita os principais cartões de crédito e débito e PIX'
+    ],
+    restaurantsAndBars: [
+      'Restaurante do Lago com variado buffet brasileiro regional',
+      'Lake Point Bar refinado servindo coquetéis refrescantes e drinks'
+    ],
+    wellnessAndSports: [
+      '5 Piscinas sendo 4 para adultos térmicas com borda infinita e 1 infantil',
+      'Simulador de Surf exclusivo, Toboáguas panorâmicos emocionantes',
+      'Passeio de caiaque, lancha particular e bike aquática na orla',
+      'Espaço Zen, Academia de ginástica gratuita 24h e sauna'
+    ]
   }
 ];
 

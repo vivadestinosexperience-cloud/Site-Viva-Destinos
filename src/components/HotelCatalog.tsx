@@ -10,7 +10,7 @@ interface HotelCatalogProps {
 
 export default function HotelCatalog({ onOpenHotelDetail }: HotelCatalogProps) {
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeTab, setActiveTab ] = useState<'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc'>('todos');
+  const [activeTab, setActiveTab ] = useState<'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam'>('todos');
   const [selectedFeature, setSelectedFeature] = useState<string>('todos');
 
   // Key feature tags for rapid filtration
@@ -109,6 +109,12 @@ export default function HotelCatalog({ onOpenHotelDetail }: HotelCatalogProps) {
                 className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'ctc' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
               >
                 Rede CTC ({HOTELS_DATA.filter(h => h.category === 'ctc').length})
+              </button>
+              <button
+                onClick={() => { setActiveTab('wam'); }}
+                className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'wam' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
+              >
+                WAM Experience ({HOTELS_DATA.filter(h => h.category === 'wam').length})
               </button>
               <button
                 onClick={() => { setActiveTab('olimpia'); }}

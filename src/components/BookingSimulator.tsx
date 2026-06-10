@@ -460,6 +460,13 @@ ${specialNeeds.trim() ? `\n💬 *Observações Especiais:* ${specialNeeds.trim()
               </div>
             )}
 
+            {selectedHotel.category === 'wam' && (
+              <div className="bg-azul/5 border border-azul/15 rounded-xl p-3.5 text-xs text-azul flex items-center gap-2 font-medium">
+                <Gift size={16} className="text-dourado shrink-0 animate-pulse" />
+                <span>Sensacional! A sua reserva no <strong>{selectedHotel.name}</strong> garante acesso completo à maravilhosa infraestrutura de lazer da Rede WAM Experience, com ambientes fantásticos para toda a família e atendimento de padrão internacional!</span>
+              </div>
+            )}
+
             {selectedHotel.category === 'olimpia' && (
               <div className="bg-azul/5 border border-azul/15 rounded-xl p-3.5 text-xs text-azul flex items-center gap-2 font-medium">
                 <Ticket size={16} className="text-dourado shrink-0 animate-pulse" />

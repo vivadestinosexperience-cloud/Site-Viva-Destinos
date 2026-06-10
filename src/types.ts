@@ -1,7 +1,7 @@
 export interface Hotel {
   id: string;
   name: string;
-  category: 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc';
+  category: 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam';
   categoryLabel: string;
   tagline: string;
   description: string;
