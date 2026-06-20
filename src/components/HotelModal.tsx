@@ -104,7 +104,7 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
     setIsLightSwiping(false);
   };
 
-  // Lock body scroll when modal is active
+  // Lock body scroll and preload images when modal is active
   useEffect(() => {
     if (hotel) {
       document.body.style.overflow = 'hidden';
@@ -117,6 +117,12 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
       } else {
         setShowZoomHint(true);
       }
+
+      // Preload all images for this hotel to make transitions instant
+      hotel.images.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -225,12 +231,21 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
                 if (isMainSwiping) handleMainDragEnd();
               }}
             >
-              <img
-                src={hotel.images[activeImgIndex]}
-                alt={`${hotel.name} - Imagem ${activeImgIndex + 1}`}
-                className="w-full h-full object-cover transition-all duration-300 pointer-events-none"
-                referrerPolicy="no-referrer"
-              />
+              <div className="absolute inset-0 select-none">
+                <AnimatePresence mode="popLayout">
+                  <motion.img
+                    key={activeImgIndex}
+                    src={hotel.images[activeImgIndex]}
+                    alt={`${hotel.name} - Imagem ${activeImgIndex + 1}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2, ease: 'easeOut' }}
+                    className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                    referrerPolicy="no-referrer"
+                  />
+                </AnimatePresence>
+              </div>
               
               {/* Persistent helper badge in the top-left corner */}
               <button
@@ -637,16 +652,21 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
                 <ChevronRight size={24} />
               </button>
 
-              <motion.img
-                initial={{ scale: 0.95, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.95, opacity: 0 }}
-                transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                src={hotel.images[activeImgIndex]}
-                alt={`${hotel.name} - Imagem ${activeImgIndex + 1}`}
-                className="max-w-full max-h-[85vh] md:max-h-[90vh] object-contain rounded-2xl shadow-2xl select-none pointer-events-none"
-                referrerPolicy="no-referrer"
-              />
+              <div className="relative flex items-center justify-center w-full h-full max-w-full max-h-[85vh] md:max-h-[90vh]">
+                <AnimatePresence mode="popLayout">
+                  <motion.img
+                    key={activeImgIndex}
+                    initial={{ scale: 0.97, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.97, opacity: 0 }}
+                    transition={{ duration: 0.2, ease: 'easeOut' }}
+                    src={hotel.images[activeImgIndex]}
+                    alt={`${hotel.name} - Imagem ${activeImgIndex + 1}`}
+                    className="max-w-full max-h-[85vh] md:max-h-[90vh] object-contain rounded-2xl shadow-2xl select-none pointer-events-none absolute"
+                    referrerPolicy="no-referrer"
+                  />
+                </AnimatePresence>
+              </div>
 
               {/* Bottom info tag inside lightbox */}
               <div 
