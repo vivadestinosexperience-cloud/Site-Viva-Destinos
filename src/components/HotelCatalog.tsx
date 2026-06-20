@@ -6,11 +6,12 @@ import { Hotel } from '../types';
 
 interface HotelCatalogProps {
   onOpenHotelDetail: (hotel: Hotel) => void;
+  activeTab: 'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam';
+  setActiveTab: (tab: 'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam') => void;
 }
 
-export default function HotelCatalog({ onOpenHotelDetail }: HotelCatalogProps) {
+export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTab }: HotelCatalogProps) {
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeTab, setActiveTab ] = useState<'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam'>('todos');
   const [selectedFeature, setSelectedFeature] = useState<string>('todos');
 
   // Key feature tags for rapid filtration

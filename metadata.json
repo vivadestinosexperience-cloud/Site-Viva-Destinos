@@ -1,6 +1,6 @@
 {
   "name": "Viva Destinos Experience",
-  "description": "Portfólio interativo de hotéis e experiências de Caldas Novas da Viva Destinos Experience, guiado pelo simpático Capitão Destino.",
+  "description": "Portfólio interativo de hotéis e experiências em Caldas Novas, Olímpia, Rio Quente e Costa do Sauípe da Viva Destinos Experience, guiado pelo simpático Capitão Destino.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Header from './components/Header';
+import DestinationsShowcase from './components/DestinationsShowcase';
 import ExperiencePillars from './components/ExperiencePillars';
 import InteractiveQuiz from './components/InteractiveQuiz';
 import MascotSection from './components/MascotSection';
@@ -14,6 +15,7 @@ import { Hotel } from './types';
 
 export default function App() {
   const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null);
+  const [activeTab, setActiveTab] = useState<'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam'>('todos');
 
   const handleOpenHotelDetail = (hotel: Hotel) => {
     setSelectedHotel(hotel);
@@ -28,8 +30,15 @@ export default function App() {
       {/* 1. Hero banner and navigation */}
       <Header />
 
+      {/* Modern Destinations Showcase */}
+      <DestinationsShowcase setActiveTab={setActiveTab} />
+
       {/* 2. Complete Hotel Dual-Chain catalog (Portfolio) */}
-      <HotelCatalog onOpenHotelDetail={handleOpenHotelDetail} />
+      <HotelCatalog 
+        onOpenHotelDetail={handleOpenHotelDetail} 
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+      />
 
       {/* 3. Brand Value Badges layout (5 Pillars) */}
       <ExperiencePillars />

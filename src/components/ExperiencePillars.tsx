@@ -33,7 +33,7 @@ export default function ExperiencePillars() {
     },
     {
       title: 'Os melhores destinos para você',
-      description: 'Selecionamos cirurgicamente as melhores redes hoteleiras de Caldas Novas para garantir alta qualidade.',
+      description: 'Selecionamos as melhores redes hoteleiras em Caldas Novas, Olímpia, Rio Quente e Costa do Sauípe para garantir alto padrão.',
       icon: Compass,
       color: 'from-azul to-[#091e38]',
       accent: 'text-dourado',

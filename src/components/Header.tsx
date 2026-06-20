@@ -102,7 +102,7 @@ export default function Header() {
           </div>
 
           <h2 className="font-display font-bold text-4xl sm:text-5xl xl:text-6xl leading-[1.08] tracking-tight text-white">
-            Viva Caldas Novas com <br />
+            Viva Destinos com <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-dourado via-[#F5D084] to-dourado">
               diversão, conforto
             </span> <br /> e experiências únicas.
@@ -174,7 +174,7 @@ export default function Header() {
             {/* Mascot message bubble */}
             <div className="absolute top-2 -right-4 bg-white/10 hover:bg-white/15 px-4 py-2 text-xs md:text-sm text-white font-medium rounded-2xl rounded-bl-none border border-white/15 backdrop-blur-md shadow-2xl scale-95 origin-bottom-left max-w-44 select-none">
               <span className="text-dourado font-bold">Capitão Destino:</span>
-              <p className="mt-0.5 text-[11px] leading-tight text-white/90">E aí! Prontos para as melhores termas?</p>
+              <p className="mt-0.5 text-[11px] leading-tight text-white/90">E aí! Prontos para o seu próximo destino dos sonhos?</p>
             </div>
           </div>
         </motion.div>

@@ -22,7 +22,7 @@ export default function CustomerReviews() {
           </h2>
           <div className="w-16 h-1 bg-dourado mx-auto rounded-full" />
           <p className="text-gray-650 max-w-lg mx-auto text-sm sm:text-base font-light">
-            Confira as avaliações de famílias e casais reais de todo o Brasil que planejaram as férias perfeitas em Caldas Novas com a nossa assessoria.
+            Confira as avaliações de famílias e casais reais de todo o Brasil que planejaram as férias perfeitas nos melhores destinos com a nossa assessoria.
           </p>
         </div>
 

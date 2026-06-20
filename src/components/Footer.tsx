@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
           
           <p className="text-white/70 leading-relaxed font-light text-xs sm:text-sm">
-            Nós conduzimos você e sua família às melhores experiências de lazer, conforto e diversão em Caldas Novas com segurança e planejamento exclusivo.
+            Nós conduzimos você e sua família às melhores experiências de lazer, conforto e diversão nos melhores destinos do Brasil com segurança e planejamento exclusivo.
           </p>
 
           <div className="flex items-center gap-3">
