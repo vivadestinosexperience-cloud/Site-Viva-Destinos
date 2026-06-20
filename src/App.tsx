@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Header from './components/Header';
-import DestinationsShowcase from './components/DestinationsShowcase';
 import ExperiencePillars from './components/ExperiencePillars';
 import InteractiveQuiz from './components/InteractiveQuiz';
 import MascotSection from './components/MascotSection';
@@ -29,9 +28,6 @@ export default function App() {
     <div className="min-h-screen bg-claro text-slate-800 font-sans antialiased overflow-x-hidden">
       {/* 1. Hero banner and navigation */}
       <Header />
-
-      {/* Modern Destinations Showcase */}
-      <DestinationsShowcase setActiveTab={setActiveTab} />
 
       {/* 2. Complete Hotel Dual-Chain catalog (Portfolio) */}
       <HotelCatalog 
