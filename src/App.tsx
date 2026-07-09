@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import ExperiencePillars from './components/ExperiencePillars';
 import InteractiveQuiz from './components/InteractiveQuiz';
@@ -11,10 +11,64 @@ import TrustSection from './components/TrustSection';
 import WhatsAppWidget from './components/WhatsAppWidget';
 import HotelModal from './components/HotelModal';
 import { Hotel } from './types';
+import { HOTELS_DATA } from './data/hotelsData';
 
 export default function App() {
   const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null);
   const [activeTab, setActiveTab] = useState<'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam'>('todos');
+
+  // Sync selectedHotel change to the URL query parameter
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const currentHotelId = params.get('hotel');
+
+    if (selectedHotel) {
+      if (currentHotelId !== selectedHotel.id) {
+        params.set('hotel', selectedHotel.id);
+        const newUrl = `${window.location.pathname}?${params.toString()}`;
+        window.history.pushState({ hotelId: selectedHotel.id }, '', newUrl);
+      }
+    } else {
+      if (currentHotelId) {
+        params.delete('hotel');
+        const newUrl = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname;
+        window.history.pushState({}, '', newUrl);
+      }
+    }
+  }, [selectedHotel]);
+
+  // Handle browser back/forward and initial URL query parameters
+  useEffect(() => {
+    const handlePopState = () => {
+      const params = new URLSearchParams(window.location.search);
+      const hotelId = params.get('hotel');
+      if (hotelId) {
+        const found = HOTELS_DATA.find((h) => h.id === hotelId);
+        if (found) {
+          setSelectedHotel(found);
+          // Auto scroll to catalog so user knows where they are
+          setTimeout(() => {
+            const element = document.getElementById('hoteis');
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+          }, 150);
+        } else {
+          setSelectedHotel(null);
+        }
+      } else {
+        setSelectedHotel(null);
+      }
+    };
+
+    // Run once on load to verify initial state
+    handlePopState();
+
+    window.addEventListener('popstate', handlePopState);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, []);
 
   const handleOpenHotelDetail = (hotel: Hotel) => {
     setSelectedHotel(hotel);

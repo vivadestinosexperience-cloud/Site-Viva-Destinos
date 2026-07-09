@@ -1,4 +1,4 @@
-import { Compass, Mail, Phone, MapPin, Instagram, Facebook, Award, ArrowUp } from 'lucide-react';
+import { Compass, Mail, Phone, MapPin, Instagram, MessageCircle, Award, ArrowUp } from 'lucide-react';
 
 export default function Footer() {
   const handleScrollToTop = () => {
@@ -36,8 +36,8 @@ export default function Footer() {
             <a href="https://www.instagram.com/vivadestinosexperience/" target="_blank" rel="noreferrer" className="bg-white/5 hover:bg-dourado hover:text-azul p-2 rounded-full transition-colors">
               <Instagram size={16} />
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61588801127216" target="_blank" rel="noreferrer" className="bg-white/5 hover:bg-dourado hover:text-azul p-2 rounded-full transition-colors">
-              <Facebook size={16} />
+            <a href="https://wa.me/556421310045?text=Ol%C3%A1%21+Estou+no+site+e+gostaria+de+falar+com+um+Consultor+Exclusivo+da+Viva+Destinos%21" target="_blank" rel="noreferrer" className="bg-white/5 hover:bg-dourado hover:text-azul p-2 rounded-full transition-colors" title="WhatsApp">
+              <MessageCircle size={16} />
             </a>
           </div>
         </div>

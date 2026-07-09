@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ChevronLeft, ChevronRight, Star, Compass, CheckCircle2, ShieldAlert, MessageCircle, Info, MapPin, Clock } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Star, Compass, CheckCircle2, ShieldAlert, MessageCircle, Info, MapPin, Clock, Share2, Check } from 'lucide-react';
 import MascotImage from './MascotImage';
 import { Hotel } from '../types';
 
@@ -13,6 +13,17 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
   const [activeImgIndex, setActiveImgIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [showZoomHint, setShowZoomHint] = useState(true);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyLink = () => {
+    if (!hotel) return;
+    const url = new URL(window.location.href);
+    url.searchParams.set('hotel', hotel.id);
+    navigator.clipboard.writeText(url.toString()).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   // Drag / swipe states for main gallery
   const [mainDragStartX, setMainDragStartX] = useState<number | null>(null);
@@ -197,10 +208,29 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
               </span>
             </div>
 
+            {/* Share / Copy Link Button */}
+            <button
+              onClick={handleCopyLink}
+              className="ml-2.5 sm:ml-4 bg-white/10 hover:bg-white/20 text-white px-3 sm:px-4 py-2.5 sm:py-3 rounded-2xl transition-all cursor-pointer border border-white/10 shrink-0 active:scale-95 flex items-center gap-1.5 justify-center shadow-lg font-medium text-xs sm:text-sm"
+              title="Copiar Link do Empreendimento"
+            >
+              {copied ? (
+                <>
+                  <Check size={16} className="text-emerald-400" />
+                  <span className="text-emerald-400">Copiado!</span>
+                </>
+              ) : (
+                <>
+                  <Share2 size={16} className="text-dourado animate-pulse" />
+                  <span className="text-white/90 hidden sm:inline">Copiar Link</span>
+                </>
+              )}
+            </button>
+
             {/* Right Close Button */}
             <button
               onClick={onClose}
-              className="ml-2.5 sm:ml-4 bg-white/10 hover:bg-white/20 text-white p-2.5 sm:p-3 rounded-2xl transition-all cursor-pointer border border-white/10 shrink-0 active:scale-95 flex items-center justify-center shadow-lg"
+              className="ml-2 bg-white/10 hover:bg-white/20 text-white p-2.5 sm:p-3 rounded-2xl transition-all cursor-pointer border border-white/10 shrink-0 active:scale-95 flex items-center justify-center shadow-lg"
               title="Fechar Detalhes"
             >
               <X size={16} className="sm:w-[18px] sm:h-[18px]" />
