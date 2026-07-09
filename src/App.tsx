@@ -14,7 +14,14 @@ import { Hotel } from './types';
 import { HOTELS_DATA } from './data/hotelsData';
 
 export default function App() {
-  const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null);
+  const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(() => {
+    const params = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
+    const hotelId = params.get('hotel');
+    if (hotelId) {
+      return HOTELS_DATA.find((h) => h.id === hotelId) || null;
+    }
+    return null;
+  });
   const [activeTab, setActiveTab] = useState<'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam'>('todos');
 
   // Sync selectedHotel change to the URL query parameter
@@ -37,7 +44,7 @@ export default function App() {
     }
   }, [selectedHotel]);
 
-  // Handle browser back/forward and initial URL query parameters
+  // Handle browser back/forward buttons
   useEffect(() => {
     const handlePopState = () => {
       const params = new URLSearchParams(window.location.search);
@@ -46,13 +53,6 @@ export default function App() {
         const found = HOTELS_DATA.find((h) => h.id === hotelId);
         if (found) {
           setSelectedHotel(found);
-          // Auto scroll to catalog so user knows where they are
-          setTimeout(() => {
-            const element = document.getElementById('hoteis');
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-          }, 150);
         } else {
           setSelectedHotel(null);
         }
@@ -61,13 +61,23 @@ export default function App() {
       }
     };
 
-    // Run once on load to verify initial state
-    handlePopState();
-
     window.addEventListener('popstate', handlePopState);
     return () => {
       window.removeEventListener('popstate', handlePopState);
     };
+  }, []);
+
+  // Auto-scroll the background view to the catalog on initial direct hotel page load
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('hotel')) {
+      setTimeout(() => {
+        const element = document.getElementById('hoteis');
+        if (element) {
+          element.scrollIntoView({ behavior: 'auto', block: 'center' });
+        }
+      }, 400);
+    }
   }, []);
 
   const handleOpenHotelDetail = (hotel: Hotel) => {
