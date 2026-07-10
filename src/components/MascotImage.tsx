@@ -10,7 +10,7 @@ export default function MascotImage({ className = '', size = 'md' }: MascotImage
 
   const getDimensions = () => {
     switch (size) {
-      case 'sm': return 'w-24 h-24';
+      case 'sm': return 'w-14 h-14';
       case 'md': return 'w-48 h-48';
       case 'lg': return 'w-80 h-80 md:w-96 md:h-96';
       case 'xl': return 'w-96 h-96 md:w-[440px] md:h-[440px]';

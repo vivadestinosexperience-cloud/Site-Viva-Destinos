@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Search, MapPin, Star, Sparkles, Filter, Sliders, Eye } from 'lucide-react';
 import { HOTELS_DATA } from '../data/hotelsData';
@@ -53,6 +53,139 @@ const getCategoryDestination = (category: string) => {
       return 'Caldas Novas';
   }
 };
+
+interface HotelCardProps {
+  key?: string;
+  hotel: Hotel;
+  onOpenHotelDetail: (hotel: Hotel) => void;
+}
+
+function HotelCard({ hotel, onOpenHotelDetail }: HotelCardProps) {
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const loc = getHotelLocation(hotel);
+
+  // Auto cycle images when hovered
+  useEffect(() => {
+    if (!isHovered || hotel.images.length <= 1) {
+      setCurrentImgIndex(0); // Reset when not hovered
+      return;
+    }
+
+    const interval = setInterval(() => {
+      setCurrentImgIndex((prev) => (prev + 1) % Math.min(hotel.images.length, 3)); // Cycle through first 3 images on hover
+    }, 2000); // Friendly 2-second interval
+
+    return () => clearInterval(interval);
+  }, [isHovered, hotel.images.length]);
+
+  return (
+    <motion.div
+      layout
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+      transition={{ duration: 0.4 }}
+      whileHover={{ y: -8, transition: { duration: 0.2 } }}
+      id={`hotel-card-${hotel.id}`}
+      className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 cursor-pointer flex flex-col justify-between group transition-shadow duration-300"
+      onClick={() => onOpenHotelDetail(hotel)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Hotel Cover Image */}
+      <div className="relative h-60 overflow-hidden bg-gray-200">
+        <AnimatePresence mode="popLayout">
+          <motion.img
+            key={currentImgIndex}
+            src={hotel.images[currentImgIndex]}
+            alt={hotel.name}
+            initial={{ opacity: 0.5, scale: 1 }}
+            animate={{ opacity: 1, scale: isHovered ? 1.08 : 1.02 }}
+            exit={{ opacity: 0.5 }}
+            transition={{ 
+              opacity: { duration: 0.5, ease: 'easeInOut' },
+              scale: { duration: 3.5, ease: 'linear' }
+            }}
+            className="w-full h-full object-cover"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+          />
+        </AnimatePresence>
+        
+        {/* Category overlay label */}
+        <span className="absolute top-4 left-4 bg-azul/90 text-dourado border border-dourado/30 backdrop-blur-md text-[10px] uppercase tracking-widest font-extrabold px-3.5 py-1.5 rounded-full shadow z-10">
+          {hotel.categoryLabel}
+        </span>
+
+        {/* Highlight overlay */}
+        <div className="absolute bottom-4 left-4 right-4 bg-black/55 text-white/95 text-[11px] sm:text-xs tracking-medium px-4 py-2 rounded-xl backdrop-blur-xs font-light z-10">
+          ⭐ {hotel.highlight}
+        </div>
+
+        {/* Small slide progress indicators on hover */}
+        {isHovered && hotel.images.length > 1 && (
+          <div className="absolute top-4 right-4 flex gap-1 bg-black/40 px-2 py-1.5 rounded-full backdrop-blur-md z-10 animate-fade-in">
+            {Array.from({ length: Math.min(hotel.images.length, 3) }).map((_, i) => (
+              <div 
+                key={i} 
+                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${currentImgIndex === i ? 'bg-dourado scale-110' : 'bg-white/50'}`} 
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Hotel Descriptions Content */}
+      <div className="p-6 flex-grow flex flex-col justify-between space-y-4">
+        <div className="space-y-2">
+          {/* Visual location indicator */}
+          <div className="flex items-center gap-1 text-gray-400 text-[11px] font-semibold tracking-wider uppercase select-none">
+            <MapPin size={11} className="text-dourado shrink-0" />
+            <span>{loc.city} - {loc.state}</span>
+          </div>
+          
+          <h3 className="font-display font-bold text-xl md:text-2xl text-azul group-hover:text-dourado transition-colors leading-tight">
+            {hotel.name}
+          </h3>
+          <p className="text-gray-550 leading-relaxed font-sans font-light text-xs sm:text-sm line-clamp-3">
+            {hotel.tagline}
+          </p>
+        </div>
+
+        {/* Micro features grid */}
+        <div className="flex flex-wrap gap-1.5 pt-2 select-none">
+          {hotel.features.slice(0, 3).map((feat) => (
+            <span
+              key={feat}
+              className="bg-gray-150/70 text-gray-650 text-[10px] font-semibold px-2.5 py-1 rounded"
+            >
+              {feat}
+            </span>
+          ))}
+          {hotel.features.length > 3 && (
+            <span className="bg-azul/5 text-azul text-[10px] font-extrabold px-2 py-1 rounded">
+              +{hotel.features.length - 3} mais
+            </span>
+          )}
+        </div>
+      </div>
+
+      {/* Trigger Buttons Footer */}
+      <div className="px-6 pb-6 pt-3 border-t border-gray-100 flex items-center justify-center">
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onOpenHotelDetail(hotel);
+          }}
+          className="w-full bg-dourado hover:bg-azul hover:text-white text-azul font-bold py-3.5 px-4 rounded-full flex items-center justify-center gap-1.5 cursor-pointer shadow-md transition-all duration-200 font-display uppercase tracking-wider text-xs"
+        >
+          <Eye size={15} /> Ver Fotos e Detalhes
+        </button>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTab }: HotelCatalogProps) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -318,93 +451,15 @@ export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTa
                   className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 >
                   <AnimatePresence mode="popLayout">
-                    {group.hotels.map((hotel) => {
-                      const loc = getHotelLocation(hotel);
-                    return (
-                      <motion.div
-                        layout
+                    {group.hotels.map((hotel) => (
+                      <HotelCard
                         key={hotel.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.95 }}
-                        transition={{ duration: 0.4 }}
-                        whileHover={{ y: -8, transition: { duration: 0.2 } }}
-                        id={`hotel-card-${hotel.id}`}
-                        className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 cursor-pointer flex flex-col justify-between group transition-shadow duration-300"
-                        onClick={() => onOpenHotelDetail(hotel)}
-                      >
-                        {/* Hotel Cover Image */}
-                        <div className="relative h-60 overflow-hidden bg-gray-200">
-                          <img
-                            src={hotel.images[0]}
-                            alt={hotel.name}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108"
-                            loading="lazy"
-                            referrerPolicy="no-referrer"
-                          />
-                          {/* Category overlay label */}
-                          <span className="absolute top-4 left-4 bg-azul/90 text-dourado border border-dourado/30 backdrop-blur-md text-[10px] uppercase tracking-widest font-extrabold px-3.5 py-1.5 rounded-full shadow">
-                            {hotel.categoryLabel}
-                          </span>
-
-                          {/* Highlight overlay */}
-                          <div className="absolute bottom-4 left-4 right-4 bg-black/55 text-white/95 text-[11px] sm:text-xs tracking-medium px-4 py-2 rounded-xl backdrop-blur-xs font-light">
-                            ⭐ {hotel.highlight}
-                          </div>
-                        </div>
-
-                        {/* Hotel Descriptions Content */}
-                        <div className="p-6 flex-grow flex flex-col justify-between space-y-4">
-                          <div className="space-y-2">
-                            {/* Visual location indicator */}
-                            <div className="flex items-center gap-1 text-gray-400 text-[11px] font-semibold tracking-wider uppercase select-none">
-                              <MapPin size={11} className="text-dourado shrink-0" />
-                              <span>{loc.city} - {loc.state}</span>
-                            </div>
-                            
-                            <h3 className="font-display font-bold text-xl md:text-2xl text-azul group-hover:text-dourado transition-colors leading-tight">
-                              {hotel.name}
-                            </h3>
-                            <p className="text-gray-550 leading-relaxed font-sans font-light text-xs sm:text-sm line-clamp-3">
-                              {hotel.tagline}
-                            </p>
-                          </div>
-
-                          {/* Micro features grid */}
-                          <div className="flex flex-wrap gap-1.5 pt-2 select-none">
-                            {hotel.features.slice(0, 3).map((feat) => (
-                              <span
-                                key={feat}
-                                className="bg-gray-150/70 text-gray-650 text-[10px] font-semibold px-2.5 py-1 rounded"
-                              >
-                                {feat}
-                              </span>
-                            ))}
-                            {hotel.features.length > 3 && (
-                              <span className="bg-azul/5 text-azul text-[10px] font-extrabold px-2 py-1 rounded">
-                                +{hotel.features.length - 3} mais
-                              </span>
-                            )}
-                          </div>
-                        </div>
-
-                        {/* Trigger Buttons Footer */}
-                        <div className="px-6 pb-6 pt-3 border-t border-gray-100 flex items-center justify-center">
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              onOpenHotelDetail(hotel);
-                            }}
-                            className="w-full bg-dourado hover:bg-azul hover:text-white text-azul font-bold py-3 px-4 rounded-full flex items-center justify-center gap-1.5 cursor-pointer shadow-md transition-all duration-200"
-                          >
-                            <Eye size={15} /> Ver Fotos e Detalhes
-                          </button>
-                        </div>
-                      </motion.div>
-                    );
-                  })}
-                </AnimatePresence>
-              </motion.div>
+                        hotel={hotel}
+                        onOpenHotelDetail={onOpenHotelDetail}
+                      />
+                    ))}
+                  </AnimatePresence>
+                </motion.div>
             </div>
           )})}
 

@@ -142,6 +142,20 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
     };
   }, [hotel]);
 
+  // Autoplay main slideshow when modal is open and user is not interacting
+  useEffect(() => {
+    if (!hotel || hotel.images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      // Rotate image automatically if not swiping or lightbox zooming
+      if (!isMainSwiping && !isLightboxOpen) {
+        setActiveImgIndex((prev) => (prev + 1) % hotel.images.length);
+      }
+    }, 3800); // Premium 3.8s interval
+
+    return () => clearInterval(interval);
+  }, [hotel, isMainSwiping, isLightboxOpen]);
+
   if (!hotel) return null;
 
   const handleNextImage = (e: React.MouseEvent) => {
@@ -238,11 +252,11 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
           </div>
 
           {/* Core content scrollbar wrapped grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 max-h-[78vh] sm:max-h-[82vh] lg:max-h-[80vh] overflow-y-auto lg:overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 max-h-[75vh] sm:max-h-[80vh] overflow-y-auto">
             
             {/* Left: Interactive Image Slider Column (7 Rows large on LG) */}
             <div 
-              className={`lg:col-span-7 bg-gray-900 relative h-64 sm:h-96 lg:h-full min-h-[250px] sm:min-h-[350px] lg:min-h-[450px] overflow-hidden select-none transition-colors ${
+              className={`lg:col-span-7 bg-gray-900 relative h-64 sm:h-96 lg:h-[500px] lg:sticky lg:top-0 overflow-hidden select-none transition-colors ${
                 isMainSwiping ? 'cursor-grabbing bg-gray-950' : 'cursor-grab lg:cursor-zoom-in'
               }`}
               onTouchStart={(e) => handleMainDragStart(e.touches[0].clientX)}
@@ -267,10 +281,13 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
                     key={activeImgIndex}
                     src={hotel.images[activeImgIndex]}
                     alt={`${hotel.name} - Imagem ${activeImgIndex + 1}`}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0, scale: 1 }}
+                    animate={{ opacity: 1, scale: 1.07 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2, ease: 'easeOut' }}
+                    transition={{ 
+                      opacity: { duration: 0.6, ease: 'easeInOut' },
+                      scale: { duration: 4.8, ease: 'linear' }
+                    }}
                     className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                     referrerPolicy="no-referrer"
                   />
@@ -398,7 +415,7 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
             </div>
 
             {/* Right: Hotel features & reviews details column (5 Rows out of 12) */}
-            <div className="lg:col-span-5 p-6 md:p-8 flex flex-col justify-between space-y-6 overflow-visible lg:overflow-y-auto lg:max-h-[80vh] bg-gradient-to-b from-white to-claro">
+            <div className="lg:col-span-5 p-6 md:p-8 pb-12 flex flex-col justify-between space-y-6 overflow-visible bg-gradient-to-b from-white to-claro">
               <div className="space-y-4">
                 {/* Category small Label heading */}
                 <div className="flex items-center gap-2">
@@ -573,18 +590,18 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
               </div>
 
               {/* Exclusive "Review do Capitão" Certificate section */}
-              <div className="bg-gradient-to-r from-[#FFFBF0] to-[#FFF6E3] border border-dourado/30 rounded-2xl p-4.5 space-y-2 relative overflow-hidden shadow-inner">
+              <div className="bg-gradient-to-r from-[#FFFBF0] to-[#FFF6E3] border border-dourado/30 rounded-2xl p-5 space-y-2.5 relative overflow-hidden shadow-inner">
                 {/* Embedded compass glow background */}
                 <div className="absolute -bottom-8 -right-8 text-dourado/10 pointer-events-none rotate-12">
                   <Compass size={110} />
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-13 h-13 rounded-full overflow-hidden bg-azul/5 flex items-center justify-center border border-dourado/20 shrink-0">
+                  <div className="w-14 h-14 rounded-full overflow-hidden bg-azul/5 flex items-center justify-center border border-dourado/20 shrink-0 shadow-sm">
                     <MascotImage size="sm" />
                   </div>
                   <div className="space-y-0.5">
-                    <h5 className="font-display font-bold text-[11px] sm:text-xs text-azul uppercase tracking-widest leading-none">
+                    <h5 className="font-display font-bold text-xs sm:text-sm text-azul uppercase tracking-widest leading-tight">
                       Resenha do Capitão Destino
                     </h5>
                     <div className="flex items-center text-xs text-dourado font-bold">
@@ -593,20 +610,13 @@ export default function HotelModal({ hotel, onClose }: HotelModalProps) {
                   </div>
                 </div>
 
-                <p className="text-[11px] sm:text-xs text-gray-700 leading-relaxed italic relative z-10 font-sans font-light">
+                <p className="text-[11px] sm:text-xs text-gray-750 leading-relaxed italic relative z-10 font-sans font-light">
                   "{hotel.captainTip}"
                 </p>
               </div>
 
               {/* Direct converter Trigger Button */}
               <div className="space-y-4 pt-3 border-t border-gray-150">
-                <div className="bg-azul/5 p-3 rounded-2xl flex items-center gap-2.5">
-                  <CheckCircle2 size={18} className="text-dourado shrink-0" />
-                  <div className="text-xs text-azul leading-normal">
-                    Assessoria <strong>105% Gratuita</strong>! Sem taxas extras de reserva na Viva Destinos.
-                  </div>
-                </div>
-
                 <a
                   href={getWhatsAppLink()}
                   target="_blank"
