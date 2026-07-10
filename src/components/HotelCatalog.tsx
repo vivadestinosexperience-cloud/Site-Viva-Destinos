@@ -330,7 +330,7 @@ export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTa
                         transition={{ duration: 0.4 }}
                         whileHover={{ y: -8, transition: { duration: 0.2 } }}
                         id={`hotel-card-${hotel.id}`}
-                        className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 cursor-pointer flex flex-col justify-between group transition-shadow duration-350"
+                        className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 cursor-pointer flex flex-col justify-between group transition-shadow duration-300"
                         onClick={() => onOpenHotelDetail(hotel)}
                       >
                         {/* Hotel Cover Image */}

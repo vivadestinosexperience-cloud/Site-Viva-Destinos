@@ -9,20 +9,37 @@
   --color-grafite: #111827;
   --color-verde: #25D366;
   
+  /* Custom grays to fix non-standard color classes used in components */
+  --color-gray-150: #ECEFF3;
+  --color-gray-250: #D1D8E2;
+  --color-gray-255: #CBD5E1;
+  --color-gray-305: #94A3B8;
+  --color-gray-450: #64748B;
+  --color-gray-550: #475569;
+  --color-gray-650: #334155;
+  --color-gray-750: #1E293B;
+  
   --font-sans: "Inter", system-ui, sans-serif;
   --font-display: "Space Grotesk", sans-serif;
+
+  /* Custom animations defined natively in Tailwind v4 */
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-pulse-subtle: pulse-subtle 3s ease-in-out infinite;
+  --animate-spin-slow: spin 12s linear infinite;
 }
 
-/* Custom fade animations and global enhancements */
+/* Custom keyframes */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 }
 
-.animate-float {
-  animation: float 4s ease-in-out infinite;
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
 }
 
+/* Custom shadows */
 .whatsapp-shadow {
   box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
 }
@@ -44,5 +61,15 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #f1c46d;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 

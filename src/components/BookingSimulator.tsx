@@ -490,13 +490,13 @@ ${specialNeeds.trim() ? `\n💬 *Observações Especiais:* ${specialNeeds.trim()
 
             {/* Response Alerts */}
             {errorMessage && (
-              <div className="bg-red-50 border border-red-200 text-red-650 text-xs sm:text-sm px-4 py-3.5 rounded-2xl font-medium leading-relaxed">
+              <div className="bg-red-50 border border-red-200 text-red-800 text-xs sm:text-sm px-4 py-3.5 rounded-2xl font-medium leading-relaxed">
                 ⚠️ {errorMessage}
               </div>
             )}
 
             {successMessage && (
-              <div className="bg-green-50 border border-green-200 text-green-755 text-xs sm:text-sm px-4 py-3.5 rounded-2xl font-medium leading-relaxed">
+              <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm px-4 py-3.5 rounded-2xl font-medium leading-relaxed">
                 ✅ {successMessage}
               </div>
             )}
