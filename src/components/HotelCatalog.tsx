@@ -10,9 +10,54 @@ interface HotelCatalogProps {
   setActiveTab: (tab: 'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam' | 'beach-park') => void;
 }
 
+// Map hotel category to City & State location
+export const getHotelLocation = (hotel: { category: string; id: string }) => {
+  switch (hotel.category) {
+    case 'lagoa':
+    case 'diroma':
+    case 'viver-caldas':
+    case 'ctc':
+    case 'wam':
+      return { city: 'Caldas Novas', state: 'GO' };
+    case 'rio-quente':
+      return { city: 'Rio Quente', state: 'GO' };
+    case 'olimpia':
+      return { city: 'Olímpia', state: 'SP' };
+    case 'sauipe':
+      return { city: 'Costa do Sauípe', state: 'BA' };
+    case 'beach-park':
+      return { city: 'Aquiraz', state: 'CE' };
+    default:
+      return { city: 'Caldas Novas', state: 'GO' };
+  }
+};
+
+// Map category to main city helper for compatibility checks
+const getCategoryDestination = (category: string) => {
+  switch (category) {
+    case 'lagoa':
+    case 'diroma':
+    case 'viver-caldas':
+    case 'ctc':
+    case 'wam':
+      return 'Caldas Novas';
+    case 'rio-quente':
+      return 'Rio Quente';
+    case 'olimpia':
+      return 'Olímpia';
+    case 'sauipe':
+      return 'Costa do Sauípe';
+    case 'beach-park':
+      return 'Aquiraz';
+    default:
+      return 'Caldas Novas';
+  }
+};
+
 export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTab }: HotelCatalogProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFeature, setSelectedFeature] = useState<string>('todos');
+  const [selectedDestination, setSelectedDestination] = useState<string>('todos');
 
   // Key feature tags for rapid filtration
   const quickFilters = useMemo(() => [
@@ -24,18 +69,35 @@ export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTa
     { label: 'Grupo/Família', value: 'família' }
   ], []);
 
+  // List of distinct destinations
+  const destinations = useMemo(() => [
+    { label: 'Todos os Destinos', value: 'todos' },
+    { label: 'Caldas Novas - GO', value: 'Caldas Novas' },
+    { label: 'Rio Quente - GO', value: 'Rio Quente' },
+    { label: 'Olímpia - SP', value: 'Olímpia' },
+    { label: 'Aquiraz - CE', value: 'Aquiraz' },
+    { label: 'Costa do Sauípe - BA', value: 'Costa do Sauípe' },
+  ], []);
+
   // Filter algorithmic logic
   const filteredHotels = useMemo(() => {
     return HOTELS_DATA.filter((hotel) => {
-      // 1. Category check
+      // 1. Destination check
+      let matchesDestination = true;
+      if (selectedDestination !== 'todos') {
+        const loc = getHotelLocation(hotel);
+        matchesDestination = loc.city === selectedDestination;
+      }
+
+      // 2. Category check
       const matchesTab = activeTab === 'todos' || hotel.category === activeTab;
       
-      // 2. Search check
+      // 3. Search check
       const matchesSearch = hotel.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
                             hotel.tagline.toLowerCase().includes(searchTerm.toLowerCase()) || 
                             hotel.description.toLowerCase().includes(searchTerm.toLowerCase());
 
-      // 3. Quick properties check
+      // 4. Quick properties check
       let matchesFeature = true;
       if (selectedFeature !== 'todos') {
         const query = selectedFeature.toLowerCase();
@@ -54,9 +116,34 @@ export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTa
         matchesFeature = inFeatures || tagsMatch || freeParquesMatch;
       }
 
-      return matchesTab && matchesSearch && matchesFeature;
+      return matchesDestination && matchesTab && matchesSearch && matchesFeature;
     });
-  }, [searchTerm, activeTab, selectedFeature]);
+  }, [searchTerm, activeTab, selectedFeature, selectedDestination]);
+
+  // Group filtered hotels by City and State for separation
+  const groupedHotels = useMemo(() => {
+    const groups: { [key: string]: { city: string; state: string; hotels: Hotel[] } } = {};
+    
+    filteredHotels.forEach((hotel) => {
+      const { city, state } = getHotelLocation(hotel);
+      const key = `${city} - ${state}`;
+      
+      if (!groups[key]) {
+        groups[key] = { city, state, hotels: [] };
+      }
+      groups[key].hotels.push(hotel);
+    });
+    
+    return groups;
+  }, [filteredHotels]);
+
+  // Reset helper
+  const handleResetFilters = () => {
+    setSearchTerm('');
+    setSelectedFeature('todos');
+    setSelectedDestination('todos');
+    setActiveTab('todos');
+  };
 
   return (
     <section id="hoteis" className="py-24 bg-claro px-6 md:px-[8%] relative">
@@ -77,74 +164,86 @@ export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTa
         </div>
 
         {/* Dashboard filter center */}
-        <div className="bg-white p-5 rounded-3xl shadow-lg border border-gray-100 space-y-5">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            {/* 1. Categorized Tabs */}
-            <div className="flex bg-gray-50 p-1.5 rounded-2xl w-full md:w-auto overflow-x-auto shrink-0 select-none">
-              <button
-                onClick={() => { setActiveTab('todos'); setSelectedFeature('todos'); }}
-                className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'todos' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
-              >
-                Todos ({HOTELS_DATA.length})
-              </button>
-              <button
-                onClick={() => { setActiveTab('lagoa'); }}
-                className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'lagoa' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
-              >
-                Lagoa Parques ({HOTELS_DATA.filter(h => h.category === 'lagoa').length})
-              </button>
-              <button
-                onClick={() => { setActiveTab('diroma'); }}
-                className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'diroma' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
-              >
-                Rede diRoma ({HOTELS_DATA.filter(h => h.category === 'diroma').length})
-              </button>
-              <button
-                onClick={() => { setActiveTab('viver-caldas'); }}
-                className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'viver-caldas' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
-              >
-                Viver Caldas ({HOTELS_DATA.filter(h => h.category === 'viver-caldas').length})
-              </button>
-              <button
-                onClick={() => { setActiveTab('ctc'); }}
-                className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'ctc' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
-              >
-                Rede CTC ({HOTELS_DATA.filter(h => h.category === 'ctc').length})
-              </button>
-              <button
-                onClick={() => { setActiveTab('wam'); }}
-                className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'wam' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
-              >
-                WAM Experience ({HOTELS_DATA.filter(h => h.category === 'wam').length})
-              </button>
-              <button
-                onClick={() => { setActiveTab('olimpia'); }}
-                className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'olimpia' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
-              >
-                Hot Beach Olímpia ({HOTELS_DATA.filter(h => h.category === 'olimpia').length})
-              </button>
-              <button
-                onClick={() => { setActiveTab('sauipe'); }}
-                className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'sauipe' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
-              >
-                Costa do Sauípe ({HOTELS_DATA.filter(h => h.category === 'sauipe').length})
-              </button>
-              <button
-                onClick={() => { setActiveTab('rio-quente'); }}
-                className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'rio-quente' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
-              >
-                Rio Quente ({HOTELS_DATA.filter(h => h.category === 'rio-quente').length})
-              </button>
-              <button
-                onClick={() => { setActiveTab('beach-park'); }}
-                className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'beach-park' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
-              >
-                Rede Beach Park ({HOTELS_DATA.filter(h => h.category === 'beach-park').length})
-              </button>
+        <div className="bg-white p-6 rounded-3xl shadow-xl border border-gray-100 space-y-6">
+          
+          {/* A. Destination Selector (Cidade & Estado) */}
+          <div className="space-y-2.5">
+            <span className="text-xs font-bold uppercase tracking-widest text-azul flex items-center gap-1.5 px-1">
+              <MapPin size={14} className="text-dourado" /> 1. Escolha o Destino (Cidade & Estado)
+            </span>
+            <div className="flex bg-gray-50 p-1.5 rounded-2xl overflow-x-auto gap-1 select-none scrollbar-none">
+              {destinations.map((dest) => {
+                const count = dest.value === 'todos' 
+                  ? HOTELS_DATA.length 
+                  : HOTELS_DATA.filter(h => getHotelLocation(h).city === dest.value).length;
+                
+                return (
+                  <button
+                    key={dest.value}
+                    onClick={() => {
+                      setSelectedDestination(dest.value);
+                      // Reset network tab if it's incompatible with the newly selected destination
+                      if (dest.value !== 'todos' && activeTab !== 'todos') {
+                        const categoryDest = getCategoryDestination(activeTab);
+                        if (categoryDest !== dest.value) {
+                          setActiveTab('todos');
+                        }
+                      }
+                    }}
+                    className={`px-5 py-2.5 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 whitespace-nowrap ${selectedDestination === dest.value ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul hover:bg-gray-100'}`}
+                  >
+                    {dest.label} ({count})
+                  </button>
+                );
+              })}
             </div>
+          </div>
 
-            {/* 2. Text Search */}
-            <div className="relative w-full md:max-w-md">
+          {/* B. Brand/Network Selector */}
+          <div className="space-y-2.5">
+            <span className="text-xs font-bold uppercase tracking-widest text-azul flex items-center gap-1.5 px-1">
+              <Sparkles size={14} className="text-dourado" /> 2. Escolha por Rede ou Parque
+            </span>
+            <div className="flex bg-gray-50 p-1.5 rounded-2xl overflow-x-auto gap-1 select-none scrollbar-none">
+              <button
+                onClick={() => { setActiveTab('todos'); }}
+                className={`px-5 py-2.5 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 whitespace-nowrap ${activeTab === 'todos' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul hover:bg-gray-100'}`}
+              >
+                Todas as Redes ({HOTELS_DATA.filter(h => selectedDestination === 'todos' || getHotelLocation(h).city === selectedDestination).length})
+              </button>
+              
+              {[
+                { id: 'lagoa', label: 'Lagoa Parques', city: 'Caldas Novas' },
+                { id: 'diroma', label: 'Rede diRoma', city: 'Caldas Novas' },
+                { id: 'viver-caldas', label: 'Viver Caldas', city: 'Caldas Novas' },
+                { id: 'ctc', label: 'Rede CTC', city: 'Caldas Novas' },
+                { id: 'wam', label: 'WAM Experience', city: 'Caldas Novas' },
+                { id: 'olimpia', label: 'Hot Beach Olímpia', city: 'Olímpia' },
+                { id: 'sauipe', label: 'Costa do Sauípe', city: 'Costa do Sauípe' },
+                { id: 'rio-quente', label: 'Rio Quente Resorts', city: 'Rio Quente' },
+                { id: 'beach-park', label: 'Rede Beach Park', city: 'Aquiraz' }
+              ]
+                .filter(net => selectedDestination === 'todos' || net.city === selectedDestination)
+                .map((net) => {
+                  const count = HOTELS_DATA.filter(h => h.category === net.id).length;
+                  return (
+                    <button
+                      key={net.id}
+                      onClick={() => { setActiveTab(net.id as any); }}
+                      className={`px-5 py-2.5 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 whitespace-nowrap ${activeTab === net.id ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
+                    >
+                      {net.label} ({count})
+                    </button>
+                  );
+                })
+              }
+            </div>
+          </div>
+
+          {/* C. Search & Attribute Quick Filters */}
+          <div className="flex flex-col lg:flex-row gap-4 pt-4 border-t border-gray-100 items-center justify-between">
+            {/* 1. Text Search */}
+            <div className="relative w-full lg:max-w-md">
               <input
                 type="text"
                 placeholder="Buscar pelo nome ou lazer..."
@@ -154,25 +253,26 @@ export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTa
               />
               <Search className="absolute left-4 top-3.5 text-gray-450" size={18} />
             </div>
-          </div>
 
-          {/* 3. Easy Attribute Filter Pills */}
-          <div className="border-t border-gray-100 pt-4 flex items-center gap-3 overflow-x-auto scrollbar-none pb-1">
-            <span className="text-gray-600 text-xs font-bold uppercase tracking-wider shrink-0 flex items-center gap-1.5">
-              <Filter size={14} className="text-dourado" /> Filtrar:
-            </span>
-            <div className="flex gap-2 min-w-max">
-              {quickFilters.map((filter) => (
-                <button
-                  key={filter.value}
-                  onClick={() => setSelectedFeature(filter.value)}
-                  className={`px-4 py-1.5 rounded-full text-xs font-medium cursor-pointer transition-all ${selectedFeature === filter.value ? 'bg-dourado text-azul font-bold shadow-sm' : 'bg-gray-100 hover:bg-gray-200 text-gray-500'}`}
-                >
-                  {filter.label}
-                </button>
-              ))}
+            {/* 2. Quick Attribute Filter Pills */}
+            <div className="flex items-center gap-3 overflow-x-auto w-full lg:w-auto pb-1 lg:pb-0 scrollbar-none">
+              <span className="text-gray-650 text-xs font-bold uppercase tracking-wider shrink-0 flex items-center gap-1.5">
+                <Filter size={14} className="text-dourado" /> Filtrar Lazer:
+              </span>
+              <div className="flex gap-2 min-w-max">
+                {quickFilters.map((filter) => (
+                  <button
+                    key={filter.value}
+                    onClick={() => setSelectedFeature(filter.value)}
+                    className={`px-4 py-1.5 rounded-full text-xs font-medium cursor-pointer transition-all ${selectedFeature === filter.value ? 'bg-dourado text-azul font-bold shadow-sm' : 'bg-gray-100 hover:bg-gray-200 text-gray-500'}`}
+                  >
+                    {filter.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
+
         </div>
 
         {/* Dynamic active indicators */}
@@ -180,117 +280,151 @@ export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTa
           <span>
             Mostrando <strong className="text-azul font-semibold">{filteredHotels.length}</strong> de {HOTELS_DATA.length} hotéis cadastrados
           </span>
-          {searchTerm || selectedFeature !== 'todos' ? (
+          {searchTerm || selectedFeature !== 'todos' || selectedDestination !== 'todos' || activeTab !== 'todos' ? (
             <button
-              onClick={() => { setSearchTerm(''); setSelectedFeature('todos'); setActiveTab('todos'); }}
+              onClick={handleResetFilters}
               className="text-dourado font-bold hover:underline cursor-pointer"
             >
-              Excluir Filtros
+              Limpar Todos os Filtros
             </button>
           ) : null}
         </div>
 
-        {/* Grid Catalog Cards */}
-        <motion.div 
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredHotels.map((hotel) => (
-              <motion.div
-                layout
-                key={hotel.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4 }}
-                whileHover={{ y: -8, transition: { duration: 0.2 } }}
-                id={`hotel-card-${hotel.id}`}
-                className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 cursor-pointer flex flex-col justify-between group transition-shadow duration-350"
-                onClick={() => onOpenHotelDetail(hotel)}
-              >
-                {/* Hotel Cover Image */}
-                <div className="relative h-60 overflow-hidden bg-gray-200">
-                  <img
-                    src={hotel.images[0]}
-                    alt={hotel.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108"
-                    loading="lazy"
-                    referrerPolicy="no-referrer"
-                  />
-                  {/* Category overlay label */}
-                  <span className="absolute top-4 left-4 bg-azul/90 text-dourado border border-dourado/30 backdrop-blur-md text-[10px] uppercase tracking-widest font-extrabold px-3.5 py-1.5 rounded-full shadow">
-                    {hotel.categoryLabel}
-                  </span>
-
-                  {/* Highlight overlay */}
-                  <div className="absolute bottom-4 left-4 right-4 bg-black/55 text-white/95 text-[11px] sm:text-xs tracking-medium px-4 py-2 rounded-xl backdrop-blur-xs font-light">
-                    ⭐ {hotel.highlight}
+        {/* Grouped Catalog List */}
+        <div className="space-y-16">
+          {Object.keys(groupedHotels).map((groupKey) => {
+            const group = groupedHotels[groupKey];
+            return (
+              <div key={groupKey} className="space-y-6">
+                
+                {/* Separator / Header for City and State */}
+                <div className="flex items-center gap-3 border-b border-gray-200 pb-3">
+                  <div className="bg-azul text-dourado p-2.5 rounded-xl shadow-sm">
+                    <MapPin size={18} />
                   </div>
-                </div>
-
-                {/* Hotel Descriptions Content */}
-                <div className="p-6 flex-grow flex flex-col justify-between space-y-4">
-                  <div className="space-y-2">
-                    <h3 className="font-display font-bold text-xl md:text-2xl text-azul group-hover:text-dourado transition-colors leading-tight">
-                      {hotel.name}
+                  <div>
+                    <h3 className="font-display font-bold text-lg sm:text-xl text-azul flex items-center gap-1.5">
+                      {group.city} <span className="text-dourado font-light">|</span> <span className="text-gray-500 font-medium text-sm sm:text-base">{group.state}</span>
                     </h3>
-                    <p className="text-gray-550 leading-relaxed font-sans font-light text-xs sm:text-sm line-clamp-3">
-                      {hotel.tagline}
+                    <p className="text-[11px] text-gray-450 font-light mt-0.5">
+                      {group.hotels.length} {group.hotels.length === 1 ? 'empreendimento disponível' : 'empreendimentos disponíveis'}
                     </p>
                   </div>
+                </div>
 
-                  {/* Micro features grid */}
-                  <div className="flex flex-wrap gap-1.5 pt-2 select-none">
-                    {hotel.features.slice(0, 3).map((feat) => (
-                      <span
-                        key={feat}
-                        className="bg-gray-150/70 text-gray-650 text-[10px] font-semibold px-2.5 py-1 rounded"
+                {/* Grid of cards under this location */}
+                <motion.div 
+                  layout
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
+                  <AnimatePresence mode="popLayout">
+                    {group.hotels.map((hotel) => {
+                      const loc = getHotelLocation(hotel);
+                    return (
+                      <motion.div
+                        layout
+                        key={hotel.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        transition={{ duration: 0.4 }}
+                        whileHover={{ y: -8, transition: { duration: 0.2 } }}
+                        id={`hotel-card-${hotel.id}`}
+                        className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 cursor-pointer flex flex-col justify-between group transition-shadow duration-350"
+                        onClick={() => onOpenHotelDetail(hotel)}
                       >
-                        {feat}
-                      </span>
-                    ))}
-                    {hotel.features.length > 3 && (
-                      <span className="bg-azul/5 text-azul text-[10px] font-extrabold px-2 py-1 rounded">
-                        +{hotel.features.length - 3} mais
-                      </span>
-                    )}
-                  </div>
-                </div>
+                        {/* Hotel Cover Image */}
+                        <div className="relative h-60 overflow-hidden bg-gray-200">
+                          <img
+                            src={hotel.images[0]}
+                            alt={hotel.name}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108"
+                            loading="lazy"
+                            referrerPolicy="no-referrer"
+                          />
+                          {/* Category overlay label */}
+                          <span className="absolute top-4 left-4 bg-azul/90 text-dourado border border-dourado/30 backdrop-blur-md text-[10px] uppercase tracking-widest font-extrabold px-3.5 py-1.5 rounded-full shadow">
+                            {hotel.categoryLabel}
+                          </span>
 
-                {/* Trigger Buttons Footer */}
-                <div className="px-6 pb-6 pt-3 border-t border-gray-100 flex items-center justify-center">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onOpenHotelDetail(hotel);
-                    }}
-                    className="w-full bg-dourado hover:bg-azul hover:text-white text-azul font-bold py-3 px-4 rounded-full flex items-center justify-center gap-1.5 cursor-pointer shadow-md transition-all duration-200"
-                  >
-                    <Eye size={15} /> Ver Fotos e Detalhes
-                  </button>
-                </div>
+                          {/* Highlight overlay */}
+                          <div className="absolute bottom-4 left-4 right-4 bg-black/55 text-white/95 text-[11px] sm:text-xs tracking-medium px-4 py-2 rounded-xl backdrop-blur-xs font-light">
+                            ⭐ {hotel.highlight}
+                          </div>
+                        </div>
+
+                        {/* Hotel Descriptions Content */}
+                        <div className="p-6 flex-grow flex flex-col justify-between space-y-4">
+                          <div className="space-y-2">
+                            {/* Visual location indicator */}
+                            <div className="flex items-center gap-1 text-gray-400 text-[11px] font-semibold tracking-wider uppercase select-none">
+                              <MapPin size={11} className="text-dourado shrink-0" />
+                              <span>{loc.city} - {loc.state}</span>
+                            </div>
+                            
+                            <h3 className="font-display font-bold text-xl md:text-2xl text-azul group-hover:text-dourado transition-colors leading-tight">
+                              {hotel.name}
+                            </h3>
+                            <p className="text-gray-550 leading-relaxed font-sans font-light text-xs sm:text-sm line-clamp-3">
+                              {hotel.tagline}
+                            </p>
+                          </div>
+
+                          {/* Micro features grid */}
+                          <div className="flex flex-wrap gap-1.5 pt-2 select-none">
+                            {hotel.features.slice(0, 3).map((feat) => (
+                              <span
+                                key={feat}
+                                className="bg-gray-150/70 text-gray-650 text-[10px] font-semibold px-2.5 py-1 rounded"
+                              >
+                                {feat}
+                              </span>
+                            ))}
+                            {hotel.features.length > 3 && (
+                              <span className="bg-azul/5 text-azul text-[10px] font-extrabold px-2 py-1 rounded">
+                                +{hotel.features.length - 3} mais
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Trigger Buttons Footer */}
+                        <div className="px-6 pb-6 pt-3 border-t border-gray-100 flex items-center justify-center">
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              onOpenHotelDetail(hotel);
+                            }}
+                            className="w-full bg-dourado hover:bg-azul hover:text-white text-azul font-bold py-3 px-4 rounded-full flex items-center justify-center gap-1.5 cursor-pointer shadow-md transition-all duration-200"
+                          >
+                            <Eye size={15} /> Ver Fotos e Detalhes
+                          </button>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </AnimatePresence>
               </motion.div>
-            ))}
-          </AnimatePresence>
+            </div>
+          )})}
 
           {/* Empty search fallback */}
           {filteredHotels.length === 0 && (
-            <div className="col-span-1 md:col-span-2 lg:col-span-3 bg-white p-12 text-center rounded-3xl shadow-md border border-gray-100 flex flex-col items-center justify-center space-y-4">
+            <div className="bg-white p-12 text-center rounded-3xl shadow-md border border-gray-100 flex flex-col items-center justify-center space-y-4">
               <span className="text-4xl text-gray-300">🔍</span>
               <h4 className="font-display font-bold text-xl text-azul">Nenhum hotel condiz com os filtros selecionados!</h4>
               <p className="text-gray-550 text-sm max-w-sm">
-                O Capitão Destino sugere redefinir a busca por texto ou mudar os filtros de lazer clicando abaixo.
+                O Capitão Destino sugere redefinir a busca por texto, mudar o destino ou limpar os filtros clicando abaixo.
               </p>
               <button
-                onClick={() => { setSearchTerm(''); setSelectedFeature('todos'); setActiveTab('todos'); }}
+                onClick={handleResetFilters}
                 className="bg-dourado text-azul hover:bg-azul hover:text-white font-bold px-6 py-2.5 rounded-full text-xs shadow cursor-pointer transition-all"
               >
                 Limpar Todos os Filtros
               </button>
             </div>
           )}
-        </motion.div>
+        </div>
 
       </div>
     </section>
