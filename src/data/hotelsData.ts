@@ -2841,6 +2841,262 @@ export const HOTELS_DATA: Hotel[] = [
       'Passeio de caiaque, lancha particular e bike aquática na orla',
       'Espaço Zen, Academia de ginástica gratuita 24h e sauna'
     ]
+  },
+  {
+    id: 'oceani-beach-park',
+    name: 'Oceani Beach Park Hotel',
+    category: 'beach-park',
+    categoryLabel: 'Rede Beach Park',
+    tagline: 'À beira da belíssima praia do Porto das Dunas, combinando aconchego, lazer e a brisa do mar.',
+    description: 'O Oceani Beach Park Hotel é o refúgio perfeito para quem busca estar de frente para o mar do Porto das Dunas e a poucos metros do melhor parque aquático do mundo! Com uma atmosfera intimista, aconchegante e cheia de charme, oferece uma das vistas mais paradisíacas da região. Conta com uma área de lazer fantástica, incluindo piscina à beira-mar, quadras de vôlei de praia, tênis e excelente gastronomia regional. Ideal para casais e famílias que sonham com dias de sol, pés na areia e momentos inesquecíveis de relaxamento no Ceará.',
+    images: [
+      'https://i.postimg.cc/y6pLCfF7/BEACHPARKOCEANI-DJI-0553.jpg',
+      'https://i.postimg.cc/T2Ntvknz/MG-0004.jpg',
+      'https://i.postimg.cc/ryZf2h53/MG-0015.jpg',
+      'https://i.postimg.cc/J7YpCTjg/MG-0016.jpg',
+      'https://i.postimg.cc/Dfpx3C1N/MG-0021.jpg',
+      'https://i.postimg.cc/BZ7mfhx9/MG-0233.jpg',
+      'https://i.postimg.cc/PfVSn616/MG-0280.jpg',
+      'https://i.postimg.cc/Y0PRN9p9/MG-0298.jpg',
+      'https://i.postimg.cc/6qPcV39Q/MG-0317.jpg',
+      'https://i.postimg.cc/6qPcV396/MG-0363.jpg',
+      'https://i.postimg.cc/J0Fx3n1r/MG-0446.jpg',
+      'https://i.postimg.cc/hvYs8jSx/MG-0464.jpg',
+      'https://i.postimg.cc/8cY4d516/MG-0472.jpg',
+      'https://i.postimg.cc/x8Z5GC0b/MG-0478.jpg',
+      'https://i.postimg.cc/Wzy8m32F/MG-9962.jpg',
+      'https://i.postimg.cc/nrW2KzHM/MG-9967.jpg',
+      'https://i.postimg.cc/Fz6pbR9z/MG-9973.jpg'
+    ],
+    features: ['Pé na Areia', 'Piscina Panorâmica', 'Quadra de Tênis', 'Recreação Exclusiva', 'Próximo ao Parque'],
+    captainRating: 9.7,
+    captainTip: 'A vista para o mar é simplesmente espetacular! Não deixe de aproveitar a brisa do entardecer na piscina e fazer uma caminhada na praia de Porto das Dunas. Fica coladinho no parque!',
+    highlight: 'Localização Exclusiva de Frente para o Mar',
+    bestFor: 'família',
+    hours: {
+      checkIn: 'Check-in a partir das 15h00m',
+      checkOut: 'Check-out até 12h00m',
+      reception: 'Recepção 24h aberta e operante',
+      breakfast: 'Café da manhã cearense: das 07h00m às 10h00m'
+    },
+    generalServices: [
+      'Estacionamento rotativo gratuito para hóspedes',
+      'Recepção permanente 24h e guarda-volumes',
+      'Internet Wi-Fi de alta velocidade gratuita em todas as áreas',
+      'Acessibilidade estrutural para Cadeira de Rodas',
+      'Serviço de quarto e arrumação diária',
+      'Copa do bebê equipada'
+    ],
+    restaurantsAndBars: [
+      'Restaurante Palas com o melhor da gastronomia regional e internacional',
+      'Bar da Piscina com drinks tropicais e petiscos frescos de praia'
+    ],
+    wellnessAndSports: [
+      'Piscina com área para adultos e infantil cercada de coqueiros',
+      'Quadra de tênis oficial, quadra de vôlei de praia e salão de jogos',
+      'Espaço kids monitorado por recreadores e playground externo',
+      'Academia equipada e sauna a vapor'
+    ]
+  },
+  {
+    id: 'wellness-beach-park',
+    name: 'Wellness Beach Park Resort',
+    category: 'beach-park',
+    categoryLabel: 'Rede Beach Park',
+    tagline: 'O equilíbrio perfeito entre spa, relaxamento, diversão e conforto em família.',
+    description: 'Inaugurado para unir o conceito de resort com um spa exclusivo, o Wellness Beach Park Resort é perfeito para quem viaja com famílias maiores ou grupos de amigos. Oferece amplos apartamentos com copa completa, sala e varanda espaçosa. Sua área de lazer externa é exuberante, contando com três piscinas, hidromassagem, bar molhado, quadra poliesportiva, parquinho infantil e o renomado Spa Beach Park. Tudo pensado para restaurar suas energias com muito conforto e bem-estar ao lado do maior complexo aquático da América Latina.',
+    images: [
+      'https://i.postimg.cc/SNzfFmSK/DJI-0525.jpg',
+      'https://i.postimg.cc/xjZ34X2M/DJI-0543.jpg',
+      'https://i.postimg.cc/c1zBbvSY/MG-0002.jpg',
+      'https://i.postimg.cc/SQPfvnhM/MG-0017.jpg',
+      'https://i.postimg.cc/ZYQxMWSB/MG-0034.jpg',
+      'https://i.postimg.cc/jq14FDbW/MG-0037.jpg',
+      'https://i.postimg.cc/bY59BZhr/MG-0058.jpg',
+      'https://i.postimg.cc/T2sJ4K6Y/MG-0068.jpg',
+      'https://i.postimg.cc/FF6VBY4r/MG-0139.jpg',
+      'https://i.postimg.cc/xjZ34X2j/MG-0140.jpg',
+      'https://i.postimg.cc/qBFx5NTp/MG-0166.jpg',
+      'https://i.postimg.cc/Pf7QRCjH/MG-0170.jpg',
+      'https://i.postimg.cc/VshWVJ8m/MG-0178.jpg',
+      'https://i.postimg.cc/SQPfvnhh/MG-0428.jpg',
+      'https://i.postimg.cc/8kYm07Sg/MG-0433.jpg',
+      'https://i.postimg.cc/qBFx5NdW/MG-0740.jpg',
+      'https://i.postimg.cc/gc7HTxP5/MG-0751.jpg',
+      'https://i.postimg.cc/HnF0ch2B/MG-0760.jpg',
+      'https://i.postimg.cc/QCvg9ybS/MG-0770.jpg',
+      'https://i.postimg.cc/5yD5YR3L/MG-0781.jpg',
+      'https://i.postimg.cc/6qFV2m0R/MG-0790.jpg',
+      'https://i.postimg.cc/WzxmFHnZ/MG-0803.jpg',
+      'https://i.postimg.cc/MHg0MFDj/MG-0812.jpg',
+      'https://i.postimg.cc/6qFV2m04/MG-0858.jpg'
+    ],
+    features: ['Apartamentos Espaçosos', 'Spa de Alto Padrão', 'Três Piscinas', 'Bar Molhado', 'Quadra Poliesportiva'],
+    captainRating: 9.6,
+    captainTip: 'Os apartamentos são incrivelmente espaçosos, perfeitos para quem viaja com toda a família. O Spa oferece massagens maravilhosas para relaxar depois de um dia agitado no parque aquático!',
+    highlight: 'Spa Exclusivo e Amplo Conforto',
+    bestFor: 'grupo',
+    hours: {
+      checkIn: 'Check-in a partir das 15h00m',
+      checkOut: 'Check-out até 12h00m',
+      reception: 'Recepção 24h com atendimento premium',
+      breakfast: 'Café da manhã variado: das 07h00m às 10h00m'
+    },
+    generalServices: [
+      'Estacionamento gratuito e seguro no subsolo',
+      'Recepção 24 horas com serviço ágil de concierge',
+      'Wi-Fi de excelente sinal em todo o resort',
+      'Copa do bebê com infraestrutura completa para papais e mamães',
+      'Elevadores modernos de fácil acesso',
+      'Arrumação de quarto diária'
+    ],
+    restaurantsAndBars: [
+      'Restaurante Azul no lobby oferecendo buffets deliciosos e jantares temáticos',
+      'Bar Molhado na piscina com petiscos, coquetéis artesanais e sucos naturais'
+    ],
+    wellnessAndSports: [
+      'Spa Beach Park completo com salas de massagem, jacuzzi e saunas relaxantes',
+      'Três piscinas externas integradas à área verde com espreguiçadeiras confortáveis',
+      'Salão de jogos completo, quadra poliesportiva e playground externo para crianças',
+      'Brinquedoteca climatizada e monitoramento permanente de recreadores'
+    ]
+  },
+  {
+    id: 'suites-beach-park',
+    name: 'Suites Beach Park Resort',
+    category: 'beach-park',
+    categoryLabel: 'Rede Beach Park',
+    tagline: 'O clássico resort pé na areia com arquitetura rústica e todo o encanto cearense.',
+    description: 'Com o charme das tradicionais vilas praianas, o Suites Beach Park Resort oferece uma experiência clássica de pé na areia. A arquitetura aconchegante e rústica convida ao descanso imediato. Possui ampla área de lazer com piscina gigante, toboágua infantil, quadras esportivas, equipe de recreação animada para todas as idades e acesso extremamente facilitado ao parque aquático. Um resort perfeito para quem busca mergulhar de cabeça no melhor clima praiano do Ceará com máxima conveniência e conforto.',
+    images: [
+      'https://i.postimg.cc/MTT1sS3b/MG-6976.jpg',
+      'https://i.postimg.cc/tTTFrjvN/MG-6983.jpg',
+      'https://i.postimg.cc/bJJ16hVQ/MG-6994.jpg',
+      'https://i.postimg.cc/1ttDWQ7D/MG-6998.jpg',
+      'https://i.postimg.cc/Y99QXHDv/MG-7002.jpg',
+      'https://i.postimg.cc/633CHXbT/MG-7004.jpg',
+      'https://i.postimg.cc/j55y8b3L/MG-7007.jpg',
+      'https://i.postimg.cc/633CHXbq/MG-7016.jpg',
+      'https://i.postimg.cc/7bv7YTHL/MG-7056.jpg',
+      'https://i.postimg.cc/GtTGCjCB/MG-7062.jpg',
+      'https://i.postimg.cc/vTxfsvsB/MG-7073.jpg',
+      'https://i.postimg.cc/NF2mcxcj/MG-7079.jpg',
+      'https://i.postimg.cc/90wZhBhj/MG-7087.jpg',
+      'https://i.postimg.cc/brSkhRj4/MG-7099.jpg',
+      'https://i.postimg.cc/wMRLpkdZ/MG-7101.jpg',
+      'https://i.postimg.cc/bJBkWBKc/MG-7106.jpg',
+      'https://i.postimg.cc/Tw4gF4Bz/MG-7110.jpg',
+      'https://i.postimg.cc/Tw4gF4BS/MG-7115.jpg',
+      'https://i.postimg.cc/76W0dWjt/MG-7122.jpg',
+      'https://i.postimg.cc/ydbctb2f/MG-7138.jpg',
+      'https://i.postimg.cc/ZRMp2MX8/MG-7139.jpg',
+      'https://i.postimg.cc/Sj08NzSX/MG-7282.jpg',
+      'https://i.postimg.cc/W3HgCHxr/MG-7310.jpg',
+      'https://i.postimg.cc/hjjVCBZp/MG-7319.jpg'
+    ],
+    features: ['Pé na Areia', 'Piscina Gigante', 'Toboágua Infantil', 'Recreação Nota 1000', 'Acesso Fácil ao Parque'],
+    captainRating: 9.8,
+    captainTip: 'Tem uma das melhores recreações infantis da rede! A proximidade direta com a areia da praia torna o início e o fim do dia extremamente revigorantes e tranquilos.',
+    highlight: 'Acesso Direto à Praia e Charme Rústico',
+    bestFor: 'família',
+    hours: {
+      checkIn: 'Check-in a partir das 15h00m',
+      checkOut: 'Check-out até 12h00m',
+      reception: 'Recepção 24h de alta qualidade',
+      breakfast: 'Café da manhã da praia: das 07h00m às 10h00m'
+    },
+    generalServices: [
+      'Estacionamento rotativo privativo no local para hóspedes',
+      'Recepção 24h e balcão de turismo no lobby',
+      'Wi-Fi rápido e gratuito disponível em todas as áreas comuns e quartos',
+      'Copa infantil equipada com micro-ondas e utensílios básicos',
+      'Serviços de arrumação, limpeza diária e lavanderia sob demanda'
+    ],
+    restaurantsAndBars: [
+      'Restaurante Porto das Dunas servindo gastronomia regional de excelência',
+      'Jangada Bar com petiscos, coquetéis à base de frutas locais e chopp gelado'
+    ],
+    wellnessAndSports: [
+      'Ampla piscina adulto de formato orgânico com deck molhado e piscina infantil',
+      'Kid’s Club completo com equipe de recreadores especializados e toboágua rústico',
+      'Quadra de vôlei de areia, quadra de tênis oficial e quadra poliesportiva',
+      'Academia de ginástica moderna, saunas e áreas de descanso arborizadas'
+    ]
+  },
+  {
+    id: 'acqua-beach-park',
+    name: 'Acqua Beach Park Resort',
+    category: 'beach-park',
+    categoryLabel: 'Rede Beach Park',
+    tagline: 'O único resort com um rio lento exclusivo que te leva flutuando direto para o parque aquático.',
+    description: 'Luxo, sofisticação e muita inovação aquática te esperam no Acqua Beach Park Resort. O grande diferencial é o incrível "Acqualink", um rio lento privativo e exclusivo que percorre todo o resort e leva os hóspedes flutuando em boias diretamente para a entrada do Beach Park! O empreendimento conta com uma belíssima piscina de borda infinita de frente para a praia, áreas fitness, quadras poliesportivas, kid’s club com recreadores especializados e acomodações requintadas. É a definição perfeita de luxo litorâneo e diversão inteligente no Nordeste.',
+    images: [
+      'https://i.postimg.cc/hv0zgZYD/DJI-0045.jpg',
+      'https://i.postimg.cc/sfPZp1g6/DJI-0051.jpg',
+      'https://i.postimg.cc/xjGbKq15/DJI-0057-(1).jpg',
+      'https://i.postimg.cc/QCq9sYzV/DJI-0097.jpg',
+      'https://i.postimg.cc/FzxdmC6F/DJI-0104.jpg',
+      'https://i.postimg.cc/8kdrhszw/DJI-0541.jpg',
+      'https://i.postimg.cc/BZ51xtnB/DJI-0557.jpg',
+      'https://i.postimg.cc/tRdVh74h/DJI-0567.jpg',
+      'https://i.postimg.cc/05GJpryD/DJI-05671.jpg',
+      'https://i.postimg.cc/Wz7FjYyh/DJI-05672.jpg',
+      'https://i.postimg.cc/qqrhPHjX/MG-8575.jpg',
+      'https://i.postimg.cc/4yG7DRBv/MG-8578.jpg',
+      'https://i.postimg.cc/hvnzkRp9/MG-8602.jpg',
+      'https://i.postimg.cc/D0hJ93B1/MG-8686.jpg',
+      'https://i.postimg.cc/7h4GFrm7/MG-8696.jpg',
+      'https://i.postimg.cc/8cGJ2gtr/MG-8802.jpg',
+      'https://i.postimg.cc/wMzyCY0R/MG-8820.jpg',
+      'https://i.postimg.cc/Y07G5Bbv/MG-8850.jpg',
+      'https://i.postimg.cc/brRD8V5q/MG-9409.jpg',
+      'https://i.postimg.cc/yxTgBpGB/MG-9437.jpg',
+      'https://i.postimg.cc/VvFr1ZhQ/MG-9447.jpg',
+      'https://i.postimg.cc/rs90cZPB/MG-9457.jpg',
+      'https://i.postimg.cc/qqGh0D5W/MG-9463.jpg',
+      'https://i.postimg.cc/NMm2Cj78/MG-9499.jpg',
+      'https://i.postimg.cc/DZL4pwdL/MG-9504.jpg',
+      'https://i.postimg.cc/nzB9ShYq/MG-9510.jpg',
+      'https://i.postimg.cc/FR3kCHgj/MG-9514.jpg',
+      'https://i.postimg.cc/V6n0ZkBt/MG-9522.jpg',
+      'https://i.postimg.cc/2yxbm9Kt/MG-9598.jpg',
+      'https://i.postimg.cc/zvkb52c2/MG-9609.jpg',
+      'https://i.postimg.cc/0jCMxXBc/MG-9624.jpg',
+      'https://i.postimg.cc/wMzyCY0n/MG-9637.jpg',
+      'https://i.postimg.cc/C50B3pmt/MG-9660.jpg',
+      'https://i.postimg.cc/T1xLzvCF/MG-9763.jpg',
+      'https://i.postimg.cc/L5SYcFNQ/MG-9776.jpg',
+      'https://i.postimg.cc/QCD92Z06/MG-9796.jpg',
+      'https://i.postimg.cc/sxzQkCwc/MG-9831.jpg'
+    ],
+    features: ['Rio Lento Exclusivo', 'Piscina de Borda Infinita', 'Serviço de Luxo', 'Suítes de Alto Padrão', 'Acesso VIP ao Parque'],
+    captainRating: 9.9,
+    captainTip: 'Ir flutuando de boia direto do resort para o Beach Park através do Acqualink é uma das experiências mais divertidas e inesquecíveis que você pode ter! A piscina com borda infinita de frente pro mar também é sensacional.',
+    highlight: 'Acqualink: Rio Lento Direto para o Parque',
+    bestFor: 'luxo',
+    hours: {
+      checkIn: 'Check-in a partir das 15h00m',
+      checkOut: 'Check-out até 12h00m',
+      reception: 'Recepção 24h de luxo com portaria bilíngue',
+      breakfast: 'Café da manhã gourmet: das 07h00m às 10h30m'
+    },
+    generalServices: [
+      'Estacionamento coberto exclusivo e gratuito para hóspedes',
+      'Recepção de luxo 24h e serviço de concierge VIP',
+      'Internet Wi-Fi premium e de altíssima velocidade em todo o resort',
+      'Copa infantil decorada e completa para maior conveniência de famílias',
+      'Elevadores modernos panorâmicos rápidos'
+    ],
+    restaurantsAndBars: [
+      'Restaurante Aquiraz sofisticado servindo alta gastronomia contemporânea e pratos cearenses',
+      'Toati Bar molhado integrado ao rio lento e deck com snacks deliciosos'
+    ],
+    wellnessAndSports: [
+      'Acqualink: Rio lento privativo que conecta o resort diretamente ao Beach Park',
+      'Espetacular piscina de borda infinita de frente para a praia do Porto das Dunas',
+      'Kid’s Club temático climatizado com recreação e programação de alta qualidade',
+      'Academia completa de ginástica 24h, quadras poliesportivas e de tênis'
+    ]
   }
 ];
 

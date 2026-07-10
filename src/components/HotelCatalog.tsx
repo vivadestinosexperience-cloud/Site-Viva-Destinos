@@ -6,8 +6,8 @@ import { Hotel } from '../types';
 
 interface HotelCatalogProps {
   onOpenHotelDetail: (hotel: Hotel) => void;
-  activeTab: 'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam';
-  setActiveTab: (tab: 'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam') => void;
+  activeTab: 'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam' | 'beach-park';
+  setActiveTab: (tab: 'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam' | 'beach-park') => void;
 }
 
 export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTab }: HotelCatalogProps) {
@@ -134,6 +134,12 @@ export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTa
                 className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'rio-quente' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
               >
                 Rio Quente ({HOTELS_DATA.filter(h => h.category === 'rio-quente').length})
+              </button>
+              <button
+                onClick={() => { setActiveTab('beach-park'); }}
+                className={`px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 ${activeTab === 'beach-park' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul'}`}
+              >
+                Rede Beach Park ({HOTELS_DATA.filter(h => h.category === 'beach-park').length})
               </button>
             </div>
 
