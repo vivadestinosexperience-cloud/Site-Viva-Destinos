@@ -22,7 +22,7 @@ export default function App() {
     }
     return null;
   });
-  const [activeTab, setActiveTab] = useState<'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam' | 'beach-park'>('todos');
+  const [activeTab, setActiveTab] = useState<'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam' | 'beach-park' | 'amarante'>('todos');
 
   // Sync selectedHotel change to the URL query parameter
   useEffect(() => {

@@ -6,8 +6,8 @@ import { Hotel } from '../types';
 
 interface HotelCatalogProps {
   onOpenHotelDetail: (hotel: Hotel) => void;
-  activeTab: 'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam' | 'beach-park';
-  setActiveTab: (tab: 'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam' | 'beach-park') => void;
+  activeTab: 'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam' | 'beach-park' | 'amarante';
+  setActiveTab: (tab: 'todos' | 'lagoa' | 'diroma' | 'viver-caldas' | 'olimpia' | 'sauipe' | 'rio-quente' | 'ctc' | 'wam' | 'beach-park' | 'amarante') => void;
 }
 
 // Map hotel category to City & State location
@@ -27,6 +27,17 @@ export const getHotelLocation = (hotel: { category: string; id: string }) => {
       return { city: 'Costa do Sauípe', state: 'BA' };
     case 'beach-park':
       return { city: 'Aquiraz', state: 'CE' };
+    case 'amarante':
+      if (hotel.id.includes('maceio')) {
+        return { city: 'Maceió', state: 'AL' };
+      }
+      if (hotel.id.includes('japaratinga')) {
+        return { city: 'Japaratinga', state: 'AL' };
+      }
+      if (hotel.id.includes('maragogi')) {
+        return { city: 'Maragogi', state: 'AL' };
+      }
+      return { city: 'Maceió', state: 'AL' };
     default:
       return { city: 'Caldas Novas', state: 'GO' };
   }
@@ -49,6 +60,8 @@ const getCategoryDestination = (category: string) => {
       return 'Costa do Sauípe';
     case 'beach-park':
       return 'Aquiraz';
+    case 'amarante':
+      return 'Maceió';
     default:
       return 'Caldas Novas';
   }
@@ -210,6 +223,9 @@ export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTa
     { label: 'Olímpia - SP', value: 'Olímpia' },
     { label: 'Aquiraz - CE', value: 'Aquiraz' },
     { label: 'Costa do Sauípe - BA', value: 'Costa do Sauípe' },
+    { label: 'Maceió - AL', value: 'Maceió' },
+    { label: 'Japaratinga - AL', value: 'Japaratinga' },
+    { label: 'Maragogi - AL', value: 'Maragogi' }
   ], []);
 
   // Filter algorithmic logic
@@ -317,9 +333,15 @@ export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTa
                       setSelectedDestination(dest.value);
                       // Reset network tab if it's incompatible with the newly selected destination
                       if (dest.value !== 'todos' && activeTab !== 'todos') {
-                        const categoryDest = getCategoryDestination(activeTab);
-                        if (categoryDest !== dest.value) {
-                          setActiveTab('todos');
+                        if (activeTab === 'amarante') {
+                          if (dest.value !== 'Maceió' && dest.value !== 'Japaratinga' && dest.value !== 'Maragogi') {
+                            setActiveTab('todos');
+                          }
+                        } else {
+                          const categoryDest = getCategoryDestination(activeTab);
+                          if (categoryDest !== dest.value) {
+                            setActiveTab('todos');
+                          }
                         }
                       }
                     }}
@@ -346,17 +368,18 @@ export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTa
               </button>
               
               {[
-                { id: 'lagoa', label: 'Lagoa Parques', city: 'Caldas Novas' },
-                { id: 'diroma', label: 'Rede diRoma', city: 'Caldas Novas' },
-                { id: 'viver-caldas', label: 'Viver Caldas', city: 'Caldas Novas' },
-                { id: 'ctc', label: 'Rede CTC', city: 'Caldas Novas' },
-                { id: 'wam', label: 'WAM Experience', city: 'Caldas Novas' },
-                { id: 'olimpia', label: 'Hot Beach Olímpia', city: 'Olímpia' },
-                { id: 'sauipe', label: 'Costa do Sauípe', city: 'Costa do Sauípe' },
-                { id: 'rio-quente', label: 'Rio Quente Resorts', city: 'Rio Quente' },
-                { id: 'beach-park', label: 'Rede Beach Park', city: 'Aquiraz' }
+                { id: 'lagoa', label: 'Lagoa Parques', cities: ['Caldas Novas'] },
+                { id: 'diroma', label: 'Rede diRoma', cities: ['Caldas Novas'] },
+                { id: 'viver-caldas', label: 'Viver Caldas', cities: ['Caldas Novas'] },
+                { id: 'ctc', label: 'Rede CTC', cities: ['Caldas Novas'] },
+                { id: 'wam', label: 'WAM Experience', cities: ['Caldas Novas'] },
+                { id: 'olimpia', label: 'Hot Beach Olímpia', cities: ['Olímpia'] },
+                { id: 'sauipe', label: 'Costa do Sauípe', cities: ['Costa do Sauípe'] },
+                { id: 'rio-quente', label: 'Rio Quente Resorts', cities: ['Rio Quente'] },
+                { id: 'beach-park', label: 'Rede Beach Park', cities: ['Aquiraz'] },
+                { id: 'amarante', label: 'Resorts Amarante', cities: ['Maceió', 'Japaratinga', 'Maragogi'] }
               ]
-                .filter(net => selectedDestination === 'todos' || net.city === selectedDestination)
+                .filter(net => selectedDestination === 'todos' || net.cities.includes(selectedDestination))
                 .map((net) => {
                   const count = HOTELS_DATA.filter(h => h.category === net.id).length;
                   return (
