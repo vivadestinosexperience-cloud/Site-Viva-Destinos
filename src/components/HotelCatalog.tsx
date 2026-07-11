@@ -320,7 +320,7 @@ export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTa
             <span className="text-xs font-bold uppercase tracking-widest text-azul flex items-center gap-1.5 px-1">
               <MapPin size={14} className="text-dourado" /> 1. Escolha o Destino (Cidade & Estado)
             </span>
-            <div className="flex bg-gray-50 p-1.5 rounded-2xl overflow-x-auto gap-1 select-none scrollbar-none">
+            <div className="flex bg-gray-50 p-1.5 pb-3 rounded-2xl overflow-x-auto gap-1 select-none custom-scrollbar-x">
               {destinations.map((dest) => {
                 const count = dest.value === 'todos' 
                   ? HOTELS_DATA.length 
@@ -359,7 +359,7 @@ export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTa
             <span className="text-xs font-bold uppercase tracking-widest text-azul flex items-center gap-1.5 px-1">
               <Sparkles size={14} className="text-dourado" /> 2. Escolha por Rede ou Parque
             </span>
-            <div className="flex bg-gray-50 p-1.5 rounded-2xl overflow-x-auto gap-1 select-none scrollbar-none">
+            <div className="flex bg-gray-50 p-1.5 pb-3 rounded-2xl overflow-x-auto gap-1 select-none custom-scrollbar-x">
               <button
                 onClick={() => { setActiveTab('todos'); }}
                 className={`px-5 py-2.5 rounded-xl font-display font-bold text-xs sm:text-sm cursor-pointer transition-all shrink-0 whitespace-nowrap ${activeTab === 'todos' ? 'bg-azul text-dourado shadow-md' : 'text-gray-500 hover:text-azul hover:bg-gray-100'}`}
@@ -411,7 +411,7 @@ export default function HotelCatalog({ onOpenHotelDetail, activeTab, setActiveTa
             </div>
 
             {/* 2. Quick Attribute Filter Pills */}
-            <div className="flex items-center gap-3 overflow-x-auto w-full lg:w-auto pb-1 lg:pb-0 scrollbar-none">
+            <div className="flex items-center gap-3 overflow-x-auto w-full lg:w-auto pb-3 lg:pb-1 custom-scrollbar-x">
               <span className="text-gray-650 text-xs font-bold uppercase tracking-wider shrink-0 flex items-center gap-1.5">
                 <Filter size={14} className="text-dourado" /> Filtrar Lazer:
               </span>
